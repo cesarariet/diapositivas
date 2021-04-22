@@ -1,0 +1,21 @@
+{
+  "name": "clases",
+  "version": "1.0.0",
+  "description": "Aquí pondré las plantillas para las diapositivas de clases, los modulos de trabajo. Automatizaré tareas con Gulp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Estanislao Cesar Ariet <cesarariet@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-inject": "^5.0.5",
+    "gulp-mathjax-node": "^1.1.1",
+    "gulp-pug-3": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "mathjax-node": "^2.1.1",
+    "node-sass": "^5.0.0"
+  }
+}

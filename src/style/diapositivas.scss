@@ -1,0 +1,130 @@
+@import "reseteo";
+
+@font-face {
+  font-family: "Oswald";
+  src: url(font/Oswald-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "ubuntu";
+  src: url(font/Ubuntu-Regular.ttf);
+}
+
+$fuente-0: "Oswald", sans-serif;
+$fuente-1: "Ubuntu", sans-serif;
+$fuente-size-texto: 2.5vw;
+$fuente-size-comentario: 0.8em;
+$margen-texto: 0.3em;
+
+$color-0: #351330;
+$color-1: #cc2a41;
+$color-2: #64908a;
+$color-3: #e8caa4;
+$borde-radio: 3px;
+$borde: $borde-radio solid $color-2;
+
+html {
+  font-size: $fuente-size-texto;
+}
+
+body {
+  font-family: $fuente-1;
+  color: $color-3;
+  background-color: $color-0;
+  width: 100vw;
+  margin: auto;
+}
+.diapositivas {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.diapositivas .diapo {
+  display: flex;
+  min-height: 100vh;
+  width: 95vw;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $fuente-0;
+  text-transform: uppercase;
+  color: $color-1;
+  margin-bottom: $margen-texto;
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+
+p,
+ol,
+ul {
+  margin-top: $margen-texto;
+  line-height: 1.3;
+}
+
+ul,
+ol {
+  padding-left: 2 * $margen-texto;
+}
+
+// estilo para los comentarios, notas, extras
+.comentario {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: $fuente-size-comentario;
+  color: $color-2;
+  max-width: 90%;
+  width: fit-content;
+  margin: 2 * $margen-texto auto;
+  padding: $margen-texto $margen-texto $margen-texto 2em + 2 * $margen-texto;
+  border: $borde;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  h3 {
+    position: absolute;
+
+    width: 1.5em;
+    color: $color-2;
+    left: 0;
+    bottom: 0;
+    transform-origin: 0 0;
+    transform: rotate(-90deg) translate(-1em + $margen-texto, $margen-texto);
+    margin: 0;
+  }
+}
+
+// p
+//   margin: $margen
+
+// ul,ol
+//   padding-left: 1em
+//   margin-top: $margen
+//   margin-bottom: $margen
+//   li
+//     margin: $margen
+//   li > p
+//     margin-left: 0
+
+// // Estilo de la diaposituva
+
+// .diapo
+//   box-sizing: border-box
+//   width: $diapositiva-ancho
+//   height: $diapositiva-alto
+//   margin:  (100vh - $diapositiva-alto) auto 20vh auto
