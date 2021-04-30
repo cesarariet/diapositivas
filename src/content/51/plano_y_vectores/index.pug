@@ -4,22 +4,70 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title Document
+		title Puntos y Vectores en el plano
 		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js") 
 	body
 		.diapositivas
 			.diapo
-				h1 Esto es un titulo h1  
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sed quis quo nihil, animi m quod sequi inventore impedit reiciendis sit amet magnam eius atque laboriosam porro minima.Sapiente perferendis libero odit similique repellat, incidunt sunt
-				h2 Esto es un subtitulo h2 
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem fuga recusandae maxime, sapiente sed nisi, tempora explicabo cum porro obcaecati unde. Beatae expedita accusantium voluptatibus nesciunt corporis magnam similique!
-				.comentario
-					h3 Edf
-					ol
-						li fdasd asdf asdf asd fas dfas df asd fasd f asdf asdf asmf qswkjlf nasdfkjsadfjkñs fñksd jfñlas fjlksdñh fjash jñ
-						li asfda
-						li $ \beta +\int_n^2 x $
-						li asdf
+				h1 Distancia entre puntos
+				.contenido
+
+					p Sean dos puntos $a=(x_1,y_1)$ y $b=(x_2,y_2)$. la distancia entre $a$ y $b$ se define como 
+					p \[ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \]
+				.adicional
+					figure
+						#g
+						script(src="distanciaEntrePuntos.js") 
+						figcaption En el gráfico se ven los puntos $A$ y $B$ unidos por un segmento $d$ (representa la distancia entre ambos puntos). 
+
+
 			.diapo
-				h1 Esta es la 2da diapositiva 
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odit iusto consequuntur modi consequatur iure, ratione labore enim voluptatibus suscipit dolores? Sequi, magni aperiam aliquid sunt deleniti voluptatibus similique excepturi?
+				h1 Vectores
+				.contenido 
+					ul 
+						li Llamaremos $\vec{v}=(v_1,v_2)$ a la flecha que nace en el origen de coordenadas y llega al punto $(x_0,y_0)$.
+						li El largo de la flecha se denomina <strong>módulo o norma del vector</strong> y se calcula mediante: \[ ||\vec{v}||=\sqrt{v_1^2+v_2^2} \]
+
+				figure 
+					#normaVector 
+					script(src="normaVector.js") 
+					figcaption En el gráfico se observa un vector y el calculo de su módulo.
+				.comentario 
+					h3 Nota 
+					ul 
+						li Un punto es una ubicación en el plano.
+						li Un vector es una flecha que apunta a un punto (tiene dirección, sentido y módulo).
+						li El módulo de un vector es la distancia desde el punto $(0,0)$ (punto de aplicación del vector) hasta el punto $(v_1,v_2)$ (extremo del vector). 
+						
+			.diapo 
+				h1 Suma de Vectores 
+				.contenido 
+					h2 Definición
+					p Dado dos vectores $\vec{v}=(v_1,v_2)$ y $\vec{w}=(w_1,w_2)$. Definimos la suma de vectores como \[ \vec{v}+\vec{w}=(v_1+w_1,v_2+w_2)\]
+				figure
+					#sumaVectores
+					script(src="sumaVectores.js") 
+					figcaption Representación gráfica de la suma de vectores. Desde el punto de vista geométrico la suma de vectores puede hacerse con la regla del paralelogramo.
+
+				.comentario 
+					h3 Nota 
+					ul 
+						li Una suma de vectores consiste en sumar los valores coordenada a coordenada.
+						li La suma de vectores es conmutativa y asociativa (sin importar el orden de los términos, el resultado es el mismo).
+						li La resta de vectores es: \[ \vec{v}-\vec{w}=(v_1-w_1,v_2-w_2) \]
+
+			.diapo 
+				h1 Producto por un escalar
+				.contenido 
+					h2 Definición 
+					p Sea un vector \( \vec{v}=(v_1,v_2) \) y un número $\lambda\in\mathbb{R}$. Definimos: \[ \lambda \cdot \vec{v} =\lambda \cdot (v_1,v_2) = (\lambda\cdot v_1,\lambda \cdot v_2) \]	
+				figure 
+					#vectorPorEscalar 
+					script(src="vectorPorEscalar.js") 
+					figcaption El producto de un vector $\vec{v}$ (en negro) por un escalar $\lambda$ (un número) genera un nuevo vector $\lambda\vec{v}$. El efecto geométrico es un "escalado" del vector según el valor del "escalar". 
+				.comentario 
+					h3 Nota 
+					ul
+						li El vector $\lambda \vec{v}$ se estira según el valor de $|\lambda|$.
+						li Si $\lambda$ es negativo, el vector $\lambda\vec{v}$ tiene sentido contrario a $\vec{v}$.

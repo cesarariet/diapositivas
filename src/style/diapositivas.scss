@@ -11,7 +11,9 @@
 
 $fuente-0: "Oswald", sans-serif;
 $fuente-1: "Ubuntu", sans-serif;
-$fuente-size-texto: 2.5vw;
+// $fuente-size-texto: 4.5vw;
+
+$fuente-size-texto: 16px;
 $fuente-size-comentario: 0.8em;
 $margen-texto: 0.3em;
 
@@ -41,8 +43,11 @@ body {
 .diapositivas .diapo {
   display: flex;
   min-height: 100vh;
+  max-width: 800px;
   width: 95vw;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20vh;
   justify-content: center;
   flex-direction: column;
   scroll-snap-align: start;
@@ -55,7 +60,7 @@ h3 {
   text-transform: uppercase;
   color: $color-1;
   margin-bottom: $margen-texto;
-  margin-top: 1em;
+  margin-top: $margen-texto;
 }
 
 h1 {
@@ -72,7 +77,7 @@ h3 {
 p,
 ol,
 ul {
-  margin-top: $margen-texto;
+  margin: $margen-texto auto;
   line-height: 1.3;
 }
 
@@ -84,6 +89,7 @@ ol {
 // estilo para los comentarios, notas, extras
 .comentario {
   position: relative;
+  min-height: 4em;
   display: flex;
   align-items: center;
   font-size: $fuente-size-comentario;
@@ -91,11 +97,12 @@ ol {
   max-width: 90%;
   width: fit-content;
   margin: 2 * $margen-texto auto;
-  padding: $margen-texto $margen-texto $margen-texto 2em + 2 * $margen-texto;
+  padding: $margen-texto $margen-texto $margen-texto 2em + 3 * $margen-texto;
   border: $borde;
   border-radius: 10px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
+  text-align: justify;
   h3 {
     position: absolute;
 
@@ -107,6 +114,21 @@ ol {
     transform: rotate(-90deg) translate(-1em + $margen-texto, $margen-texto);
     margin: 0;
   }
+}
+
+figure {
+  margin: $margen-texto auto;
+}
+figure > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+figure > figcaption {
+  margin-top: $margen-texto;
+  font-size: $fuente-size-comentario;
+  text-align: justify;
+  max-width: 400px;
+  color: $color-2;
 }
 
 // p

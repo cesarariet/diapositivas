@@ -1,0 +1,126 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Límite de funciones
+		meta(name="description", content="Límite de funciones. Límites especiales. Propiedades")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js") 
+	body 
+		.diapositivas 
+			.diapo 
+				h1 Límite (hacia $+\infty$)
+				.contenido 
+					h2 Definición
+					p Sea $f$ una función cuyo dominio no esta acotado superiormete.
+					p Diremos que $$ \lim_{x\to+\infty} f(x) =l $$ cuando se cumple: \[ \forall \epsilon,\exists N>0: x>N \implies |f(x)-l|<\epsilon \]
+					p Diremos que $$ \lim_{x\to+\infty} f(x) =\infty $$ cuando se cumple: \[ \forall M,\exists N>0: x>N \implies |f(x)|>M \]
+
+
+
+				.comentario 
+					h3 Nota 
+					ul 
+						li La definición es equivalente al límite de sucesiones.
+						li No se pueden usar los criterios de D'Alembert (del cociente) y Cauchy (de la raiz n-ésima). Son exclusivos de sucesiones.
+						li Como el dominio no esta restringido a $\mathbb{N}$ también pueden hacerse $x\to -\infty$, $x\to a$ con $a\in\mathbb{R}$, etc.
+
+			.diapo 
+				h1 Límite (hacia $-\infty$)
+				.contenido 
+					h2 Definición
+					p Sea $f$ una función cuyo dominio no esta acotado inferiormente.
+					p Diremos que $$ \lim_{x\to-\infty} f(x) =l $$ cuando se cumple: \[ \forall \epsilon,\exists N>0: x<-N \implies |f(x)-l|<\epsilon \]
+					p Diremos que $$ \lim_{x\to-\infty} f(x) =\infty $$ cuando se cumple: \[ \forall M,\exists N>0: x&lt N \implies |f(x)|>M \]
+
+			.diapo 
+				h1 Límite puntual 
+				.contenido 
+					p Sea $f$ una función y $a\in\mathbb{R}$
+					h2 Definición de límite lateral por derecha
+					p $$ \lim_{x\to a^+} f(x) =l $$ Cuando se cumple: \[ \forall \epsilon,\exists \delta>0: x-a<\delta \Rightarrow |f(x)-l|<\epsilon \]
+					h2 Definición de límite lateral por izquierda 
+					p $$ \lim_{x\to a^-} f(x) =l $$ Cuando se cumple: \[ \forall \epsilon,\exists \delta>0: a-x<\delta \Rightarrow |f(x)-l|<\epsilon \]
+					h2 Definición de límite puntual
+					p $$ \lim_{x\to a} f(x) =l $$ Cuando se cumple: \[ \forall \epsilon,\exists \delta>0: |x-a|<\delta \Rightarrow |f(x)-l|<\epsilon \]
+				.comentario 
+					h3 Nota 
+					ul 
+						li El límite puntual existe si y solo si los límites laterales existen y valen lo mismo. \[ \lim_{x\to a}f(x)= \lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)\]
+						li Los límites con resultado $\infty$ se reemplaza $\forall \epsilon>0$ por $\forall M>0$ y también $|f(x)-l|<\epsilon$ por $|f(x)|>M$ 
+
+				figure 
+					#limitePuntual 
+					script(src="limitePuntual.js") 
+					figcaption Representación gráfica de la definición de límite puntual para el caso $ \lim_{x\to 1} f(x)=2.$ Los valores $2\epsilon$ y $2\delta$ forman el alto y el ancho (respectivamente) de un rectangulo centrado en $(a,l)$.
+
+			.diapo 
+				h1 Propiedades de límites 
+				.contenido
+					p El tratamiento es similar a los límites de sucesiones (sin criterio de D'Alembert ni criterio de Cauchy):
+					ol 
+						li Vale el algebra de límites de sucesiones.
+						li Se mantienen las indeterminaciones.
+						li Vale las propiedad del Sandwich y $\text{"0"}\cdot\text{"acotado"}.$
+						li En sumas y restas se puede sacar factor común el término dominante (cuando este tiene a $\infty$).
+						li En divisiones de polinomios que tienen a $\text{"0"}/\text{"0"}$ se puede factorizar.
+						li Se puede multiplicar y dividir por el conjugado $(\sqrt{a}-\sqrt{b})\cdot(\sqrt{a}+\sqrt{b})=a-b$.
+						li En los límites $\text{"a"}^\text{"b"}$ vale: 
+							ul 
+								li si $\text{"a"}>1$
+								ul 
+									li $\text{"a"}^{"+\infty"} =+\infty $ 
+									li $ \text{"a"}^{"-\infty"} =0$
+								li si $1>\text{"a"}>0$
+								ul 
+									li $\text{"a"}^{"+\infty"} =0 $ 
+									li $ \text{"a"}^{"-\infty"} =+\infty$
+								li si $a\to 1$ y $b\to \infty$ usar el límite especial: \[ \lim_{x\to +\infty}\left(1+\frac{1}{x}\right)^x=e \]
+							li En los casos $\sin(\text{"0"})/\text{"0"}$ se puede usar $$\lim_{x\to 0}\frac{\sin(x)}{x}=1.$$
+							li Se puede hacer cambio de variable.
+							li Se puede usar la regla de L'Hospital.
+						.comentario
+							h3 Nota 
+							p La notación $\text{"a"}$ representa a una función cuyo límite es $a$. 
+
+
+			.diapo
+				h1 Límite especial $\sin(x)/x$
+				.contenido
+					h2 Propiedad
+					p $$ \lim_{x\to 0} \frac{\sin(x)}{x}=1 $$
+				.comentario
+					h3 Nota 
+					ul 
+						li El límite presenta una indeterminación $\frac{sin(\text{"0"})}{\text{"0"}} $
+						li Si bien esta propiedad es fundamental para este tipo de indeterminación, podrá salvarse también con la regla de L'Hospital.
+
+
+			.diapo 
+				h1 Asíntotas de una función 
+				.contenido
+					h2 Asíntota horizontal (AH)
+					p Diremos que una función tiene una asíntota horizontal (AH) en $y=b$ si 
+					p \[ \lim_{x\to \pm \infty}f(x)=b \text{(finito)} \]
+					.comentario 
+						h3 Nota 
+						ul 
+							li Si el límite es finito solo para $x\to +\infty$ diremos que hay AH por derecha.
+							li Si el límite es finito solo para $x\to -\infty$ diremos que hay AH por izquierda.
+							li Si el dominio de la función esta acotado, entonces no puede tener AH. 
+					h2 Asíntota Vertical (AV)
+					p Diremos que una función tiene una asíntota vertical (AV) en $x=a$ si 
+					p \[ \lim_{x\to a^+}f(x)=\infty, \text{ o bien, } \lim_{x\to a^-}f(x)=\infty\]
+					.comentario 
+						h3 Nota 
+						ul 
+							li Son candidatos a AH los valores que no pertencen al dominio de la función y los lugares de bifurcación en una función partida.
+							li Con que un límite lateral de $\infty$ alcanza para la existencia de una AV.
+
+					figure 
+						#asintotas 
+						script(src="asintotas.js") 
+						figcaption Gráfico de una función y sus asíntotas. Hay una AV por derecha de ecuación $y=2$, una AV por izquierda de ecuación $y=-2$ y una AH de ecuación $x=3$.
+

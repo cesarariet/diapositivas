@@ -1,0 +1,49 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Sucesiones
+		meta(name="description", content="Definición de sucesiones y su límite. Indeterminaciones. Teoremas y propiedades para resolver indeterminaciones.")
+		meta(name="keywords", content="sucesión, límite, indeterminación, convergencia, divergencia")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js") 
+	body 
+		.diapositivas 
+			.diapo 
+				.contenido
+					h1 Sucesiones 
+					ul 
+						li Es una función de dominio en los Naturales, $$a:\mathbb{N}\to \mathbb{R}$$ 
+						li Llamaremos término n-ésimo a la evluación de sucesión en $n$, y lo notaremos \[a_n = a(n)\]
+						li También puede pensarse como una lista de elementos: \[ (a_n)_{n\in\mathbb{N}}=(a_1,a_2,a_3,a_4,\dots) \]
+
+					.comentario 
+						h3 Nota 
+						ul 
+							li Se usan las primeras letras del abecedario para nombrar las sucesiones.
+							li La variable independiente es $n$ para hacer enfasis en su dominio en $\mathbb{N}$.
+							li La fórmula que decribe los valores de la sucesión para cada $n$ se denomina término general.
+							li Una sucesión se puede definir por recurrencia. Ejemplo: La suceción que cumple $a_1=2$ y $a_n=3\cdot a_{n-1}$.
+
+			.diapo
+				h1 Representación de sucesiones 
+				script(src="./representacionSucesiones.js") 
+				.contenido 
+					h2 Gráfico en el plano $\mathbb{R}^2$
+					figure 
+						#graficoDeSucesion 
+						figcaption Las sucesiones se pueden representar igual que una función, con la salvedad de su dominio en $\mathbb{N}$. El el gráfico se observa $a_n=2+(-1)^n/n$
+					h2 Puntos en la Recta 
+					figure 
+						#sucesionEnLaRecta 
+						figcaption Cada punto representa los términos de la sucesión $a_n=2+(-1)^n/n$
+
+			.diapo
+				h1 Límite de Sucesiones 
+				h2 Definición 
+				p Una sucesión $a_n$ se dice convergente a o tiende a $l\in\mathbb{R}$ si \[ \forall\epsilon>0,\Rightarrow n_0/ n>n_0 \implies  | a_n-l| &lt \epsilon \]
+				figure 
+					#defLimite 
+					script(src="./definicionLimite.js") 

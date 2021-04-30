@@ -1,10 +1,10 @@
-const { task, watch, src, dest } = require("gulp");
+const { task, watch, src, dest, series, parallel } = require("gulp");
 const math = require("gulp-mathjax-node");
 const inject = require("gulp-inject");
 const sass = require("gulp-sass");
 const cssmin = require("gulp-cssmin");
 const pug = require("gulp-pug-3");
-const { default: gulpConfig } = require("./gulp.config");
+const htmlmin = require("gulp-htmlmin");
 
 task("compilaPug", function (cb) {
   src("./src/content/**/*.pug").pipe(pug()).pipe(math()).pipe(dest("dist"));
@@ -24,6 +24,11 @@ task("copiarArchivos", function (cb) {
   cb();
 });
 
+task("copiarUtilidades", function (cb) {
+  src("./src/utils/**/*").pipe(dest("dist/utils"));
+  cb();
+});
+
 task("watch", function () {
   watch("./src/content/**/*.pug", task("compilaPug"));
   watch("./src/style/*.scss", task("compilaSass"));
@@ -31,4 +36,15 @@ task("watch", function () {
     ["./src/content/**/*", "!./src/content/**/*.pug"],
     task("copiarArchivos")
   );
+  watch("./src/utils/**/*", task("copiarUtilidades"));
 });
+
+task(
+  "build",
+  parallel(
+    task("compilaPug"),
+    task("compilaSass"),
+    task("copiarArchivos"),
+    task("copiarUtilidades")
+  )
+);
