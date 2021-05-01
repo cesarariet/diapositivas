@@ -35,16 +35,35 @@ html(lang="es")
 					p Diremos que $$ \lim_{x\to-\infty} f(x) =l $$ cuando se cumple: \[ \forall \epsilon,\exists N>0: x<-N \implies |f(x)-l|<\epsilon \]
 					p Diremos que $$ \lim_{x\to-\infty} f(x) =\infty $$ cuando se cumple: \[ \forall M,\exists N>0: x&lt N \implies |f(x)|>M \]
 
+
 			.diapo 
-				h1 Límite puntual 
+				h1 Límite Lateral por izquierda
 				.contenido 
-					p Sea $f$ una función y $a\in\mathbb{R}$
-					h2 Definición de límite lateral por derecha
-					p $$ \lim_{x\to a^+} f(x) =l $$ Cuando se cumple: \[ \forall \epsilon,\exists \delta>0: x-a<\delta \Rightarrow |f(x)-l|<\epsilon \]
-					h2 Definición de límite lateral por izquierda 
-					p $$ \lim_{x\to a^-} f(x) =l $$ Cuando se cumple: \[ \forall \epsilon,\exists \delta>0: a-x<\delta \Rightarrow |f(x)-l|<\epsilon \]
-					h2 Definición de límite puntual
-					p $$ \lim_{x\to a} f(x) =l $$ Cuando se cumple: \[ \forall \epsilon,\exists \delta>0: |x-a|<\delta \Rightarrow |f(x)-l|<\epsilon \]
+					p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
+
+					p $$ \lim_{x\to a^-} f(x) =l $$ Cuando se cumple \[ \forall \epsilon,\exists \delta>0: 0&lt a-x<\delta \Rightarrow |f(x)-l|<\epsilon \]
+
+				figure 
+					#limiteLateralIzq 
+					script(src="limiteLateralIzq.js") 
+					figcaption Representación gráfica de un límite lateral por izquierda $\lim_{x\to 3^-}f(x)=1$. El recuadro en rojo centrado en $(a,l)=(3,1)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para cualquier valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral izquierdo del recuadro rojo y no se salga del mismo.
+
+			.diapo 
+				h1 Límite Lateral por derecha
+				.contenido 
+					p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
+
+					p $$ \lim_{x\to a^+} f(x) =l $$ Cuando se cumple \[ \forall \epsilon,\exists \delta>0: 0&lt a-x<\delta \Rightarrow |f(x)-l|<\epsilon \]
+
+				figure 
+					#limiteLateralDer 
+					script(src="limiteLateralDer.js") 
+					figcaption Representación gráfica de un límite lateral por derecha $\lim_{x\to 3^+}f(x)=3$. El recuadro en rojo centrado en $(a,l)=(3,3)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para todo valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral derecho del recuadro rojo y no se salga del mismo.
+			.diapo 
+				h1 Límite puntual
+				.contenido
+					p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
+					p $$ \lim_{x\to a} f(x) =l $$ Cuando se cumple \[ \forall \epsilon,\exists \delta>0: |x-a|<\delta \Rightarrow |f(x)-l|<\epsilon \]
 				.comentario 
 					h3 Nota 
 					ul 
@@ -54,8 +73,7 @@ html(lang="es")
 				figure 
 					#limitePuntual 
 					script(src="limitePuntual.js") 
-					figcaption Representación gráfica de la definición de límite puntual para el caso $ \lim_{x\to 1} f(x)=2.$ Los valores $2\epsilon$ y $2\delta$ forman el alto y el ancho (respectivamente) de un rectangulo centrado en $(a,l)$.
-
+					figcaption Representación gráfica de la definición de límite puntual para el caso $ \lim_{x\to 2} f(x)=1.$ Los valores $2\epsilon$ y $2\delta$ forman el alto y el ancho (respectivamente) de un rectangulo centrado en $(a,l)=(2,1)$. Para que existe el límite, en cualquier valor de $\epsilon$ debe existir un valor $\delta$ para el cual la función ingrese por los costados del recuadro rojo y no se salga del mismo.
 			.diapo 
 				h1 Propiedades de límites 
 				.contenido
