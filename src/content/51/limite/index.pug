@@ -1,0 +1,43 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Límite de funciones
+		meta(name="description", content="Definición de límite de funciones")
+		meta(name="keywords", content="límite, funciones, asíntotas")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js") 
+	body 
+		.diapositivas 
+			.diapo
+				h1 Límite $x \to +\infty$ 
+				.contenido 
+					h2 Definición 
+					p Diremos que la función tiene límite $l$ cuando $x$ tiende a $+\infty$ cuando "Los valores de f(x) se acercan al valor $l$ a medida que $x$ toma valores cada vez más grandes y positivos". Lo notaresmo 
+
+					p \[ \lim_{x\to+\infty}f(x)=l \]
+					
+					figure 
+						#limiteAlInf 
+						script(src="limiteAlInf.js") 
+						figcaption Representación visual de límite de una función cuando $\lim_{x\to+\infty}f(x)=3$
+
+					figure 
+						#limiteAlInf2 
+						script(src="limiteAlInf2.js") 
+						figcaption Representación visual de límite de una función cuando $\lim_{x\to+\infty}f(x)=+\infty$
+
+			.diapo 
+				h1 Propiedades de los límites $x\to + \infty$
+				.contenido 
+					p \[ \lim_{x\to+\infty}x^p=+\infty, \text{ (p>0)} \]	
+					p \[ \lim_{x\to+\infty}\frac{1}{x^p}=0, \text{ (p>0)} \]
+
+				.comentario 
+					h3 Nota 
+					ul 
+						li El infinito no es un número por lo cual hay que tener cuidado operar con él.
+						li Existen indeterminaciones:  \[\frac{"\infty"}{"\infty"},"\infty"-"\infty", \frac{"0"}{"0"},\]\["0"\cdot "\infty", "1"^{"\infty"},"0"^"0","\infty"^"0" \]
+						li Para el infinito vale la regla de los signos.
