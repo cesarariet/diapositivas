@@ -1,0 +1,28 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Composición de funciones
+		meta(name="description", content="Definición de composición de funciones.")
+		meta(name="keywords", content="composición, funcion")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+	body 
+		.diapositivas 
+			.diapo 
+				h1 Composición de funciones 
+				.contenido 
+					p Sean $ f$ y $g$ dos funciones. Definimos \[ f\circ g (x)= f\big(g(x)\big) \]
+
+				.comentario 
+					h3 Nota 
+					ul 
+						li Al evaluar una composición $f\circ g (x)$, se evalua primero $x$ en la función $g$ y el resultado es evaluado en la función $f$.
+							p Ejemplo: Sea $f(x)=x^2-7x$ y $g(x)=5x-6$. Entonces $$\begin{align}f\circ g(2)&=f(g(2))\\&=f(4)=-12\end{align}$$
+						li Para hallar la fórmula de la composición $f\circ g(x)$ se puede cambiar la $x$ de la función $f$ por la expresión de la función $g$.
+							p En el ejemplo anterior: $$\begin{equation}\begin{split}f\circ g (x) & =f(g(x))\\&=f(5x-6)\\&=(5x-6)^2-7(5x-6)\end{split}\end{equation}$$
+						li En general $ f\circ g \neq g\circ f $, es decir, el orden de la composición es importante.
+				figure 
+					img(src="cadena.jpg", alt="La composición de funciones representada por máquinas en serie")
+					figcaption Representación de la composición $f\circ g$ como máquinas trabajando en serie. En la imagen la función $g$ recibe una botella sucia y la limpia (resultado). Luego la función $f$ recibe la botella límpia y la rellena.

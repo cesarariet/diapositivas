@@ -130,23 +130,20 @@ figure > figcaption {
   max-width: 400px;
   color: $color-2;
 }
-
-// p
-//   margin: $margen
-
-// ul,ol
-//   padding-left: 1em
-//   margin-top: $margen
-//   margin-bottom: $margen
-//   li
-//     margin: $margen
-//   li > p
-//     margin-left: 0
-
-// // Estilo de la diaposituva
-
-// .diapo
-//   box-sizing: border-box
-//   width: $diapositiva-ancho
-//   height: $diapositiva-alto
-//   margin:  (100vh - $diapositiva-alto) auto 20vh auto
+figure img {
+  width: 100%;
+  max-width: 400px;
+}
+table {
+  width: fit-content;
+  border: $color-2 2px solid;
+  text-align: center;
+  th {
+    color: $color-0;
+    background-color: $color-2;
+  }
+  td {
+    padding: 0 1em;
+    border: $color-2 solid 1px;
+  }
+}
