@@ -1,18 +1,22 @@
 const { task, watch, src, dest, series, parallel } = require("gulp");
 const math = require("gulp-mathjax-node");
-const inject = require("gulp-inject");
 const sass = require("gulp-sass");
 const cssmin = require("gulp-cssmin");
 const pug = require("gulp-pug-3");
-const htmlmin = require("gulp-htmlmin");
+const gulpWatch = require("gulp-watch");
 
 task("compilaPug", function (cb) {
-  src("./src/content/**/*.pug").pipe(pug()).pipe(math()).pipe(dest("dist"));
+  src("./src/content/**/*.pug")
+    .pipe(gulpWatch("./src/content/**/*.pug"))
+    .pipe(pug())
+    .pipe(math())
+    .pipe(dest("dist"));
   cb();
 });
 
 task("compilaSass", function (cb) {
   src("./src/style/*.scss")
+    .pipe(gulpWatch("./src/style/*.scss"))
     .pipe(sass())
     .pipe(cssmin())
     .pipe(dest("dist/style"));
@@ -20,7 +24,9 @@ task("compilaSass", function (cb) {
 });
 
 task("copiarArchivos", function (cb) {
-  src(["./src/content/**/*", "!./src/content/**/*.pug"]).pipe(dest("dist"));
+  src(["./src/content/**/*", "!./src/content/**/*.pug"])
+    .pipe(gulpWatch(["./src/content/**/*", "!./src/content/**/*.pug"]))
+    .pipe(dest("dist"));
   cb();
 });
 
