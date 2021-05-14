@@ -13,96 +13,99 @@ html(lang="es")
 		.diapositivas 
 			.diapo 
 				h1 ¿Invertir una función?
-				.contenido 
-					p Dada un a función $f$ nos gustaria encontrar una función que deshaga la evaluación de $f$. Llamaremos a esta función, si existe, $f^{-1}$ \[ f(x)=y \iff f^{-1}(y)=x \]
-					p Entonces también se cumplirá \[ f	^{-1}\circ f(x)=x \] \[ f\circ f^{-1}(x)=x \]
-					p Diremos que una función es inversible si tiene inversa.
-				.comentario 
-					h3 Nota 
-					ul 
-						li La primer ecuación puede entenderse como la forma de despejar una función (en el caso de tener función inversa)
-						li Esa primer ecuación nos indica una forma de hallar la inversa de una función. Plantear $f(x)=y$ y despejar $x$. No siempre es posible.
-						li En la segunda y tercer ecuación, una función y su inversa (si existe) se cancelan entre si.
-						li La inversa de $f^{-1}$ es $f$ (invertir dos veces una función devuelve la misma función).
+				.col-2
+					.contenido 
+						p Dada un a función $f$ nos gustaria encontrar una función que deshaga la evaluación de $f$. Llamaremos a esta función, si existe, $f^{-1}$ \[ f(x)=y \iff f^{-1}(y)=x \]
+						p Entonces también se cumplirá \[ f	^{-1}\circ f(x)=x \] \[ f\circ f^{-1}(x)=x \]
+						p Diremos que una función es inversible si tiene inversa.
+					.comentario 
+						h3 Nota 
+						ul 
+							li La primer ecuación puede entenderse como la forma de despejar una función (en el caso de tener función inversa)
+							li Esa primer ecuación nos indica una forma de hallar la inversa de una función. Plantear $f(x)=y$ y despejar $x$. No siempre es posible.
+							li En la segunda y tercer ecuación, una función y su inversa (si existe) se cancelan entre si.
+							li La inversa de $f^{-1}$ es $f$ (invertir dos veces una función devuelve la misma función).
 
 			.diapo 
 				h1 Ejemplo de una función inversible
-				.contenido 
-					p Sea la función $$f(x)=2x-1$$
-					p Despejar la ecuación $f(x)=y$ es un método que puede intentarse para hallar la función inversa.  \[ \begin{align}f(x)&=y\\ 2x-1&=y \\ x&=\frac{y+1}{2}  \end{align} \]
-					p Como pudo despejarse $x$, obtenemos \[ f^{-1}(x)=\frac{x+1}{2} \]
-				.comentario 
-					h3 Nota 
-					div 
-						p En una tabla de valores puede verse facilmente la relación de una función y su función inversa.
-						<figure style="display:block">
-							<div style="display: grid;grid-template: 1fr / 1fr 1fr;justify-items:center">
-								<table>
-									<tr>
-										<th>$x$</th>
-										<th>$f(x)$</th>
-									</tr>
-									<tr>
-										<td>-2</td>
-										<td>-5</td>
-									</tr>
-									<tr>
-										<td>-1</td>
-										<td>-3</td>
-									</tr>
-									<tr>
-										<td>0</td>
-										<td>-1</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>1</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>3</td>
-									</tr>
-								</table>
-							
-								<table>
-									<tr>
-										<th>$x$</th>
-										<th>$f^{-1}(x)$</th>
-									</tr>
-									<tr>
-										<td>-5</td>
-										<td>-2</td>
-									</tr>
-									<tr>
-										<td>-3</td>
-										<td>-1</td>
-									</tr>
-									<tr>
-										<td>-1</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>1</td>
-										<td>1</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>2</td>
-									</tr>
-								</table>
-							</div>
-							figcaption Tabla de valores de la función $f(x)=2\cdot x-1$ (a la derecha) y tabla de valores de su función inversa $f^{-1}(x)$. Notar las tablas tienen sus columnas de valores intercambiados.
-						</figure>
+				.col-2
+					.contenido 
+						p Sea la función $$f(x)=2x-1$$
+						p Despejar la ecuación $f(x)=y$ es un método que puede intentarse para hallar la función inversa.  \[ \begin{align}f(x)&=y\\ 2x-1&=y \\ x&=\frac{y+1}{2}  \end{align} \]
+						p Como pudo despejarse $x$, obtenemos \[ f^{-1}(x)=\frac{x+1}{2} \]
+					.comentario 
+						h3 Nota 
+						div 
+							p En una tabla de valores puede verse facilmente la relación de una función y su función inversa.
+							<figure style="display:block">
+								<div style="display: grid;grid-template: 1fr / 1fr 1fr;justify-items:center">
+									<table>
+										<tr>
+											<th>$x$</th>
+											<th>$f(x)$</th>
+										</tr>
+										<tr>
+											<td>-2</td>
+											<td>-5</td>
+										</tr>
+										<tr>
+											<td>-1</td>
+											<td>-3</td>
+										</tr>
+										<tr>
+											<td>0</td>
+											<td>-1</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>3</td>
+										</tr>
+									</table>
+								
+									<table>
+										<tr>
+											<th>$x$</th>
+											<th>$f^{-1}(x)$</th>
+										</tr>
+										<tr>
+											<td>-5</td>
+											<td>-2</td>
+										</tr>
+										<tr>
+											<td>-3</td>
+											<td>-1</td>
+										</tr>
+										<tr>
+											<td>-1</td>
+											<td>0</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>2</td>
+										</tr>
+									</table>
+								</div>
+								figcaption Tabla de valores de la función $f(x)=2\cdot x-1$ (a la derecha) y tabla de valores de su función inversa $f^{-1}(x)$. Notar las tablas tienen sus columnas de valores intercambiados.
+							</figure>
 			
 			.diapo 
 				h1 Ejemplo de una función no inversible
-				.contenido 
-					p Sea la función $$f(x)=x^4-x^2$$
-					p La función repite resultados por lo cual no es posible asignar la evaluación inversa con una función.
-					p \[ \begin{align}  f(2)&=12 \\ f(-2)&=12 \end{align}\Bigg\rbrace \implies f^{-1}(12)= \text{ 2 o -2}\]
+				.col-2
+					.contenido 
+						p Sea la función $$f(x)=x^4-x^2$$
+						p La función repite resultados por lo cual no es posible asignar la evaluación inversa con una función.
+						p \[ \begin{align}  f(2)&=12 \\ f(-2)&=12 \end{align}\Bigg\rbrace \implies f^{-1}(12)= \text{ 2 o -2}\]
 
-					
-					p La función $f$ no tiene inversa.
+						
+						p La función $f$ no tiene inversa.
 					.comentario
 						h3 Nota 
 						ul 
@@ -114,49 +117,50 @@ html(lang="es")
 							
 			.diapo 
 				h1 Función inyectiva 
-				.contenido 
-					h2 Definición 
-					p Diremos que una función $f$ es inyectiva si y solo si para todo $x_1,x_2\in dom f$ \[ x_1\neq x_2 \iff f(x_1)\neq f(x_2) \]
-					h2 Propiedad 
-					p Para que una función sea inversible es necesario que sea inyectiva.
-				.comentario 
-					h3 Nota 
-					ul 
-						li Una función que repite resultados no es inyectiva.
-						li Una función no inyectiva no tiene función inversa.
-						li Una función dada por un gráfico NO es inyectiva si hay alguna altura (segunda coordenada) que sea alcanzado más de una vez.
-						li La definición de inyectividad depende del dominio de la función.
-			.diapo 
-				h1 Función inversa 
-				.contenido 
-					h2 Propiedad 
-					ul 
-						li Para que una función ser inversible debe ser inyectiva.
-						li \( f(x)=y \iff x=f^{-1}(y) \) 
-						li \(  f^{-1}\circ f(x)=x \) 
-						li \( f\circ f^{-1}(x)=x \) 
-						li \( Im f^{-1}= Dom f \) 
-						li \( Im f = Dom f^{-1} \) 
-			.diapo 
-				h1 Gráfico de una función y su inversa 
-				.contenido 
-					p Los gráficos de $f$ y su función inversa $f^{-1}$ tienen las coordenadas cambiadas.
-					p Para pasar del gráfico de $f$ al gráfico de su función inversa \( f^{-1} \) se deben invertir los ejes de coordendas (girando 90 grados y volteandolo horizontalmente.) 
-				figure
-					style .graficoInvertido{animation-name: invertir;animation-duration: 3s;animation-fill-mode:forwards}
-					style @keyframes invertir{50%{transform: rotateZ(-90deg)}100%{transform: rotateZ(-90deg) rotateX(180deg)}}
-
-					#graficoInversa
-					script(src="graficoInversa.js") 
-
-					figcaption Gráfico de una función (linea continua) y de su invesa (linea punteada). Haciendo click en <button onclick="invertir()">invertir</button> puede verse una animación que muestra como el gráfico de la función $f$ se transforma en el gráfico de su función inversa (tomando la linea continua el lugar de la linea punteada).
-				.comentario
-					h3 Nota 
-					div
-						p Teniendo en cuenta  \[ f(a)=b \iff f^{-1}(b)=a \]
-					
+				.col-2
+					.contenido 
+						h2 Definición 
+						p Diremos que una función $f$ es inyectiva si y solo si para todo $x_1,x_2\in dom f$ \[ x_1\neq x_2 \iff f(x_1)\neq f(x_2) \]
+						h2 Teorema 
+						p Para que una función sea inversible es necesario que sea inyectiva.
+					.comentario 
+						h3 Nota 
 						ul 
-							li Los puntos del gráfico de $f$ son de la forma \[ (a,f(a))=(a,b) \]
-							li Los puntos del gráfico de $f^{-1}$ son de la forma \[ (b,f^{-1}(b))=(b,a) \]
+							li Una función que repite resultados no es inyectiva.
+							li Una función no inyectiva no tiene función inversa.
+							li Una función dada por un gráfico NO es inyectiva si hay alguna altura (segunda coordenada) que sea alcanzado más de una vez.
+							li La definición de inyectividad depende del dominio de la función.
+
+			.diapo 
+				h1 Propiedades de una función inversa
+				.contenido 
+					h2 Propiedades 
+					ul 
+						li "Al despejar una función, pasa al otro miembro como su función inversa" \[ f(x)=y \iff x=f^{-1}(y) \] 
+						li "La composición de una función y su inversa se cancelan entre si" \[  f^{-1}\circ f(x)=x \] \[ f\circ f^{-1}(x)=x \] 
+						li Relación entre la imagen y dominio de una función y su inversa \[ Im f^{-1}= Dom f \] \[ Im f = Dom f^{-1} \] 
+			.diapo 
+				h1 Gráfico de una función y su inversa
+				.col-2 
+					.contenido 
+						ul
+							li Los gráficos de $f$ y su función inversa $f^{-1}$ tienen las coordenadas cambiadas.
+							li Para pasar del gráfico de $f$ al gráfico de su función inversa \( f^{-1} \) se deben invertir los ejes de coordendas (girando 90 grados y volteandolo horizontalmente.) 
+						.comentario
+							h3 Nota 
+							div
+								p Teniendo en cuenta  \[ f(a)=b \iff f^{-1}(b)=a \]
+							
+								ul 
+									li Los puntos del gráfico de $f$ son de la forma \[ (a,f(a))=(a,b) \]
+									li Los puntos del gráfico de $f^{-1}$ son de la forma \[ (b,f^{-1}(b))=(b,a) \]
+					figure
+						style .graficoInvertido{animation-name: invertir;animation-duration: 3s;animation-fill-mode:forwards}
+						style @keyframes invertir{50%{transform: rotateZ(-90deg)}100%{transform: rotateZ(-90deg) rotateX(180deg)}}
+
+						#graficoInversa
+						script(src="graficoInversa.js") 
+
+						figcaption Gráfico de una función (linea continua) y de su invesa (linea punteada). Haciendo click en <button onclick="invertir()">invertir</button> puede verse una animación que muestra como el gráfico de la función $f$ se transforma en el gráfico de su función inversa (tomando la linea continua el lugar de la linea punteada).
 
 					

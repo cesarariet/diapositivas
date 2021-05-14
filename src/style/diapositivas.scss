@@ -14,6 +14,7 @@ $fuente-1: "Ubuntu", sans-serif;
 // $fuente-size-texto: 4.5vw;
 
 $fuente-size-texto: 16px;
+$fuente-size-texto-pantalla-grande: 1.4vw;
 $fuente-size-comentario: 0.8em;
 $margen-texto: 0.3em;
 
@@ -43,7 +44,6 @@ body {
 .diapositivas .diapo {
   display: flex;
   min-height: 100vh;
-  max-width: 800px;
   width: 95vw;
   margin-left: auto;
   margin-right: auto;
@@ -95,6 +95,7 @@ ol {
   font-size: $fuente-size-comentario;
   color: $color-2;
   max-width: 90%;
+  height: fit-content;
   width: fit-content;
   margin: 2 * $margen-texto auto;
   padding: $margen-texto $margen-texto $margen-texto 2em + 3 * $margen-texto;
@@ -145,5 +146,17 @@ table {
   td {
     padding: 0 1em;
     border: $color-2 solid 1px;
+  }
+}
+@media (min-width: 680px) {
+  .col-2 {
+    display: grid;
+    grid-template-columns: minmax(360px, 2fr) minmax(320px, 1fr);
+    align-items: center;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: $fuente-size-texto-pantalla-grande;
   }
 }
