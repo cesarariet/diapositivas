@@ -11,63 +11,100 @@ html(lang="en")
 		.diapositivas
 			.diapo
 				h1 Distancia entre puntos
-				.contenido
-
-					p Sean dos puntos $a=(x_1,y_1)$ y $b=(x_2,y_2)$. la distancia entre $a$ y $b$ se define como 
-					p \[ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \]
-				.adicional
-					figure
-						#g
-						script(src="distanciaEntrePuntos.js") 
-						figcaption En el gráfico se ven los puntos $A$ y $B$ unidos por un segmento $d$ (representa la distancia entre ambos puntos). 
+				.col-2
+					.contenido
+						p Sean dos puntos $A=(x_1,y_1)$ y $B=(x_2,y_2)$. la distancia entre $A$ y $B$ se define como $$ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2} $$
+						.comentario 
+							h3 Nota
+							p No importa que punto se tome como $A$ y $B$. La distancia no depende del orden de los puntos.
+					.adicional
+						figure
+							#g
+							script(src="distanciaEntrePuntos.js") 
+							figcaption En el gráfico se ven los puntos $A$ y $B$ unidos por un segmento $d$ (representa la distancia entre ambos puntos). 
 
 
 			.diapo
 				h1 Vectores
-				.contenido 
-					ul 
-						li Llamaremos $\vec{v}=(v_1,v_2)$ a la flecha que nace en el origen de coordenadas y llega al punto $(x_0,y_0)$.
-						li El largo de la flecha se denomina <strong>módulo o norma del vector</strong> y se calcula mediante: \[ ||\vec{v}||=\sqrt{v_1^2+v_2^2} \]
+				.col-2
+					.contenido 
+						ul 
+							li Llamaremos $\vec{v}=(v_1,v_2)$ a la flecha que nace en el origen de coordenadas y llega al punto $(v_1,v_2).$
+							li El largo de la flecha se denomina <strong>módulo o norma del vector</strong> y se calcula mediante: $$ ||\vec{v}||=\sqrt{v_1^2+v_2^2} $$
+						.comentario 
+							h3 Nota 
+							ul 
+								li Un punto es una ubicación en el plano.
+								li Un vector es una flecha que apunta a un punto (tiene dirección, sentido y módulo).
+								li El módulo de un vector es la distancia desde el punto $(0,0)$ (punto de aplicación del vector) hasta el punto $(v_1,v_2)$ (extremo del vector). 
+								li Notar la diferencia entre la notación del módulo de un número $|3|$ y el módulo de un vector $||(2,1)||.$
+								
+					figure 
+						#normaVector 
+						script(src="normaVector.js") 
+						figcaption En el gráfico se observa un vector y el calculo de su módulo.
 
-				figure 
-					#normaVector 
-					script(src="normaVector.js") 
-					figcaption En el gráfico se observa un vector y el calculo de su módulo.
-				.comentario 
-					h3 Nota 
-					ul 
-						li Un punto es una ubicación en el plano.
-						li Un vector es una flecha que apunta a un punto (tiene dirección, sentido y módulo).
-						li El módulo de un vector es la distancia desde el punto $(0,0)$ (punto de aplicación del vector) hasta el punto $(v_1,v_2)$ (extremo del vector). 
-						
 			.diapo 
 				h1 Suma de Vectores 
-				.contenido 
-					h2 Definición
-					p Dado dos vectores $\vec{v}=(v_1,v_2)$ y $\vec{w}=(w_1,w_2)$. Definimos la suma de vectores como \[ \vec{v}+\vec{w}=(v_1+w_1,v_2+w_2)\]
-				figure
-					#sumaVectores
-					script(src="sumaVectores.js") 
-					figcaption Representación gráfica de la suma de vectores. Desde el punto de vista geométrico la suma de vectores puede hacerse con la regla del paralelogramo.
+				.col-2
+					.contenido 
+						h2 Definición
+						p Dado dos vectores $\vec{v}=(v_1,v_2)$ y $\vec{w}=(w_1,w_2)$. Definimos la suma de vectores como $$ \vec{v}+\vec{w}=(v_1+w_1,v_2+w_2)$$
 
-				.comentario 
-					h3 Nota 
-					ul 
-						li Una suma de vectores consiste en sumar los valores coordenada a coordenada.
-						li La suma de vectores es conmutativa y asociativa (sin importar el orden de los términos, el resultado es el mismo).
-						li La resta de vectores es: \[ \vec{v}-\vec{w}=(v_1-w_1,v_2-w_2) \]
+						.comentario 
+							h3 Nota 
+							ul 
+								li Una suma de vectores consiste en sumar los valores coordenada a coordenada.
+								li La suma de vectores es conmutativa y asociativa (sin importar el orden de los términos, el resultado es el mismo). $$\vec{v}+\vec{w}=\vec{w}+\vec{v}$$
+								li La resta de vectores es: $$ \vec{v}-\vec{w}=(v_1-w_1,v_2-w_2) $$
+
+
+					figure
+						#sumaVectores
+						script(src="sumaVectores.js") 
+						figcaption Representación gráfica de la suma de vectores. Desde el punto de vista geométrico la suma de vectores puede hacerse con la regla del paralelogramo.
+
+
 
 			.diapo 
 				h1 Producto por un escalar
-				.contenido 
-					h2 Definición 
-					p Sea un vector \( \vec{v}=(v_1,v_2) \) y un número $\lambda\in\mathbb{R}$. Definimos: \[ \lambda \cdot \vec{v} =\lambda \cdot (v_1,v_2) = (\lambda\cdot v_1,\lambda \cdot v_2) \]	
-				figure 
-					#vectorPorEscalar 
-					script(src="vectorPorEscalar.js") 
-					figcaption El producto de un vector $\vec{v}$ (en negro) por un escalar $\lambda$ (un número) genera un nuevo vector $\lambda\vec{v}$. El efecto geométrico es un "escalado" del vector según el valor del "escalar". 
-				.comentario 
-					h3 Nota 
-					ul
-						li El vector $\lambda \vec{v}$ se estira según el valor de $|\lambda|$.
-						li Si $\lambda$ es negativo, el vector $\lambda\vec{v}$ tiene sentido contrario a $\vec{v}$.
+				.col-2
+					.contenido 
+						h2 Definición 
+						p Sea un vector $\vec{v}=(v_1,v_2)$ y un número $\lambda $.	Definimos: $$ \lambda \cdot \vec{v} =\lambda \cdot (v_1,v_2) = (\lambda\cdot v_1,\lambda \cdot v_2) $$	
+						h2 Propiedades
+						ul
+							li Ley distributiva
+								p $$(\lambda+\beta)\cdot\vec{v}=\lambda\cdot \vec{v}+\beta\cdot\vec{v}$$
+								p $$\lambda\cdot(\vec{v}+\vec{w})=\lambda\cdot\vec{v}+\lambda\cdot\vec{w}$$
+							li Módulo de un producto por un escalar
+								p $$||\lambda\cdot\vec{v}||=|\lambda|\cdot||\vec{v}||$$
+						.comentario 
+							h3 Nota 
+							ul
+								li El vector $\lambda\cdot \vec{v}$ se estira según el valor de $|\lambda|$. 
+								li Si $\lambda$ es negativo, el vector $\lambda\cdot\vec{v}$ tiene sentido contrario a $\vec{v}$.
+								li El vector $\lambda \cdot \vec{v}$ mantiene la dirección del vector $\vec{v}$. Es decir $\lambda\cdot\vec{v}$ y $\vec{v}$ son paralelos.
+					figure 
+						#vectorPorEscalar 
+						script(src="vectorPorEscalar.js") 
+						figcaption El producto de un vector $\vec{v}$ (en negro) por un escalar $\lambda$ (un número) genera un nuevo vector $\lambda\vec{v}$. El efecto geométrico es un "escalado" del vector según el valor del "escalar". 
+			
+			.diapo
+				h1 Producto escalar de vectores
+				.col-2
+					.contenido
+						h2 Definición
+						p Sean $\vec{v}=(v_1,v_2)$ y $\vec{w}=(w_1,w_2)$ vectores. Definimos el producto escalar entre ellos como $$ \vec{v}\cdot\vec{w}=v_1\cdot w_1+v_2\cdot w_2$$
+						h2 Propiedades
+						ul
+							li Ley distributiva $$ \vec{u}\cdot (\vec{w}+\vec{w})=\vec{u}\cdot{w}+\vec{u}\cdot\vec{w}$$ $$(\vec{u}+\vec{v})\cdot\vec{w}=\vec{u}\cdot\vec{w}+\vec{v}\cdot \vec{w}$$
+							li Módulo y producto escalar de vectores $$ |\vec{v}\cdot \vec{w}|=||\vec{v}||\cdot||\vec{w}||$$ 
+							li Ángulo entre vectores. Dos vectores $\vec{v}$ y $\vec{w}$ son perpendiculares si el producto escalar entre ellos da cero. $$\vec{v}\perp \vec{w}\iff \vec{v}\cdot\vec{w}=0$$
+					.comentario
+						h3 Nota
+						div
+							p No confundir el producto por un escalar y el producto escalar de vectores.
+								ul 
+									li En el producto por un escalar $\lambda \cdot \vec{v}$ intervienen un número $\lambda$ y un vector $\vec{v}$. El resultado es un vector.
+									li En un producto escalar de vectores $\vec{v}\cdot \vec{w}$ intervienen dos vectores. El resultado es un número.
