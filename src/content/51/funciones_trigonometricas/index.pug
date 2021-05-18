@@ -23,7 +23,7 @@ html(lang="es")
 						.comentario
 							h3 Nota
 							ul
-								li Cada valor de longitud de arco se relaciona con un ángulo. Llamaremos a esta forma de medir ángulos radianes. $$ 2\pi = 360^\circ,\pi = 180^\circ,\frac{\pi}{2}=90^\circ$$ $$ \frac{\pi}{3}=60^\circ,\frac{\pi}{4}=45^\circ ,\frac{\pi}{6}=30^\circ$$
+								li Cada valor de longitud de arco se relaciona con un ángulo. Llamaremos radianes a esta forma de medir ángulos. $$ 2\pi = 360^\circ,\pi = 180^\circ,\frac{\pi}{2}=90^\circ$$ $$ \frac{\pi}{3}=60^\circ,\frac{\pi}{4}=45^\circ ,\frac{\pi}{6}=30^\circ$$
 
 								li A los $2\pi$ radianes se da una vuelta entera, para valores mayores se vuelve a pasar por los puntos de la circunferencia trigonométrica. 
 					figure
@@ -70,6 +70,10 @@ html(lang="es")
 								td $\pi$
 								td $-1$
 								td $0$
+							tr 
+								td $\frac{3\pi}{2}$ 
+								td $0$ 
+								td $-1$ 
 							tr
 								td $2\pi$
 								td $1$
@@ -87,7 +91,7 @@ html(lang="es")
 					figure
 						#cosenoPropiedades
 						script(src="cosenoPropiedades.js")
-						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedaes listadas. Notar que cada punto pertenece a un cuadrante distinto de la circunferencia trigonométrica. 
+						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedades listadas. Notar que cada punto pertenece a un cuadrante distinto del plano cartesiano. Los puntos en el II y III cuadrante son valores negativos del coseno.
 						
 
 			.diapo
@@ -100,7 +104,7 @@ html(lang="es")
 					figure
 						#senoPropiedades
 						script(src="senoPropiedades.js")
-						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedaes listadas. Notar que cada punto pertenece a un cuadrante distinto de la circunferencia trigonométrica. 
+						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedades listadas. Notar que cada punto pertenece a un cuadrante distinto del plano cartesiano. Los puntos en el III y IV cuadrante son valores negativos de la función seno.
 
 
 
@@ -122,24 +126,18 @@ html(lang="es")
 							li Los gráficos de ambas funciones son similares, salvo por una traslación horizontal.
 							li Los gráficos se repiten cada $2\pi$
 							li La imagen de ambas funciones es $[-1,1]$
-
-
-
-
-
-
-
+							li Ambas funciones son continuas en los reales.
 
 
 			.diapo
 				h1 Amplitud, Imagen y Periodo
 				.col-2
 					.contenido
-						p Dada la función de alguna de las siguientes formas $$f(x)=A\cdot \cos(B\cot x +C)+D$$ $$f(x)=A\cdot \sin(B\cot x +C)+D$$
+						p Dada la función de alguna de las siguientes formas $$f(x)=A\cdot \cos(B\cdot x +C)+D$$ $$f(x)=A\cdot \sin(B\cdot x +C)+D$$
 						p Se definen:
 						ul
 							li Amplitud de oscilación: $|A|$
-							li Imagen de la función: $Im f=[|A|+D,-|A|+D]$
+							li Imagen de la función: $Im f=[-|A|+D,|A|+D]$
 							li Periodo de oscilación: $\frac{2\pi}{|B|}$
 					figure
 						#funcionAmplitudPeriodo
