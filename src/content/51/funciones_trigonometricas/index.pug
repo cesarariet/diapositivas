@@ -39,6 +39,7 @@ html(lang="es")
 							li Usando el teorema de Pitagoras se obtiene $$\cos^2(x)+\sin^2(x)=1$$
 							li Como el radio de la circunferencia es 1, resulta $$ -1\leq \cos(x) \leq 1$$ $$ -1\leq \sin(x)\leq 1$$
 							li Dado que para una longitud de arco mayor a $2\pi$ se vuelven a repetir los puntos de la circunferencia trigonométrica $$\cos(x+2\pi)=\cos(x)$$ $$\sin(x+2\pi)=\sin(x)$$
+							li Identidades trigonométricas de suma de ángulos $$ \cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y) $$ $$ \sin(x+y)=\cos(x)\sin(y)+\sin(x)\cos(x) $$
 					figure
 						table 
 							tr
@@ -74,3 +75,75 @@ html(lang="es")
 								td $1$
 								td $0$
 						figcaption Valores notables de las funciones coseno y seno. Las primeras cuatro filas corresponden con resultados en el primer cuadrante del plano cartesiano.
+
+
+			.diapo
+				h1 Propiedades del coseno
+				.col-2
+					.contenido
+						p Usando la identidad trigonométrica de suma de ángulos $$ \cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$$
+						p puede mostrarse $$\cos(\pi-x)=-\cos(x)$$ $$\cos(\pi+x)=-\cos(x)$$ $$\cos(2\pi-x)=\cos(x)$$ 
+						p Estás propiedades son útiles para la resolución de problemas del tipo $\cos(x)=a$
+					figure
+						#cosenoPropiedades
+						script(src="cosenoPropiedades.js")
+						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedaes listadas. Notar que cada punto pertenece a un cuadrante distinto de la circunferencia trigonométrica. 
+						
+
+			.diapo
+				h1 Propiedades del seno
+				.col-2
+					.contenido
+						p Usando la identidad trigonométrica de suma de ángulos $$ \sin(x+y)=\cos(x)\sin(y)+\sin(x)\cos(y)$$
+						p puede mostrarse $$\sin(\pi-x)=\sin(x)$$ $$\sin(\pi+x)=-\sin(x)$$ $$\sin(2\pi-x)=-\sin(x)$$
+						p Estás propiedades son útiles para la resolución de problemas del tipo $\sin(x)=a$
+					figure
+						#senoPropiedades
+						script(src="senoPropiedades.js")
+						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedaes listadas. Notar que cada punto pertenece a un cuadrante distinto de la circunferencia trigonométrica. 
+
+
+
+			.diapo
+				h1 Gráficos de las funciones coseno y seno
+				.col-2
+					.contenido
+						h2 Función coseno
+						figure
+							#coseno
+							script(src="coseno.js")
+						h2 Función seno
+						figure 
+							#seno
+							script(src="seno.js")
+					.comentario
+						h3 Nota
+						ul 
+							li Los gráficos de ambas funciones son similares, salvo por una traslación horizontal.
+							li Los gráficos se repiten cada $2\pi$
+							li La imagen de ambas funciones es $[-1,1]$
+
+
+
+
+
+
+
+
+
+			.diapo
+				h1 Amplitud, Imagen y Periodo
+				.col-2
+					.contenido
+						p Dada la función de alguna de las siguientes formas $$f(x)=A\cdot \cos(B\cot x +C)+D$$ $$f(x)=A\cdot \sin(B\cot x +C)+D$$
+						p Se definen:
+						ul
+							li Amplitud de oscilación: $|A|$
+							li Imagen de la función: $Im f=[|A|+D,-|A|+D]$
+							li Periodo de oscilación: $\frac{2\pi}{|B|}$
+					figure
+						#funcionAmplitudPeriodo
+						script(src="funcionAmplitudPeriodo.js")
+						figcaption Representación de la función $f(x)$ donde pueden verse la dependencia entre el gráfico y las constantes $A$, $B$, $C$ y $D$.
+
+
