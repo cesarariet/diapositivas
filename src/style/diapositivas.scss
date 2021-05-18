@@ -78,7 +78,7 @@ p,
 ol,
 ul {
   margin: $margen-texto $margen-texto;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 ul,
@@ -130,6 +130,7 @@ figure > figcaption {
   text-align: justify;
   max-width: 400px;
   color: $color-2;
+	line-height:1.4;
 }
 figure img {
   width: 100%;
@@ -142,9 +143,10 @@ table {
   th {
     color: $color-0;
     background-color: $color-2;
+		padding: .2em 1em;
   }
   td {
-    padding: 0 1em;
+    padding: .2em 1em;
     border: $color-2 solid 1px;
   }
 }

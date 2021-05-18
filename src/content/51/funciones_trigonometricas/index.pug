@@ -1,0 +1,76 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Funciones Trigonométricas
+		meta(name="description", content="Definición de funciones trigonométricas a partir de la circunferencia trigonométrica. Propiedades y gráficos de las funciones seno y coseno. ")
+		meta(name="keywords", content="trigonometría, seno, coseno, identidades trigonométricas, radianes")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js")
+	body
+		.diapositivas
+			.diapo
+				h1 Circunferencia Trigométrica
+				.col-2
+					.contenido
+						ul
+							li La circunferencia trigométrica tiene radio 1 y centro en $(0,0).$
+							li Se define las funciones coseno y seno como las coordenadas del punto $$P=(\cos(x),\sin(x))$$ donde $x$ es la longitud de arco desde el punto $(1,0)$ hasta el punto $P$ con la siguiente convención:
+								ul
+									li $x\gt 0$ si el arco es en sentido anti-horario.
+									li $x\lt 0 $ si el arco es en sentido horario.
+						.comentario
+							h3 Nota
+							ul
+								li Cada valor de longitud de arco se relaciona con un ángulo. Llamaremos a esta forma de medir ángulos radianes. $$ 2\pi = 360^\circ,\pi = 180^\circ,\frac{\pi}{2}=90^\circ$$ $$ \frac{\pi}{3}=60^\circ,\frac{\pi}{4}=45^\circ ,\frac{\pi}{6}=30^\circ$$
+
+								li A los $2\pi$ radianes se da una vuelta entera, para valores mayores se vuelve a pasar por los puntos de la circunferencia trigonométrica. 
+					figure
+						#circunferenciaTrigonometrica
+						script(src="circunferenciaTrigonometrica.js")
+						figcaption Representación de la circunferencia trigonométrica. En color rojo se marca el arco de longitud $x$ desde el punto $(1,0)$ hasta el punto $P$. La primer coordenadas de $P$ es el valor del $\cos(x)$ y la segunda coordenada de $P$ es el valor del $\sin(x).$
+
+			.diapo
+				h1 Propiedades de las funciones trigométrica
+				.col-2
+					.contenido
+						ul
+							li Usando el teorema de Pitagoras se obtiene $$\cos^2(x)+\sin^2(x)=1$$
+							li Como el radio de la circunferencia es 1, resulta $$ -1\leq \cos(x) \leq 1$$ $$ -1\leq \sin(x)\leq 1$$
+							li Dado para una longitud de arco mayor a $2\pi$ se vuelven a repetir los puntos de la circunferencia trigonométrica $$\cos(x+2\pi)=\cos(\pi)$$ $$\sin(x+2\pi)=\sin(x)$$
+					figure
+						table 
+							tr
+								th $x$
+								th $\cos(x)$
+								th $\sin(x)$
+							tr
+								td $0$
+								td $1$
+								td $0$
+							tr
+								td $\frac{\pi}{6}$
+								td $\frac{\sqrt{3}}{2}$
+								td $\frac{1}{2}$
+							tr
+								td $\frac{\pi}{4}$
+								td $\frac{\sqrt{2}}{2}$
+								td $\frac{\sqrt{2}}{2}$
+							tr
+								td $\frac{\pi}{3}$		
+								td $\frac{1}{2}$
+								td $\frac{\sqrt{3}}{2}$
+							tr
+								td $\frac{\pi}{2}$
+								td $0$
+								td $1$
+							tr
+								td $\pi$
+								td $-1$
+								td $0$
+							tr
+								td $2\pi$
+								td $1$
+								td $0$
+						figcaption Valores notables de las funciones coseno y seno. Las primeras 4 columnas corresponden con resultados en el primer cuadrante del plano cartesiano.
