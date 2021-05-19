@@ -62,7 +62,7 @@ html(lang="es")
 					figure 
 						#limiteLateralDer 
 						script(src="limiteLateralDer.js") 
-						figcaption Representación gráfica de un límite lateral por derecha $\lim_{x\to 3^+}f(x)=3$. El recuadro en rojo centrado en $(a,l)=(3,3)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para todo valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral derecho del recuadro rojo y no se salga del mismo.
+						figcaption Representación gráfica de un límite lateral por derecha $\lim_{x\to 3^+}f(x)=3$. El recuadro en rojo centrado en $(a,l)=(3,1)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para todo valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral derecho del recuadro rojo y no se salga del mismo.
 
 
 
@@ -110,14 +110,30 @@ html(lang="es")
 
 			.diapo
 				h1 Límite especial $\sin(x)/x$
-				.contenido
-					h2 Propiedad
-					p $$ \lim_{x\to 0} \frac{\sin(x)}{x}=1 $$
-				.comentario
-					h3 Nota 
-					ul 
-						li El límite presenta una indeterminación $\frac{sin(\text{"0"})}{\text{"0"}} $
-						li Si bien esta propiedad es fundamental para este tipo de indeterminación, podrá salvarse también con la regla de L'Hospital.
+				.col-2
+					.contenido
+						h2 Propiedad
+						p $$ \lim_{x\to 0} \frac{\sin(x)}{x}=1 $$
+						.comentario
+							h3 Nota
+							ul
+								li El límite presenta una indeterminación $\frac{sin(\text{"0"})}{\text{"0"}} $
+								li Si bien esta propiedad es fundamental para este tipo de indeterminación, podrá salvarse también con la regla de L'Hospital.
+								li Idea de la demostración de la propiedad:
+									p Sea $x$ el arco de circunferencia entre el $(1,0)$ y el punto \( (\cos(x),\sin(x)) \) (rojo) en la construcción geométrica. Las areas de las figuras son: 
+									ul 
+										li Área del "triángulo 1"\( =\frac{\cos(x)\sin(x)}2 \) 
+										li Área de la "sección circular" \( =\frac x 2 \) 
+										li Área del "triángulo 2" \( \frac{\tan(x)} 2 \) 
+									p Debido a las desigualdades de las áreas del "triángulo 1", "sección circular" y "triángulo 2" tenemos 
+									p \[ \frac{\cos(x)\sin(x)}2 \leq \frac x 2 \leq \frac {\tan(x)} 2 \]
+									p Teniendo en cuenta que \( \tan(x)=\frac{\sin(x)}{\cos(x)} \) y diviendo a todo por \( \frac{\sin(x)}2 \) queda 
+									p \[ \sin(x)\leq \frac{x}{\sin(x)} \leq \frac 1{\cos(x)} \]
+									p Finalmente, usando el teorema de Sandwich y algebra de límites puede demostrarse el límite especial.
+					figure 
+						#limiteEspecial 
+						script(src="limiteEspecial.js") 
+						figcaption Construcción geométrica para probar el límite especial. El punto rojo es \( (\cos(x),\sin(x)). \) Notar que el área del "triángulo 1" es menor a la "sección circular" y esta última menor al "triángulo 2".
 
 
 			.diapo 
