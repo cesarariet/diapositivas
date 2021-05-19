@@ -12,68 +12,79 @@ html(lang="es")
 		.diapositivas 
 			.diapo 
 				h1 Límite (hacia $+\infty$)
-				.contenido 
-					h2 Definición
-					p Sea $f$ una función cuyo dominio no esta acotado superiormete.
-					p Diremos que $$ \lim_{x\to+\infty} f(x) =l $$ cuando se cumple: \[ \forall \epsilon,\exists N>0: x>N \implies |f(x)-l|<\epsilon \]
-					p Diremos que $$ \lim_{x\to+\infty} f(x) =\infty $$ cuando se cumple: \[ \forall M,\exists N>0: x>N \implies |f(x)|>M \]
+				.col-2
+					.contenido 
+						h2 Definición
+						p Sea $f$ una función cuyo dominio no esta acotado superiormete.
+						ul
+							li Diremos que $$ \lim_{x\to+\infty} f(x) =l $$ cuando $\forall \epsilon\gt 0,\exists N>0 $ tal que $$  x>N \implies |f(x)-l|<\epsilon$$ 
+							li Diremos que $$ \lim_{x\to+\infty} f(x) =\infty $$ cuando $ \forall M\gt 0,\exists N>0$ tal que $$ x>N \implies |f(x)|>M$$ 
 
 
 
-				.comentario 
-					h3 Nota 
-					ul 
-						li La definición es equivalente al límite de sucesiones.
-						li No se pueden usar los criterios de D'Alembert (del cociente) y Cauchy (de la raiz n-ésima). Son exclusivos de sucesiones.
-						li Como el dominio no esta restringido a $\mathbb{N}$ también pueden hacerse $x\to -\infty$, $x\to a$ con $a\in\mathbb{R}$, etc.
+					.comentario 
+						h3 Nota 
+						ul 
+							li La definición es equivalente al límite de sucesiones.
+							li No se pueden usar los criterios de D'Alembert (del cociente) y Cauchy (de la raiz n-ésima). Son exclusivos de sucesiones.
+							li Como el dominio no esta restringido a $\mathbb{N}$ también pueden hacerse $x\to -\infty$, $x\to a$ con $a\in\mathbb{R}$, etc.
 
 			.diapo 
 				h1 Límite (hacia $-\infty$)
 				.contenido 
 					h2 Definición
 					p Sea $f$ una función cuyo dominio no esta acotado inferiormente.
-					p Diremos que $$ \lim_{x\to-\infty} f(x) =l $$ cuando se cumple: \[ \forall \epsilon,\exists N>0: x<-N \implies |f(x)-l|<\epsilon \]
-					p Diremos que $$ \lim_{x\to-\infty} f(x) =\infty $$ cuando se cumple: \[ \forall M,\exists N>0: x&lt N \implies |f(x)|>M \]
+					p Diremos que $$ \lim_{x\to-\infty} f(x) =l $$ cuando $\forall \epsilon\gt 0,\exists N>0 $ tal que \[ x<-N \implies |f(x)-l|<\epsilon \]
+					p Diremos que $$ \lim_{x\to-\infty} f(x) =\infty $$ cuando $ \forall M,\exists N>0$ tal quel \[ x&lt N \implies |f(x)|>M \]
 
 
 			.diapo 
 				h1 Límite Lateral por izquierda
-				.contenido 
-					p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
+				.col-2
+					.contenido 
+						p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
 
-					p $$ \lim_{x\to a^-} f(x) =l $$ Cuando se cumple \[ \forall \epsilon,\exists \delta>0: 0&lt a-x<\delta \Rightarrow |f(x)-l|<\epsilon \]
+						p $$ \lim_{x\to a^-} f(x) =l $$ Cuando $ \forall \epsilon\gt 0,\exists \delta>0$ tal que $$ 0&lt a-x<\delta \Rightarrow |f(x)-l|<\epsilon $$
 
-				figure 
-					#limiteLateralIzq 
-					script(src="limiteLateralIzq.js") 
-					figcaption Representación gráfica de un límite lateral por izquierda $\lim_{x\to 3^-}f(x)=1$. El recuadro en rojo centrado en $(a,l)=(3,1)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para cualquier valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral izquierdo del recuadro rojo y no se salga del mismo.
+					figure 
+						#limiteLateralIzq 
+						script(src="limiteLateralIzq.js") 
+						figcaption Representación gráfica de un límite lateral por izquierda $\lim_{x\to 3^-}f(x)=1$. El recuadro en rojo centrado en $(a,l)=(3,1)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para cualquier valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral izquierdo del recuadro rojo y no se salga del mismo.
 
 			.diapo 
 				h1 Límite Lateral por derecha
-				.contenido 
-					p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
+				.col-2
+					.contenido 
+						p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
 
-					p $$ \lim_{x\to a^+} f(x) =l $$ Cuando se cumple \[ \forall \epsilon,\exists \delta>0: 0&lt x-a<\delta \Rightarrow |f(x)-l|<\epsilon \]
+						p $$ \lim_{x\to a^+} f(x) =l $$ Cuando $ \forall \epsilon\gt 0,\exists \delta>0 $ tal que \[ 0&lt x-a<\delta \Rightarrow |f(x)-l|<\epsilon \]
 
-				figure 
-					#limiteLateralDer 
-					script(src="limiteLateralDer.js") 
-					figcaption Representación gráfica de un límite lateral por derecha $\lim_{x\to 3^+}f(x)=3$. El recuadro en rojo centrado en $(a,l)=(3,3)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para todo valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral derecho del recuadro rojo y no se salga del mismo.
+					figure 
+						#limiteLateralDer 
+						script(src="limiteLateralDer.js") 
+						figcaption Representación gráfica de un límite lateral por derecha $\lim_{x\to 3^+}f(x)=3$. El recuadro en rojo centrado en $(a,l)=(3,3)$ tiene ancho $\delta$ y alto $2\epsilon.$ Para que exista el límite, para todo valor de $\epsilon$ debe existir un valor $\delta$ de tal manera que la función ingrese por el lateral derecho del recuadro rojo y no se salga del mismo.
+
+
+
 			.diapo 
 				h1 Límite puntual
-				.contenido
-					p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
-					p $$ \lim_{x\to a} f(x) =l $$ Cuando se cumple \[ \forall \epsilon,\exists \delta>0: |x-a|<\delta \Rightarrow |f(x)-l|<\epsilon \]
-				.comentario 
-					h3 Nota 
-					ul 
-						li El límite puntual existe si y solo si los límites laterales existen y valen lo mismo. \[ \lim_{x\to a}f(x)= \lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)\]
-						li Los límites con resultado $\infty$ se reemplaza $\forall \epsilon>0$ por $\forall M>0$ y también $|f(x)-l|<\epsilon$ por $|f(x)|>M$ 
+				.col-2
+					.contenido
+						p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
+						p $$ \lim_{x\to a} f(x) =l $$ Cuando $ \forall \epsilon\gt 0,\exists \delta>0$ tal que  \[ |x-a|<\delta \Rightarrow |f(x)-l|<\epsilon \]
+						.comentario 
+							h3 Nota 
+							ul 
+								li El límite puntual existe si y solo si los límites laterales existen y valen lo mismo. \[ \lim_{x\to a}f(x)= \lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)\]
+								li Los límites con resultado $\infty$ se reemplaza $\forall \epsilon>0$ por $\forall M>0$ y también $|f(x)-l|<\epsilon$ por $|f(x)|>M$ 
 
-				figure 
-					#limitePuntual 
-					script(src="limitePuntual.js") 
-					figcaption Representación gráfica de la definición de límite puntual para el caso $ \lim_{x\to 2} f(x)=1.$ Los valores $2\epsilon$ y $2\delta$ forman el alto y el ancho (respectivamente) de un rectangulo centrado en $(a,l)=(2,1)$. Para que existe el límite, en cualquier valor de $\epsilon$ debe existir un valor $\delta$ para el cual la función ingrese por los costados del recuadro rojo y no se salga del mismo.
+					figure 
+						#limitePuntual 
+						script(src="limitePuntual.js") 
+						figcaption Representación gráfica de la definición de límite puntual para el caso $ \lim_{x\to 2} f(x)=1.$ Los valores $2\epsilon$ y $2\delta$ forman el alto y el ancho (respectivamente) de un rectangulo centrado en $(a,l)=(2,1)$. Para que existe el límite, en cualquier valor de $\epsilon$ debe existir un valor $\delta$ para el cual la función ingrese por los costados del recuadro rojo y no se salga del mismo.
+
+
+
 			.diapo 
 				h1 Propiedades de límites 
 				.contenido
@@ -86,16 +97,9 @@ html(lang="es")
 						li En divisiones de polinomios que tienen a $\text{"0"}/\text{"0"}$ se puede factorizar.
 						li Se puede multiplicar y dividir por el conjugado $(\sqrt{a}-\sqrt{b})\cdot(\sqrt{a}+\sqrt{b})=a-b$.
 						li En los límites $\text{"a"}^\text{"b"}$ vale: 
-							ul 
-								li si $\text{"a"}>1$
-								ul 
-									li $\text{"a"}^{"+\infty"} =+\infty $ 
-									li $ \text{"a"}^{"-\infty"} =0$
-								li si $1>\text{"a"}>0$
-								ul 
-									li $\text{"a"}^{"+\infty"} =0 $ 
-									li $ \text{"a"}^{"-\infty"} =+\infty$
-								li si $a\to 1$ y $b\to \infty$ usar el límite especial: \[ \lim_{x\to +\infty}\left(1+\frac{1}{x}\right)^x=e \]
+							p \[ \text{"a"}^{"+\infty"} =\begin{cases} +\infty & \text{"a"}\gt 1 \\ 0 & 1\gt\text{"a"} \gt 0\end{cases}\]	
+							p \[ \text{"a"}^{"-\infty"} =\begin{cases} 0 & \text{"a"}\gt 1 \\ +\infty & 1\gt\text{"a"} \gt 0\end{cases}\]	
+							p si $a\to 1$ y $b\to \infty$ usar el límite especial: \[ \lim_{x\to +\infty}\left(1+\frac{1}{x}\right)^x=e \]
 							li En los casos $\sin(\text{"0"})/\text{"0"}$ se puede usar $$\lim_{x\to 0}\frac{\sin(x)}{x}=1.$$
 							li Se puede hacer cambio de variable.
 							li Se puede usar la regla de L'Hospital.
@@ -118,24 +122,25 @@ html(lang="es")
 
 			.diapo 
 				h1 Asíntotas de una función 
-				.contenido
-					h2 Asíntota horizontal (AH)
-					p Diremos que una función tiene una asíntota horizontal (AH) en $y=b$ si 
-					p \[ \lim_{x\to \pm \infty}f(x)=b \text{(finito)} \]
-					.comentario 
-						h3 Nota 
-						ul 
-							li Si el límite es finito solo para $x\to +\infty$ diremos que hay AH por derecha.
-							li Si el límite es finito solo para $x\to -\infty$ diremos que hay AH por izquierda.
-							li Si el dominio de la función esta acotado, entonces no puede tener AH. 
-					h2 Asíntota Vertical (AV)
-					p Diremos que una función tiene una asíntota vertical (AV) en $x=a$ si 
-					p \[ \lim_{x\to a^+}f(x)=\infty, \text{ o bien, } \lim_{x\to a^-}f(x)=\infty\]
-					.comentario 
-						h3 Nota 
-						ul 
-							li Son candidatos a AH los valores que no pertencen al dominio de la función y los lugares de bifurcación en una función partida.
-							li Con que un límite lateral de $\infty$ alcanza para la existencia de una AV.
+				.col-2
+					.contenido
+						h2 Asíntota horizontal (AH)
+						p Diremos que una función tiene una asíntota horizontal (AH) en $y=b$ si 
+						p \[ \lim_{x\to \pm \infty}f(x)=b \text{(finito)} \]
+						.comentario 
+							h3 Nota 
+							ul 
+								li Si el límite es finito solo para $x\to +\infty$ diremos que hay AH por derecha.
+								li Si el límite es finito solo para $x\to -\infty$ diremos que hay AH por izquierda.
+								li Si el dominio de la función esta acotado, entonces no puede tener AH. 
+						h2 Asíntota Vertical (AV)
+						p Diremos que una función tiene una asíntota vertical (AV) en $x=a$ si 
+						p \[ \lim_{x\to a^+}f(x)=\infty, \text{ o bien, } \lim_{x\to a^-}f(x)=\infty\]
+						.comentario 
+							h3 Nota 
+							ul 
+								li Son candidatos a AH los valores que no pertencen al dominio de la función y los lugares de bifurcación en una función partida.
+								li Con que un límite lateral de $\infty$ alcanza para la existencia de una AV.
 
 					figure 
 						#asintotas 
