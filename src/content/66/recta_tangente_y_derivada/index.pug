@@ -1,0 +1,57 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Definición de recta tangente. Definición de derivada en un punto y función derivada. Propiedades de la derivada.")
+		meta(name="keywords", content="tangente, secante, derivada, tabla de derivadas, función derivable, regla de la cadena, propiedades de la derivada")
+		title Recta tangente y derivada.
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js") 
+		
+	body
+		.diapositivas
+			.diapo
+				h1 Recta tangente
+				.col-2 
+					.contenido 
+						h2 Concepto
+						p La recta tangente a una curva en un punto $P$ es aquella recta que cumple con las siguentes propiedades:
+							ol
+								li Interseca a la curva en el punto $P$
+								li La recta y la curva son <strong> indistinguibles cerca del punto $P$</strong>
+						
+						h3 Objetivo
+						p Hallar forma funcional de la recta tangente al gráfico de una función en el punto $(x_0,f(x_0)).$
+					figure 
+						#curvaYtangente 
+						script(src="curvaYtangente.js") 
+						figcaption.
+							Una curva y su recta tangente en el punto $P$. 
+							Al ampliar el gráfico hacia el punto $P$ la curva y su recta tangente se vuelven indistinguibles.
+
+
+			.diapo 
+				h1 Recta Secante
+				.col-2 
+					.contenido 
+						h2 Definición
+	
+						p Para el gráfico de una función $f(x)$, la recta secante que pasa por los puntos $(x_0,f(x_0))$ y $(x_1,f(x_1))$ tiene:
+							ul
+								li Pendiente \[m=\frac{f(x_1)-f(x_0)}{x_1-x_0}\]
+								li Ecuación \[y=m\cdot (x-x_0)+f(x_0)\]
+						.comentario 
+							h3 Nota 
+							ul 
+								li La recta secante puede tener intersección en más de dos puntos. 
+								li La recta secante se parece más a una recta tangente al acercar los puntos $(x_0,y_0)$ y $(x_1,y_1)$. Usando esta idea construiremos la definción de la recta tangente.
+					figure 
+						#rectaSecante
+						script(src="rectaSecante.js") 
+						figcaption Recta secante que pasa por los puntos $(x_0,f(x_0))$ y $(x_1,f(x_1))$. Notar que a medida que los puntos se acercan la recta secante se parece a una recta tangente.
+	
+
+			.diapo 
+				h1 
