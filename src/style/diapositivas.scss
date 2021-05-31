@@ -58,6 +58,7 @@ h2,
 h3 {
   font-family: $fuente-0;
   text-transform: uppercase;
+  font-weight: bold;
   color: $color-1;
   margin-bottom: $margen-texto;
   margin-top: $margen-texto;
@@ -97,7 +98,7 @@ ol {
   max-width: 90%;
   height: fit-content;
   width: fit-content;
-  margin: 2 * $margen-texto $margen-texto;
+  margin: 2 * $margen-texto auto;
   padding: $margen-texto $margen-texto $margen-texto 2em + $margen-texto;
   border: $borde;
   border-radius: 10px;
