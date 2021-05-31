@@ -54,4 +54,33 @@ html(lang="es")
 	
 
 			.diapo 
-				h1 
+				h1 De la secante a la tangente 
+				.col-2 
+					.contenido
+						h2 Recta secante
+						p La recta secante al gráfico de una función $f(x)$ que pasa por los puntos $(x_0,f(x_0))$ y $(x_1,f(x_1))$ tiene:
+						p  \[ m=\frac{f(x_1)-f(x_0)}{x_1-x_0}\]
+						p  \[y=m\cdot (x-x_0)+f(x_0)\]
+						h2 Recta tangente
+						p La recta tangente al gráfico de una función $f(x)$ que pasa por el punto $(x_0,f(x_0))$ puede construirse haciendo que los puntos de la recta secante se acerquen entre si (tomando límite $x_1\to x_0$):
+						p \[ m=\lim_{x_1\rightarrow x_0}\frac{f(x_1)-f(x_0)}{x_1-x_0}\]
+						p \[  y=m\cdot (x-x_0)+f(x_0)\]
+					figure 
+						#secanteYtangente
+						script(src="secanteYtangente.js") 
+						figcaption Visualización de la recta tagente y recta secante en el gráfico de una función. "Acercando los puntos" la recta secante se aproxima a una recta tangente.
+
+
+			.diapo 
+				h1 Recta tangente 
+				h2 Definición recta tangente
+				p Sea $x_0$ un punto interior del $Dom f$. La recta tangente al gráfico de una función $f(x)$ en el punto de contacto $(x_0,f(x_0))$ se define como:
+				p \[ m=\lim_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}\]
+				p \[  y=m\cdot (x-x_0)+f(x_0)\]
+				.comentario 
+					h3 Nota 
+					ul 
+						li Como aproximamos la función por una recta cerca de $x_0$ necesitamos que la función este definida alrededor de $x_0$.
+						li Al límite propuesto se le conoce como "límite del cociente incremental". Como es un concepto muy importante, luego diremos que ese límite, si existe, corresponde con la definción de la derivada de la función.
+						li El límite del cociente incremental puede escribirse alternativamente como \[m=\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}h \]
+						li Esta definición no contempla el caso donde la recta tangente sea vertical. En ese caso, el límite del cociente incremental sería $\infty.$

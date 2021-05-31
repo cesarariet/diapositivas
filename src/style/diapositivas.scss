@@ -157,6 +157,11 @@ table {
     grid-template-columns: minmax(360px, 2fr) minmax(320px, 1fr);
     align-items: center;
   }
+  .col-igual-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
 }
 @media (min-width: 1024px) {
   html {
