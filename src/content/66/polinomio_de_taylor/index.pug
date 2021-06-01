@@ -1,0 +1,46 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Polinomio de Taylor
+		meta(name="description", content="Definición de polinomio de Taylor y el resto.")
+		meta(name="keywords", content="polinomio de taylor, resto de taylor, aproximación de funciones")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js") 
+	body 
+		.diapositivas 
+
+			.diapo 
+				h1 Generalizando la recta tangente 
+				.col-igual-2 
+					div 
+						h2 Recta tangente 
+						p Sea $f$ deriviable en $x_0$.
+						p Si $L(x)$ es la recta tangente al gráfico de $f$ en el punto $(x_0,f(x_0)),$ entonces 
+						p \[ \begin{align}  L(x_0) & = f(x_0) \\  L'(x_0)  & = f'(x_0)\end{align} \]
+					div 
+						h2 Generalización 
+						p Sea \( f \) derivable \( n \) veces. 
+						p Llamaremos polinomio de Taylor de orden \( n \) en el punto \( (x_0,f(x_0)) \), al polinomio de grado a lo sumo \( n \) tal que 
+						p \[ \begin{align}   P_n(x_0) & = f(x_0) \\  P_n'(x_0) & = f'(x_0) \\   P_n''(x_0)  & = f''(x_0)\\  P_n^{(3)}(x_0) & =f^{(3)}(x_0) \\  & \vdots \\  P_n^{(n)}(x_0)& = f^{(n)}(x_0) \end{align} \] 
+				.comentario 
+					h3 Nota 
+					ul 
+						li La recta tangente corresponde al polinomio de Taylor de orden \( 1 \) de la función.
+						li Ejemplo: El polinomio de Taylor de orden \( 5 \) de la función \( f(x)=\cos(x) \) en \( (0,1) \) es \[ P_5(x)=1-\frac{1}{2} x^2+\frac{1}{24} x^4 \]
+						li El grado del polinomio de Taylor puede no coincidir con el orden del mismo. 
+						li Nuestro objetivo es aproximar una función por un polinomio. Los polinomios son fáciles de evaluar.
+
+			.diapo
+				h1 Generalizando la recta tangente 
+				.col-igual-2 
+					div 
+						h2 Recta tangente 
+						p Sea $f$ una función derivable en $x_0$. Llamamos recta tangente al gráfico de $f$ en $(x_0,f(x_0))$ 
+						p \[ y=f(x_0)+f'(x_0)(x-x_0) \] 
+					div 
+						h2 Polinomio de Taylor 
+						p Sea $f$ $n$ veces derivable en \( x_0 \). Llamaremos polinomio de Taylor de orden \( n \) al gráfico de \( f \) en \( (x_0,f(x_0)) \) 
+						p \[ \begin{multline} P_n(x) = f(x_0)+f'(x_0)(x-x_0) \\ +\frac{f''(x_0)}{2!}(x-x_0)^2 +\dots\\ +\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n\end{multline} \]
