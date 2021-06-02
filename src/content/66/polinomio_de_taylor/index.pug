@@ -23,7 +23,7 @@ html(lang="es")
 					div 
 						h2 Polinomio de Taylor 
 						p Sea \( f \) derivable \( n \) veces. 
-						p Llamaremos polinomio de Taylor de orden \( n \) en el punto \( (x_0,f(x_0)) \), al polinomio de grado a lo sumo \( n \) tal que 
+						p Llamaremos polinomio de Taylor de orden \( n \) en el punto \( (x_0,f(x_0)) \), al polinomio \( P_n(x) \) de grado a lo sumo \( n \) tal que 
 						p \[ \begin{align}   P_n(x_0) & = f(x_0) \\  P_n'(x_0) & = f'(x_0) \\   P_n''(x_0)  & = f''(x_0)\\  P_n^{(3)}(x_0) & =f^{(3)}(x_0) \\  & \vdots \\  P_n^{(n)}(x_0)& = f^{(n)}(x_0) \end{align} \] 
 				.comentario 
 					h3 Nota 
@@ -56,7 +56,7 @@ html(lang="es")
 				h1 Polinomio de Taylor de \( \cos(x) \)
 				.col-2 
 					.contenido 
-						p Para determinar el polinomio de Taylor \( P_n(x) \) orden \( 5 \) de \( f(x)=\cos(x) \) en \( x=0 \) debemos calcular las primeras 5 derivadas
+						p Para determinar el polinomio de Taylor \( P_5(x) \) orden \( 5 \) de \( f(x)=\cos(x) \) en \( x=0 \) debemos calcular las primeras 5 derivadas
 						p.
 							\[ \begin{split}
 							&f(x)=\cos(x)& \implies f(0)=1 \\
@@ -88,7 +88,7 @@ html(lang="es")
 				h1 Polinomio de Taylor de \( \sin(x) \)
 				.col-2 
 					.contenido 
-						p Para determinar el polinomio de Taylor \( P_n(x) \) orden \( 5 \) de \( f(x)=\sin(x) \) en \( x=0 \) debemos calcular las primeras 5 derivadas
+						p Para determinar el polinomio de Taylor \( P_5(x) \) orden \( 5 \) de \( f(x)=\sin(x) \) en \( x=0 \) debemos calcular las primeras 5 derivadas
 						p.
 							\[ \begin{split}
 							&f(x)=\sin(x)& \implies f(0)=0 \\
@@ -120,7 +120,7 @@ html(lang="es")
 				h1 Polinomio de Taylor de \( e^x \)
 				.col-2 
 					.contenido 
-						p Para determinar el polinomio de Taylor \( P_n(x) \) orden \( 4 \) de \( f(x)=e^x \) en \( x=0 \) debemos calcular las primeras 4 derivadas
+						p Para determinar el polinomio de Taylor \( P_4(x) \) orden \( 4 \) de \( f(x)=e^x \) en \( x=0 \) debemos calcular las primeras 4 derivadas
 						p.
 							\[ \begin{split}
 							&f(x)=e^x& \implies f(0)=1 \\
@@ -130,7 +130,7 @@ html(lang="es")
 							&f^{(4)}(x)=e^x& \implies f^{(4)}(0)=1 
 							\end{split} \]
 						p Con lo cuál obtenemos 
-						p \[ P_5(x)=1+x+\frac{1}{2!} x^2+\frac{1}{3!} x^3+\frac{1}{4!} x^4 \]
+						p \[ P_4(x)=1+x+\frac{1}{2!} x^2+\frac{1}{3!} x^3+\frac{1}{4!} x^4 \]
 
 					div
 						figure 
@@ -151,7 +151,7 @@ html(lang="es")
 				h1 Polinomio de Taylor de \( \ln(x) \)
 				.col-2 
 					.contenido 
-						p Para determinar el polinomio de Taylor \( P_n(x) \) orden \( 4 \) de \( f(x)=\ln(x) \) en \( x=1 \) debemos calcular las primeras 4 derivadas
+						p Para determinar el polinomio de Taylor \( P_4(x) \) orden \( 4 \) de \( f(x)=\ln(x) \) en \( x=1 \) debemos calcular las primeras 4 derivadas
 						p.
 							\[ \begin{split}
 							&f(x)=\ln(x)& \implies f(1)=0 \\
@@ -161,7 +161,7 @@ html(lang="es")
 							&f^{(4)}(x)=\frac{-6}{x^4}& \implies f^{(4)}(1)=-6 
 							\end{split} \]
 						p Con lo cuál obtenemos 
-						p \[ \begin{align}  P_5(x)=&(x-1)-\frac{1}{2} (x-1)^2 \\ & +\frac{1}{3} (x-1)^3-\frac{1}{4} (x-1)^4 \end{align}  \]
+						p \[ \begin{align}  P_4(x)=&(x-1)-\frac{1}{2} (x-1)^2 \\ & +\frac{1}{3} (x-1)^3-\frac{1}{4} (x-1)^4 \end{align}  \]
 
 					div
 						figure 
@@ -184,7 +184,7 @@ html(lang="es")
 				.col-2 
 					.contenido 
 						h2 Resto de Taylor 
-						p Dada una función \( n \) veces derivable en \( x_0 \) y su polinomio de Taylor \( P_n(x_0) \) de orden \( n \) en \( x_0 \) definimos el Resto de Taylor de orden \( n \) como 
+						p Dada una función \( n \) veces derivable en \( x_0 \) y su polinomio de Taylor \( P_n(x) \) de orden \( n \) en \( x_0 \) definimos el Resto de Taylor de orden \( n \) como 
 						p \[ R_n(x)= f(x)-P_n(x) \]
 						h2 Fórmula del resto de Taylor
 						p Si \( f \) es una función \( n+1 \) veces derivable, existe un \( c \) entre \( x \) y \( x_0 \) tal que 
