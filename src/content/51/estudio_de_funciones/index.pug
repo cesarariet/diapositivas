@@ -1,0 +1,113 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Estudio de Funciones
+		meta(name="description", content="Estudio y gráficos de funciones usando las propiedades de las derivadas de la función.")
+		meta(name="keywords", content="estudio de funciones, gráfico, crecimiento, decrecimiento, derivada, fermat, lagrange, teorema de valor medio.")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js") 
+	body 
+		.diapositivas 
+			.diapo 
+				h1 Estudio de funciones 
+				p Aplicación de la derivada para reconocer los intervalos de monotonía y localización de extremos locales de una función.
+				
+			.diapo 
+				h1 Puntos Críticos 
+				.col-2
+					div
+						h2 Teorema de Fermat
+						<p>Sea $f(x)$ una función derivable en $(a,b)$ y sea $c\in(a,b)$.</p>
+						<p style="text-align:center">Si $f(c)$ es un extremo local, entonces $f'(c)=0$.</p>
+						h2 Puntos Críticos
+						p Lugares de interes del gráfico de $f(x)$, donde:
+							ul
+								<li>$f'(x)=0$ (condición necesaria pero no suficiente para extremo de $f(x)$)</li>
+								<li>Donde no exista $f'(x)$ (situación excluida del teorema de Fermat)</li>
+						p LLamaremos Puntos Críticos al conjuntos de puntos tales que 
+						p \[PC=\{x\in Domf:f'(x)=0 \lor \not\exists f'(x) \}\]
+					
+					div 
+						figure 
+							#fermat 
+							script(src="fermat.js") 
+							figcaption Como puede observarse en $x=-1$ la función alcanza un mínimo local y en $x=1$ la función alcanza un máximo local. La recta tangente en ambos lugares es horizontal (derivada nula).
+
+
+			.diapo 
+				h1 Teoremas de Valor Medio
+				.col-2 
+					
+					div 
+						p Sea \( f(x) \) una función tal que: 
+						ul 
+							li \( f \) es continua en el intervalo cerrado \( [a,b]. \)
+							li \( f \) es derivable en el intervalo abierto \( (a,b). \) 
+						p Entonces, existe un \( c\in(a,b) \) donde se cumple \[ f'(c)=\frac{f(b)-f(a)}{b-a} \]
+						.comentario 
+							h3 Nota 
+							ul 
+								li El cociente $\tfrac{f(b)-f(a)}{b-a}$ es la pendiente de la recta secante a $f$ que pasa por los puntos \( (a,f(a)) \) y \( (b,f(b)). \)
+								li $f'(c)$ es la pendiente de la recta tangente de $f$ en \( (c,f(c)). \)
+								li La igualdad indica que la recta tangente es paralela a la recta secante.
+								li El teorema garantiza la existencia de un $c$ con la propiedad anterior, pero pueden existir otros.
+
+					figure 
+						#lagrange 
+						script(src="lagrange.js") 
+						figcaption Representación gráfica del teorema. Dada la recta secante que pasa por \( (a,f(a)) \) y \( (b,f(b)), \) es posible hallar al menos una recta tangente de igual pendiente.
+			
+			.diapo 
+				h1 Consecuencias de Teorema de Valor Medio 
+				.col-2 
+					div 
+						h3 Teorema
+						p Sea $f$ una funcion derivable en $(a,b)$.
+						p(style="text-align:center")
+							span \( f \) es creciente en \( (a,b) \)
+							span \( \iff \)
+							span(style="vertical-align:middle") \( \begin{cases}f'(x)\gt 0\\ \forall x\in(a,b) \end{cases}\) 
+						p(style="text-align:center")
+							span \( f \) es decreciente en \( (a,b) \)
+							span \( \iff \)
+							span(style="vertical-align:middle") \( \begin{cases}f'(x)\lt 0\\ \forall x\in(a,b) \end{cases}\) 
+						.comentario 
+							h3 Nota 
+							ul 
+								li Con el corolario del Teorema de Bolzado sobre $f'(x)$ es posible hallar los intervalos de monotonía de la función $f.$ 
+								li Los intervalos de monotonía son útiles a la hora de estudiar o graficar una función.
+					figure 
+						#monotonia 
+						script(src="monotonia.js") 
+						figcaption La pendiente de la recta tangente al gráfico de una función y la monotonía están relacionados. En los intervalos donde la función es creciente (decreciente) su recta tangente tiene pendiente positiva (negativa).
+						
+
+			.diapo 
+				h1 Gráfico aproximado de funciones
+				.col-2 
+					div
+						p Para realizar un gráfico aproximado de una función $f(x)$ debe conocerse: 
+						ol 
+							li Hallar dominio de la función $f(x).$ 
+							li Hallar intervalos de monotonía de la función \( f(x) \)
+								ol 
+									li Cálculo de la función derivada \( f'(x). \)
+									li Hallar los puntos criticos de la función derivada \( f'(x). \)
+									li Corolario del Teorema de Bolzano sobre la función derivada \( f'(x). \)
+							li Estudiar el comportamiento de la función \( f(x) \) en las fronteras de cada intervalo de monotonía. 
+								ul 
+									li Evaluando la función cuando es posible hacerlo.
+									li Haciendo límite cuando no es posible.
+					.comentario 
+						h3 Utilidad 
+						div 
+							p Con el gráfico de una función \( f(x) \) es posible: 
+							ul 
+								li Estimar la imagen de la función \( f(x). \)
+								li Hallar los extremos de la función \( f(x) \) y clasificarlos.
+								li Hallar la cantidad de soluciones de la ecuación \( f(x)=C \) donde \( C \) es una constante.
+
+
