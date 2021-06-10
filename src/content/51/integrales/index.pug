@@ -1,0 +1,28 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Integrales y métodos de integración
+		meta(name="description", content="Definición las integrales a patir de la derivada. Tabla de integrales de funcinoes elementales. Propiedades de las integrales indefinidas. Métodos de integración.")
+		meta(name="keywords", content="integral, primitiva, antiderivada, tabla de integrales, método de partes, método de sustitución")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+	body 
+		.diapositivas
+			.diapo 
+				h1 Primitiva o antiderivada $ $ 
+				.col-igual-2
+					div 
+						p Diremos que \( F(x) \) es una primitiva o antideridava de la función \( f(x) \) si cumple \[ F'(x)=f(x) \]
+						p A la operación de buscar las primitivas de una función \( f(x) \) llamaremos integración (indefinida) y lo notaremos \[ \int f(x)\cdot dx \]
+					div
+						.comentario 
+							h3 Ejemplo
+							div
+								p La función \( f(x)=2x \) tiene por primitivas a \[ \begin{align} &F(x)=x^2  \\ &F(x)=x^2-3 \\ &F(x)=x^2+7 \end{align} \]
+								p Estas nos son las únicas, en general \( F(x)=x^2+C \) es la familia de primitiva de \( f(x), \) donde \( C \) es un constante arbitraria. Podemos usar la notación \[ \int 2x\cdot dx = x^2+C \]
+				h2 Propiedad 
+				p Si \( F(x) \) es una primitiva de la función \( f(x) \), entonces \( F(x)+C \) también es primitiva de \( f(x). \)
+
+						
