@@ -38,18 +38,20 @@ html(lang="es")
 					div
 						h2 Propiedades
 						ul
-							li Número $\cdot$ Función $$ \int K\cdot f \cdot dx = K\cdot \int f\cdot dx$$
-							li Función + Función $$ \int f+g\cdot dx = \int f\cdot dx + \int g\cdot dx $$
+							li Derivada de una integral indefinida \[ \left(\int f(x)dx\right)'=f(x) \]
+							li Número $\times$ Función $$ \int K\cdot f \cdot dx = K\cdot \int f\cdot dx$$
+							li Función + Función $$ \int (f+g)\cdot dx = \int f\cdot dx + \int g\cdot dx $$
 
 
 					div
 						figure
 							table
+								style tr{height:2em}
 								tr
 									th(colspan=2) Tabla de integrales
 								tr
 									th $f(x)$
-									th $\int f(x) dx$
+									th $ \int f(x) dx $
 								tr
 									td $1$
 									td $x+C$
@@ -71,7 +73,49 @@ html(lang="es")
 								tr
 									td $\sin(x)$
 									td $-\cos(x)+C$
-							figcaption Tabla de integrales de funciones elementales.
+							figcaption Tabla de integrales de funciones elementales. Esta tabla junto a las propiedades y los métodos de integración pueden calcularse integrales de una amplia variedad de funciones.
 
+			.diapo 
+				h1 Método de sustitución
 
+				.col-2
+					div
+						p Aplicando integral sobre la regla de la cadena se observa 
+						p \[  \int f\big(\underbrace{g(x)}_{u}\big)\cdot \underbrace{g'(x)\cdot dx}_{du}=\int f(u)\cdot du\]
+						p Para realizar el método de sustitición debe: 
+							ul 
+								li Definir una nueva variable de la forma \[ u=g(x) \]
+								li Hallar el diferencial de la nueva variable en función de la variable original \[ du=g'(x)\cdot dx \]
+								li Con las expresiones anteriores sustituir todas las \( x \) en la integral por la nueva variable \( u. \) Se obtiene una nueva integral a resolver.
 
+					.comentario 
+						h3 Nota 
+						ul 
+							li El método puede inferirse de la regla de la cadena \[ \Big(f\big(g(x)\big)\Big)'=f'\big(g(x)\big)\cdot g'(x) \] para la derivada de una composición.
+							li El método de integración no resuelve integrales, solamente cambia una integral por otra (con la esperanza de que sea más fácil de resolver).
+							li Mayormente, el metodo de sustición se aplica cuando 
+								ul 
+									li Se observa una composición de funciones (sustituyendo la función que esta dentro de la composición.)
+									li Se observa que la derivada de parte de la función se encuentra multiplicando al diferencial.
+							li Los casos anteriores son referencia, existen integrales donde se presentan las situaciones anteriores y no se resuelven por el método de susticición. También hay integrales que no corresponden a los casos de referencia pero el método es útil. 
+
+			.diapo 
+				h1 Método de partes 
+				.col-2 
+					div 
+						p Debe aplicarse la siguiente expresión
+						p \[ \int f'\cdot g\cdot dx = f\cdot g -\int f\cdot g'\cdot dx \]
+						p donde es necesario elegir las "partes" de la integral.
+						ul 
+							li Parte de la integral se tomará como $f'(x)$ y deberá calcularse $f(x)=\int f'(x)\cdot dx$ 
+							li La parte restante será $g(x)$ y deberá calcularse $g'(x)$
+
+					.comentario 
+						h3 Nota 
+						ul 
+							li El método de partes surge de integrar la fórmula  \[ (f\cdot g)'= f'\cdot g + f \cdot g' \] de la derivada de producto de funciones.
+							li El método no resuelve la integral, la transforma en una nueva.
+							li Para \( \int \text{polinomio}\cdot e^x \cdot dx \) debe tomarse el polinomio para derivar.
+							li Para \( \int \text{polinomio} \cdot \cos(x) \cdot dx \) debe tomarse el polinomio para derivar.
+							li Para \( \int \text{polinomio} \cdot \sin(x) \cdot dx \) debe tomarse el polinomio para derivar.
+							li Para \( \int \text{polinomio} \cdot \ln(x) \cdot dx \) debe tomarse el \( ln(x) \) para derivar.
