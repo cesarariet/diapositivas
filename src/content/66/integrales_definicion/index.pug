@@ -5,8 +5,8 @@ html(lang="es")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title Definición de integrales (Riemann)
-		meta(name="description", content="Definición de integrales usando sumas superiores e inferiores de Riemann. Teoremas fundamentales del cálculo. Integral definida e indefinida.")
-		meta(name="keywords", content="integral, Riemann, teorema fundamental de cálculo, regla de Barrow, integral definida, integral indefinida, primitiva")
+		meta(name="description", content="Definición de integrales usando sumas superiores e inferiores de Riemann. Teoremas fundamentales del cálculo. Integral definida e indefinida. Propiedades y métodos de integración.")
+		meta(name="keywords", content="integral, Riemann, teorema fundamental de cálculo, regla de Barrow, integral definida, integral indefinida, primitiva, tabla de integrales, método de partes, método de sustitución, método de fraciones simples.")
 		link(rel="stylesheet", href="/style/diapositivas.css")
 		script(src="/utils/geogebra.js") 
 	body 
@@ -204,16 +204,16 @@ html(lang="es")
 						p Entonces, \[F'(c)=f(c)\]
 						h2 Teorema (Regla de Barrow)
 						p Sea $f$ integrable en $[a,b]$ y sea $F(x)$ una primitiva de $f$. 
-						p Entonces, \[\int_a^b f(x)\cdot dx = F(b)-F(a)\]
+						p Entonces, \[\int_a^b f(x)\cdot dx = F(x)\Big|_a^b= F(b)-F(a)\]
 					.comentario
 						h3 Nota
 						ul
-							li $\int_a^b{f(x) \cdot dx}$ = número. (integral definida.)
-							li $\int_a^x{f(x) \cdot dt}$ = función. (la llamaremos función integral.)
+							li $\int_a^b{f(x) \cdot dx}$ = número (integral definida.)
+							li $\int_a^x{f(x) \cdot dt}$ = función (la llamaremos función integral.)
 							li.
 								La integral y la derivada están relacionadas porque \[F'(x)=\left(\int_a^x {f(t)\cdot dt}\right)'=f(x)\]
 								Usando además la regla de la cadena puede verse que
-								\[ \begin{multline} \left(\int_{g(x)}^{h(x)} {f(t)\cdot dt}\right)'=\\=f\left(h(x)\right)\cdot h'(x)-f\left(g(x)\right)\cdot g'(x)\end{multline} \]
+								\[ \begin{multline} \left(\int_{g(x)}^{h(x)} {f(t)\cdot dt}\right)'=\\=f\big(h(x)\big)\cdot h'(x)-f\big(g(x)\big)\cdot g'(x)\end{multline} \]
 							li Teniendo en cuenta la relación entre la integral y la derivada, llamaremos primitiva o antiderivada de una función $f(x)$ a la función $F(x)$ tal que cumple \[F'(x)=f(x)\]
 	
 
@@ -327,5 +327,6 @@ html(lang="es")
 							li Se llama fracción simple a cualquier función de la forma  \[ \frac{A}{(x-x_0)^k}, \text{ con } k\in\mathbb N \]
 							li Las fracciones simples son fáciles de integrar. Con la sustitución \( u = x-x_0 \) se obtiene 
 								p \[ \int \frac{A}{x-x_0}dx=A\ln|x-x_0|+C \]
-								p \[ \int \frac{A}{(x-x_0)^k}dx = \frac{A(x-x_0)^{-k+1}}{-k+1}, k\neq 1 \]
+								p y para \( k\neq 1 \)
+								p \[ \int \frac{A}{(x-x_0)^k}dx = \frac{A(x-x_0)^{-k+1}}{-k+1}+C \]
 							li Con el método se reescribe la función racional a integrar como suma de fracciones simples fáciles de integrar.
