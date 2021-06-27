@@ -1,0 +1,302 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Series reales y de pontencia
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra") 
+	body 
+		.diapositivas 
+			.diapo 
+				h1 Series reales y de potencias 
+				p $ $ 
+
+			.diapo
+
+				h1 Preliminares
+				.col-2
+					div
+						h2 Definición 
+						p Sea una sucesión $a_n$. Llamaremos sumatoria de $a_n$ desde $1$ hasta $N$ 
+						p \[ \sum_{n=1}^N a_n = a_1+a_2+\dots+a_N \]
+
+					.comentario 
+						h3 Nota 
+						ul 
+							li Se denomina como término general a $a_n.$
+							li La sumatoria de $a_n$ desde $1$ hasta $N$ es finita siempre. No es obligatorio arrancar desde $1$, puede generalizarse. 
+
+				.col-2
+					div
+						h2 Objetivos
+						ul
+							li Definir, cuando es posible, sumas de infinitos términos \[ \sum_{n=1}^{+\infty}{a_n}=a_1+a_2+a_3+\dots \]
+							li Ejemplos sencillos:
+								p(style="text-align:center") $\sum_{n=1}^{+\infty}{0}=0+0+0+\dots=0$
+								p(style="text-align:center") $\sum_{n=1}^{+\infty}{1}=1+1+1+\dots=+\infty$
+								p(style="text-align:center") $\sum_{n=1}^{+\infty}{\frac{1}{2^n}}=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\dots=1$
+								p(style="text-align:center") $\sum_{n=1}^{+\infty}{(-1)^n=-1+1-1+\dots}$ 
+						
+					.comentario
+						h3 Nota
+						div
+							ul
+								li La sumatoria hasta $+\infty$ consiste en sumar infinitos números. 
+								li ¿Puede hacerse una suma de infinitos términos en tiempo finito? En los primeros dos ejemplos queda claro que es posible, al menos en algunos casos.
+								li ¿Puede saberse antes de sumar si el resultado será finito, infinito o no tiene sentido?
+								li ¿Qué valor podemos asignar al último ejemplo?
+
+							
+			.diapo
+				h1 Series
+				h2 Definición
+				.col-2
+					div
+						p Sea $(a_n)_{n\in\mathbb N}$ una sucesión. Llamaremos serie de término general $a_n$ a la expresión \[ \sum_{n=1}^{+\infty}{a_n} = a_1+a_2+a_3+\dots \]
+
+						p Llamaremos suma parcial $S_N$ de la serie $\sum_{n=1}^{+\infty}a_n$ a la suma de los primeros $N$ términos.
+						p \[ S_N=\sum_{n=1}^{N}{a_n} =a_1+a_2+\dots+a_N \]
+						p Diremos que una serie $\sum_{n=1}^{+\infty}{a_n}$ es convergente si las sumas parciales tienen límite finito
+						p \[ \sum_{n=1}^{+\infty}{a_n}=\lim_{N\rightarrow +\infty }S_N \] 
+					.comentario
+						h3 nota
+						ul 
+							li Las sumas parciales fomar una sucesión.
+							li Diremos que una serie es divergente cuando el límite de las sumas parciales es infinito o no existe.
+							li Veremos que muchos casos podremos determinar si una serie es convergente o divergente. Sin embargo, el valor de la serie solamente podra calcularse en una cantidad reducida de casos.
+							li El término donde comienza la serie no es importante para determinar su convergencia. Notar que dado un $n_0\in\mathbb N$ cualquiera se tiene \[ \sum_{n=1}^{+\infty} a_n = \underbrace{\sum_{n=1}^{n_0} a_n}_{\text{finito}}+\underbrace{\sum_{n=n_0+1}^{+\infty}a_n}_\text{cola} \]
+								p donde el primer término es finito siempre y, por lo tanto, la convergencia de la serie depende del segundo término (suele llamarse cola de la serie).
+
+			.diapo
+				h1 Series de resultado conocido
+				.col-2 
+				
+					div
+						h2 Serie Geométrica
+						p Para $|r|<1$ la serie converge y además \[ \sum_{n=0}^{+\infty}{r^n}=\frac{1}{ 1-r} \]
+						p En cualquier otro caso la serie diverge.
+
+						h2 Serie Telescópica
+						p Sea \( (a_n)_{n\in\mathbb N} \) una sucesión real
+						p \[ \sum_{n=1}^{+\infty}{a_{n+1}-a_n}=\lim_{N\rightarrow +\infty}{a_{N+1}-a_1} \]
+						p \[  \sum_{n=1}^{+\infty}{a_n-a_{n+1}}=\lim_{N\rightarrow +\infty}{a_1-a_{N+1}} \]
+					
+					.comentario 
+						h3 Nota 
+						ul 
+							li Las fórmulas de las series geométrica y telescopicas se obtienen de analizar sus sumas parciales y aplicarles límite.
+							li Cuando la serie geométrica comience en un término distinto al propuesto, puede restarse los términos excedentes del caso con $n=0$. Por ejemplo, \[  \sum_{n=3}^{+\infty}{r^n}=\frac{1}{ 1-r}-1-r-r^2 \]
+							li Si bien en estas series particulares es posible determinar el valor de convergencia de la serie, en otras series veremos que solamente podremos indicar la convergencia o no (sin dar un valor resultante).
+			.diapo
+				h1 Teoremas importantes
+				.col-igual-2
+					div
+						h2 Condición necesaria de convergencia
+						p Toda serie cumple con
+						p $$\sum a_n \text{ conv. } \implies\lim a_n = 0$$
+						p Aunque tiene más utilidad su contrarecíproco
+						p \[ \lim a_n \neq 0 \implies \sum a_n\text{ div.}\]
+					div
+						h2 Propiedad
+						p Sean \( \sum a_n \) y \( \sum b_n \) dos series convergente. Sea \( k\in\mathbb R \). Entonces,
+						p \[ \sum k\cdot a_n = k\cdot \sum a_n \]
+						p \[ \sum (a_n +b_n) = \sum a_n +\sum b_n \]
+					div 
+						h2 Definición 
+						p Diremos que una serie \( \sum a_n \) es de términos no negativos cuando $$a_n\geq 0,\forall n\in\mathbb N.$$
+						p Las series de términos no negativos son convergentes o divergen a $+\infty.$
+					.comentario
+						h3 Nota 
+						ul 
+							li La condición necesaria es, generalmente, fácil de verificar.
+							li Es importante notar la condición necesaria de convergencia solamente puede usarse para probar la divergencia de una serie, cuando se da la situación $\lim a_n\neq 0.$ 
+							li La mayoria de los criterios de convergencia que estudiaremos corresponden a series de términos no negativos. 
+			
+			.diapo 
+				h1 Criterios de Comparación
+				.col-2
+					div
+						h2 Criterio de comparación directa
+						p Sean $\sum a_n$ y $\sum b_n$ dos series de términos no negativos tal que $a_n\leq b_n$
+						p $$\sum a_n \text{ div.} \implies \sum b_n \text{ div.}$$ 
+						p $$\sum b_n \text{ conv.} \implies \sum a_n \text{ conv.}$$
+						h2 Criterio de comparación indirecta (vía límite)
+						p Sean $\sum a_n$ y $\sum b_n$ dos series de términos no negativos 
+						p \[ \left. \begin{align}  \sum b_n \text{ conv.} \\  \lim_{n\to +\infty} \frac{a_n}{b_n} \in [0,+\infty) \end{align} \right\} \implies \sum a_n \text{ conv.} \]
+						p \[ \left. \begin{align} \sum b_n \text{ div.} \\   \lim_{n\to +\infty} \frac{a_n}{b_n} \in (0,+\infty] \end{align} \right\} \implies \sum a_n \text{ div.} \]
+
+					.comentario
+						h3 Nota
+						ul
+							li
+								| Los criterios de convergencia no dicen el valor de convergencia.
+							li Los criterios de comparación directa suelen denominarse también como criterio del mayorante y minorante. Notar que la condición \( a_n\leq b_n \) indica las sumas parciales de $\sum a_n$ serán siempre menores o iguales a las de $\sum b_n$. De allí que si la primera diverge, la segunda también; y que si la segunda diverge, la primera también.
+							li El criterio de comparación directa es útil en demostraciones pero difícil de ejecutar en general. El criterio de comparación via límite es más sencillo de usar.
+							li La notación de $$ \lim \frac{a_n}{b_n}\in (0,+\infty]$$ representa que el límite debe dar un resultado mayor estricto que cero o infinito.
+
+
+			.diapo
+				h1 Criterio integral de Cauchy
+				.col-2
+
+					div
+						p Sea $f(x)$ una función positiva y monótona decreciente en el intervalo $[N,+\infty)$. Entonces
+						p  $$\int_N^{+\infty}f(x) dx \text{ conv.} \iff \sum_N^{+\infty}{f(n)} \text{ conv.}$$
+						p y equivalentemente 
+						p  $$\int_N^{+\infty}f(x) dx \text{ div.} \iff \sum_N^{+\infty}{f(n)} \text{ div.}$$
+
+						.comentario
+							h3 Nota
+							ul
+								li Definiremos la integral impropia de una función $f(x)$  \[ \int_a^{+\infty}{f(x) dx}=\lim_{b\rightarrow\infty}{\int_a^b{f(x)dx}} \]
+								li Usualmente, partiendo de una serie $\sum a_n$, se reemplaza la $n$ por una $x$ para obtener la función $f(x).$
+								li Para verificar la monotonía de $f(x)$ alcanza ver derivada negativa en un intervalo que llegue al $+\infty.$
+					div
+						figure
+							//- +graficoGeogebra("criterioIntegralSuperior","api.setCoordSystem(-.2,8,-.2,1.2)",500,200)
+							figcaption El area de $\int_1^{+\infty}f(x)dx$ es menor que el area de los rectángulos $\sum_{n=1}^{+\infty}f(n)$. 
+						figure
+							//- +graficoGeogebra("criterioIntegralInferior","api.setCoordSystem(-.2,8,-.2,1.2)",500,200)
+							figcaption El area de $\int_1^{+\infty}f(x)dx$ es mayor que el area de los rectángulos $\sum_{n=2}^{+\infty}f(n)$. 
+
+				
+
+
+
+			.diapo
+				h1 Serie p
+				.col-igual-2
+					div
+						h3 Propiedad
+						p \[\sum_{n=1}^{+\infty} \frac{1}{n^p}=\begin{cases} \text{conv.} & p\gt 1\\ \\ \text{div.} & p\leq 1 \end{cases}\]
+					.comentario
+						h3 Nota
+						div
+							ul
+								li El caso $p=1$ se conoce como serie armónica. Corresponde a la frontera entre la convergencia y divergencia de la serie p.
+								li Para $p\leq 0$ es inmediato por no cumplir la condición necesaria de convergencia.
+								li Para $p\gt 0 $  puede usarse el criterio integral de Cauchy porque
+									ul 
+										li $f(x)=\frac{1}{x^p}$ es positivo en $(1,+\infty)$.
+										li $f'(x)=\frac{-p}{x^{p+1}}<0$ para $x\in(1,+\infty)$.
+
+				//- +diapositiva("Criterio del cociente y de la raiz")
+				//- 	.diapo__contenido
+				//- 		p Sea una serie $\sum a_n$. Dado alguno de los siguientes límites
+				//- 		table(style="width:90%")
+				//- 			tr
+				//- 				td \[ \lim_{n\rightarrow +\infty}{\frac{|a_{n+1}|}{|a_n|}}=L \]
+				//- 				td \[ \lim_{n\rightarrow +\infty}{\sqrt[n]{|a_n|}}=L \]
+				//- 		p Entonces
+				//- 		ul
+				//- 			li $\sum a_n$ converge si $L<1.$
+				//- 			li $\sum a_n$ diverge si $L>1.$
+				//- 			li El criterio no decide si $L=1.$
+
+				//- +diapositiva("Criterio de Leibniz")
+				//- 	.diapo__contenido
+				//- 		p Sea una serie alternada  de la forma $\sum_{n=1}^{+\infty}{(-1)^n|a_n|}$ o de la forma $\sum_{n=1}^{+\infty}{(-1)^{n+1}|a_n|}.$
+				//- 		p Si $a_n$ cumple las siguientes propiedades
+				//- 		ul
+				//- 			li $\lim a_n=0.$
+				//- 			li $a_n$ es monótona decreciente.
+				//- 		p Entonces, la serie es convergente.
+
+				//- 	.comentario
+				//- 		h3 Nota
+				//- 		div
+				//- 			p Diremos que una serie es alternada si término a término hay variación del signo.
+				//- 			p Una serie alternada puede escribirse como:
+				//- 			p: small \[ \sum_{n=1}^{+\infty}{(-1)^n|a_n|}=-|a_1|+|a_2|-|a_3|++\dots \]
+				//- 			p: small \[ \sum_{n=1}^{+\infty}{(-1)^{n+1}|a_n|}=|a_1|-|a_2|+|a_3|-\dots \]
+				//- 			p
+				//- 				i.icono-alerta 
+				//- 				| Si alguna de las condiciones no se cumple, el criterio no decide.
+
+
+
+
+
+
+				//- +diapositiva("Convergencia absoluta")
+				//- 	.diapo__contenido
+				//- 		h3 Definiciones
+				//- 		ul
+				//- 			li Diremos que una serie $\sum a_n$ converge absolutamente si $\sum |a_n|$ converge.
+				//- 			li Diremos que $\sum a_n$ converge condicionalmente si es convergente pero  $\sum |a_n|$ diverge (no converge absolutamente).
+				//- 		h3 Teorema
+				//- 		p: small \[ \sum |a_n| \text{ converge}\implies \sum a_n \text{ converge.} \]
+				//- 		p Es decir, una serie con convergencia absoluta es convergente.
+
+				//- 	.comentario
+				//- 		h3 Nota
+				//- 		div
+				//- 			ul
+				//- 				li $\sum (-\frac{1}{2})^n$ converge absolutamente.
+				//- 				li $\sum (-1)^n\frac{1}{n}$ converge condicionalmente.
+				//- 			p
+				//- 				i.icono-like
+				//- 				| Al estudiar la convergencia absoluta pueden usarse todos los criterios de series de términos positivos.
+				//- 			p
+				//- 				i.icono-atencion
+				//- 				| El teorema no dice nada cuando $\sum |a_n|$  es divergente.
+
+
+				//- +diapositiva("Series de potencias - Idea")
+
+				//- 	.diapo__contenido
+				//- 		p Un ejemplo conocido: Serie geométrica, para $|x|<1$ tenemos $\sum_{n=0}^{+\infty}{x^n}=\frac{1}{1-x}$
+				//- 		h3 Polinomio y Serie de Taylor
+				//- 		p Se define el polinomio de Taylor de $f(x)$ de orden $N$ en $x_0$ como
+				//- 		p \[ \sum_{n=0}^{N}{\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}  \]
+				//- 		p Y la serie de Taylor de $f(x)$ en $x_0$ la generalización de lo anterior
+				//- 		p \[ \sum_{n=0}^{+\infty}{\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}  \]
+					
+				//- 	figure
+				//- 		+graficoGeogebra("polinomioTaylor","api.setCoordSystem(-5,5,-3,8)")
+				//- 		figcaption Representación de una función y su polinomio de Taylor de orden $n$ en el punto de contacto $(x_0,f(x_0)).$
+				//- 	.comentario
+				//- 		h3 Nota
+				//- 		div
+				//- 			p
+				//- 				i.icono-idea
+				//- 				| El polinomio de Taylor extiende el concepto de recta tangente.
+				//- 			p
+				//- 				i.icono-like
+				//- 				| El polinomio de Taylor aproxima a la función $f(x)$. A mayor orden y cerca de $x_0$ mejor  es aproximación.
+				//- 			p
+				//- 				i.icono-atencion
+				//- 				| ¿Qué tan buena es la aproximación? ¿Qué tan lejos puedo estar de $x_0$ con una "buena aproximación"?
+				//- 			p
+				//- 				i.icono-like
+				//- 				| La serie de Taylor es igual a la función.
+				//- 			p
+				//- 				i.icono-atencion
+				//- 				| ¿Para qué valores de $x$ se da la igualdad?
+
+				
+
+				//- +diapositiva("Serie de potencias")
+
+				//- 	.diapo__contenido
+				//- 		p Llamaremos serie de potencias a toda serie de la forma
+				//- 		p \[ \sum_{n=0}^{+\infty}{a_n\cdot (x-x_0)^n} \]
+				//- 		p Al aplicar el criterio de cociente (D'Alembert) o de la raíz (Cauchy) algo de la forma \[ L\cdot |x-x_0|\]
+				//- 			ul
+				//- 				li Para $L\cdot |x-x_0|\lt 1$ hay convergencia absoluta. El radio de convergencia es $\frac{1}{L}.$
+				//- 				li Para $L\cdot |x-x_0| \gt 1$ la serie de potencia diverge.
+				//- 				li Para $L\cdot |x-x_0| = 1$ el criterio aplicado no decide por tanto hay que aplicar otra estrategía.
+
+				//- 	.comentario
+				//- 		h3 Nota
+				//- 		div
+				//- 			p
+				//- 				i.icono-atencion
+				//- 				| Cuando las potencias no se presentan en la forma propuesta no hay, necesariamente, radio de convergencia.
+				//- 			p
+				//- 				i.icono-idea
+				//- 				| Toda serie de potencias converge en $x_0$. El radio de convergencia puede ser cualquier numero mayor o igual a cero e incluso $+\infty$.
+								
+
