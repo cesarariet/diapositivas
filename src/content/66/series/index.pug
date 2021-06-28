@@ -6,7 +6,9 @@ html(lang="es")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title Series reales y de pontencia
 		link(rel="stylesheet", href="/style/diapositivas.css")
-		script(src="/utils/geogebra") 
+		script(src="/utils/geogebra.js") 
+		meta(name="description", content="Definición de series números reales. Series geométricas y alternadas. Criterios de convergencia para series de términos no negativos y de series alternadas. Convercia absoluta y condicional. Definición de serie de potencias y radio de convergencia.")
+		meta(name="keywords", content="series, serie geométrica, serie telescópica, serie de términos no negativos, series de términos positivos, serie alternada, criterio de convergencia, series de potencias")
 	body 
 		.diapositivas 
 			.diapo 
@@ -155,10 +157,12 @@ html(lang="es")
 								li Para verificar la monotonía de $f(x)$ alcanza ver derivada negativa en un intervalo que llegue al $+\infty.$
 					div
 						figure
-							//- +graficoGeogebra("criterioIntegralSuperior","api.setCoordSystem(-.2,8,-.2,1.2)",500,200)
+							#criterioIntegralSuperior
+							script(src="criterioIntegralSuperior.js") 
 							figcaption El area de $\int_1^{+\infty}f(x)dx$ es menor que el area de los rectángulos $\sum_{n=1}^{+\infty}f(n)$. 
 						figure
-							//- +graficoGeogebra("criterioIntegralInferior","api.setCoordSystem(-.2,8,-.2,1.2)",500,200)
+							#criterioIntegralInferior
+							script(src="criterioIntegralInferior.js") 
 							figcaption El area de $\int_1^{+\infty}f(x)dx$ es mayor que el area de los rectángulos $\sum_{n=2}^{+\infty}f(n)$. 
 
 				
@@ -181,122 +185,118 @@ html(lang="es")
 									ul 
 										li $f(x)=\frac{1}{x^p}$ es positivo en $(1,+\infty)$.
 										li $f'(x)=\frac{-p}{x^{p+1}}<0$ para $x\in(1,+\infty)$.
+								li La serie p es muy útil como complemento del criterio de comparación via límite.
 
-				//- +diapositiva("Criterio del cociente y de la raiz")
-				//- 	.diapo__contenido
-				//- 		p Sea una serie $\sum a_n$. Dado alguno de los siguientes límites
-				//- 		table(style="width:90%")
-				//- 			tr
-				//- 				td \[ \lim_{n\rightarrow +\infty}{\frac{|a_{n+1}|}{|a_n|}}=L \]
-				//- 				td \[ \lim_{n\rightarrow +\infty}{\sqrt[n]{|a_n|}}=L \]
-				//- 		p Entonces
-				//- 		ul
-				//- 			li $\sum a_n$ converge si $L<1.$
-				//- 			li $\sum a_n$ diverge si $L>1.$
-				//- 			li El criterio no decide si $L=1.$
+			.diapo
+				h1 Criterio del cociente y de la raiz
+				.col-2
+					div
+						p Sea $\sum a_n$ una serie de términos no negativos. Entonces,
+						p \[ \lim_{n\rightarrow +\infty}{\frac{a_{n+1}}{a_n}}=L\Rightarrow \begin{cases} \sum a_n \text{ conv.} &  L\lt 1 \\ \\ \sum a_n \text{ div.} &  L\gt 1  \end{cases} \]  
+						p \[ \lim_{n\rightarrow +\infty}{\sqrt[n]{a_n}}=L \Rightarrow \begin{cases} \sum a_n \text{ conv.} &  L\lt 1 \\ \\ \sum a_n \text{ div.} &  L\gt 1  \end{cases}\]
+					.comentario 
+						h3 Nota 
+						ul 
+							li El los criterios del cociente y de la raiz n-ésima también se denominan como criterio de D'Alembert y criterio de Cauchy, respectivamente.
+							li Los siguientes límites pueden ser útiles: 
+								p.
+									\[ \lim \sqrt[n]{K}=1, (K\gt0) \] 
+									\[ \lim \sqrt[n]{n^p}=1 \]
+									\[ \lim \sqrt[n]{n!}=+\infty \]
 
-				//- +diapositiva("Criterio de Leibniz")
-				//- 	.diapo__contenido
-				//- 		p Sea una serie alternada  de la forma $\sum_{n=1}^{+\infty}{(-1)^n|a_n|}$ o de la forma $\sum_{n=1}^{+\infty}{(-1)^{n+1}|a_n|}.$
-				//- 		p Si $a_n$ cumple las siguientes propiedades
-				//- 		ul
-				//- 			li $\lim a_n=0.$
-				//- 			li $a_n$ es monótona decreciente.
-				//- 		p Entonces, la serie es convergente.
+			.diapo
+				h1 Series alternadas
+				.col-2
+					div
+						h2 Definición
+						p Diremos que una serie es alternada si puede escribirse de la forma $$\sum_{n=1}^{+\infty}{(-1)^n|a_n|}$$ o de la forma $$\sum_{n=1}^{+\infty}{(-1)^{n+1}|a_n|}.$$
+						h2 Criterio de Leibniz
+						p Sea $\sum a_n$ una serie que cumple las siguientes propiedades
+						ul
+							li $\sum a_n$ es alternada.
+							li $\lim |a_n|=0.$
+							li $|a_n|$ es monótona decreciente.
+						p(style="text-align:center") Entonces, la serie $\sum a_n$ es convergente.
 
-				//- 	.comentario
-				//- 		h3 Nota
-				//- 		div
-				//- 			p Diremos que una serie es alternada si término a término hay variación del signo.
-				//- 			p Una serie alternada puede escribirse como:
-				//- 			p: small \[ \sum_{n=1}^{+\infty}{(-1)^n|a_n|}=-|a_1|+|a_2|-|a_3|++\dots \]
-				//- 			p: small \[ \sum_{n=1}^{+\infty}{(-1)^{n+1}|a_n|}=|a_1|-|a_2|+|a_3|-\dots \]
-				//- 			p
-				//- 				i.icono-alerta 
-				//- 				| Si alguna de las condiciones no se cumple, el criterio no decide.
-
-
-
-
-
-
-				//- +diapositiva("Convergencia absoluta")
-				//- 	.diapo__contenido
-				//- 		h3 Definiciones
-				//- 		ul
-				//- 			li Diremos que una serie $\sum a_n$ converge absolutamente si $\sum |a_n|$ converge.
-				//- 			li Diremos que $\sum a_n$ converge condicionalmente si es convergente pero  $\sum |a_n|$ diverge (no converge absolutamente).
-				//- 		h3 Teorema
-				//- 		p: small \[ \sum |a_n| \text{ converge}\implies \sum a_n \text{ converge.} \]
-				//- 		p Es decir, una serie con convergencia absoluta es convergente.
-
-				//- 	.comentario
-				//- 		h3 Nota
-				//- 		div
-				//- 			ul
-				//- 				li $\sum (-\frac{1}{2})^n$ converge absolutamente.
-				//- 				li $\sum (-1)^n\frac{1}{n}$ converge condicionalmente.
-				//- 			p
-				//- 				i.icono-like
-				//- 				| Al estudiar la convergencia absoluta pueden usarse todos los criterios de series de términos positivos.
-				//- 			p
-				//- 				i.icono-atencion
-				//- 				| El teorema no dice nada cuando $\sum |a_n|$  es divergente.
+					.comentario
+						h3 Nota
+						div
+							p Una serie es alternada si término a término hay variación del signo.
+							p: small \[ \sum_{n=1}^{+\infty}{(-1)^n|a_n|}=-|a_1|+|a_2|-|a_3|+\dots \]
+							p: small \[ \sum_{n=1}^{+\infty}{(-1)^{n+1}|a_n|}=|a_1|-|a_2|+|a_3|-\dots \]
+							ul
+								li Si alguna de las condiciones no se cumple, el criterio no decide.
+								li En el caso $\lim |a_n|\neq 0 $, la serie es divergente por no cumplir la condición necesaria de convergencia.
 
 
-				//- +diapositiva("Series de potencias - Idea")
+			.diapo
+				h1 Convergencia absoluta
+				.col-2
+					div
+						h2 Definiciones
+						ul
+							li Diremos que una serie $\sum a_n$ converge absolutamente si $\sum |a_n|$ converge.
+							li Diremos que $\sum a_n$ converge condicionalmente si es $\sum a_n $ converge pero  $\sum |a_n|$ diverge (no converge absolutamente).
+						h2 Teorema
+						p \[ \sum |a_n| \text{ conv.}\implies \sum a_n \text{ conv.} \]
+						p Es decir, una serie con convergencia absoluta es convergente.
 
-				//- 	.diapo__contenido
-				//- 		p Un ejemplo conocido: Serie geométrica, para $|x|<1$ tenemos $\sum_{n=0}^{+\infty}{x^n}=\frac{1}{1-x}$
-				//- 		h3 Polinomio y Serie de Taylor
-				//- 		p Se define el polinomio de Taylor de $f(x)$ de orden $N$ en $x_0$ como
-				//- 		p \[ \sum_{n=0}^{N}{\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}  \]
-				//- 		p Y la serie de Taylor de $f(x)$ en $x_0$ la generalización de lo anterior
-				//- 		p \[ \sum_{n=0}^{+\infty}{\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}  \]
+					.comentario
+						h3 Nota
+						div
+							ul
+								li $\sum (-\frac{1}{2})^n$ converge absolutamente.
+								li $\sum (-1)^n\frac{1}{n}$ converge condicionalmente.
+								li Al estudiar la convergencia absoluta pueden usarse todos los criterios de series de términos positivos.
+								li El teorema no dice nada cuando $\sum |a_n|$  es divergente.
+
+			.diapo
+				h1 Series de potencias - Idea
+				.col-2
+					div
+						h2 Serie geométrica
+						p  Para $|x|<1$ tenemos $$\sum_{n=0}^{+\infty}{x^n}=\frac{1}{1-x}$$
+						h2 Polinomio y Serie de Taylor
+						p Sea $f$ una función $N$ veces derivable. Se define el polinomio de Taylor de $f(x)$ de orden $N$ en $x_0$ como
+						p \[ \sum_{n=0}^{N}{\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}  \]
+						p Y la serie de Taylor de $f(x)$ (derivable infinitas veces) en $x_0$ es la generalización de lo anterior
+						p \[ \sum_{n=0}^{+\infty}{\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n}  \]
 					
-				//- 	figure
-				//- 		+graficoGeogebra("polinomioTaylor","api.setCoordSystem(-5,5,-3,8)")
-				//- 		figcaption Representación de una función y su polinomio de Taylor de orden $n$ en el punto de contacto $(x_0,f(x_0)).$
-				//- 	.comentario
-				//- 		h3 Nota
-				//- 		div
-				//- 			p
-				//- 				i.icono-idea
-				//- 				| El polinomio de Taylor extiende el concepto de recta tangente.
-				//- 			p
-				//- 				i.icono-like
-				//- 				| El polinomio de Taylor aproxima a la función $f(x)$. A mayor orden y cerca de $x_0$ mejor  es aproximación.
-				//- 			p
-				//- 				i.icono-atencion
-				//- 				| ¿Qué tan buena es la aproximación? ¿Qué tan lejos puedo estar de $x_0$ con una "buena aproximación"?
-				//- 			p
-				//- 				i.icono-like
-				//- 				| La serie de Taylor es igual a la función.
-				//- 			p
-				//- 				i.icono-atencion
-				//- 				| ¿Para qué valores de $x$ se da la igualdad?
+					div
+						figure
+							//- +graficoGeogebra("polinomioTaylor","api.setCoordSystem(-5,5,-3,8)")
+							#polinomioTaylor
+							script(src="polinomioTaylor.js") 
+							figcaption Representación de una función $f(x)$ y su polinomio de Taylor (curva punteada) de orden $n$ en el punto de contacto $(x_0,f(x_0))$ (en azul). 
+						.comentario
+							h3 Nota
+							div
+								ul 
+									li El polinomio de Taylor aproxima a la función $f(x)$. A mayor orden y cerca de $x_0$ mejor  es aproximación. La serie de Taylor deja de ser una aproximación para convertirse en una igualdad ¿Siempre?
+									li ¿Para qué valores de $x$ se da la igualdad entre la función y la serie?
 
 				
 
-				//- +diapositiva("Serie de potencias")
+			.diapo
+				h1 Serie de potencias
+				.col-2
+					div
+						h2 Definición
+						p Llamaremos serie de potencias a toda serie de la forma
+						p \[ \sum_{n=0}^{+\infty}{a_n\cdot (x-x_0)^n} \]
+						h2 Convengencia 
+						p Al el criterio de cociente (D'Alembert) o de la raíz (Cauchy) a la serie de potencias con módulo, \(  \sum_{n=0}^{+\infty}|{a_n\cdot (x-x_0)^n|}, \) obtenemos algo de la forma \[ L\cdot |x-x_0|\]
+							ul
+								li Para $L\cdot |x-x_0|\lt 1$ hay convergencia absoluta. El radio de convergencia es $\frac{1}{L}.$
+								li Para $L\cdot |x-x_0| \gt 1$ la serie de potencia diverge.
+								li Para $L\cdot |x-x_0| = 1$ el criterio aplicado no decide por tanto hay que aplicar otra estrategía.
 
-				//- 	.diapo__contenido
-				//- 		p Llamaremos serie de potencias a toda serie de la forma
-				//- 		p \[ \sum_{n=0}^{+\infty}{a_n\cdot (x-x_0)^n} \]
-				//- 		p Al aplicar el criterio de cociente (D'Alembert) o de la raíz (Cauchy) algo de la forma \[ L\cdot |x-x_0|\]
-				//- 			ul
-				//- 				li Para $L\cdot |x-x_0|\lt 1$ hay convergencia absoluta. El radio de convergencia es $\frac{1}{L}.$
-				//- 				li Para $L\cdot |x-x_0| \gt 1$ la serie de potencia diverge.
-				//- 				li Para $L\cdot |x-x_0| = 1$ el criterio aplicado no decide por tanto hay que aplicar otra estrategía.
-
-				//- 	.comentario
-				//- 		h3 Nota
-				//- 		div
-				//- 			p
-				//- 				i.icono-atencion
-				//- 				| Cuando las potencias no se presentan en la forma propuesta no hay, necesariamente, radio de convergencia.
-				//- 			p
-				//- 				i.icono-idea
-				//- 				| Toda serie de potencias converge en $x_0$. El radio de convergencia puede ser cualquier numero mayor o igual a cero e incluso $+\infty$.
+					.comentario
+						h3 Nota
+						div
+							ul 
+								li En el caso de $L\cdot |x-x_0| \gt 1$ la divergencia de la serie esta garantizada dado que el término general no tiende a cero (por criterio de D'Alembert o de Cauchy de sucesiones) con lo cual no se cumple la condición necesaria de convergencia.
+								li Cuando las potencias no se presentan en la forma propuesta no hay, necesariamente, radio de convergencia.
+								li Toda serie de potencias converge en $x_0$. El radio de convergencia puede ser cualquier numero mayor o igual a cero e incluso $+\infty$.
 								
 
