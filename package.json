@@ -4,7 +4,8 @@
   "description": "Aquí pondré las plantillas para las diapositivas de clases, los modulos de trabajo. Automatizaré tareas con Gulp.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server dist && gulp watch"
   },
   "author": "Mario Estanislao Cesar Ariet <cesarariet@gmail.com>",
   "license": "ISC",
