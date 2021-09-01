@@ -12,38 +12,163 @@ html(lang="es")
 	body 
 		.diapositivas 
 			.diapo 
-				.contenido
-					h1 Sucesiones 
-					ul 
-						li Es una función de dominio en los Naturales, $$a:\mathbb{N}\to \mathbb{R}$$ 
-						li Llamaremos término n-ésimo a la evluación de sucesión en $n$, y lo notaremos \[a_n = a(n)\]
-						li También puede pensarse como una lista de elementos: \[ (a_n)_{n\in\mathbb{N}}=(a_1,a_2,a_3,a_4,\dots) \]
-
-					.comentario 
-						h3 Nota 
+				h1 Sucesiones 
+				.col-igual-2
+					.contenido
+						h2 Definiciones
 						ul 
-							li Se usan las primeras letras del abecedario para nombrar las sucesiones.
-							li La variable independiente es $n$ para hacer enfasis en su dominio en $\mathbb{N}$.
-							li La fórmula que decribe los valores de la sucesión para cada $n$ se denomina término general.
-							li Una sucesión se puede definir por recurrencia. Ejemplo: La suceción que cumple $a_1=2$ y $a_n=3\cdot a_{n-1}$.
+							li Es una función de dominio en los Naturales, $$a:\mathbb{N}\to \mathbb{R}.$$ 
+							li Llamaremos término n-ésimo o término general a la evalución de sucesión en $n$, y lo notaremos \[a_n = a(n).\]
+							li También puede pensarse como una lista de elementos: \[ (a_n)_{n\in\mathbb{N}}=(a_1,a_2,a_3,a_4,\dots). \]
+					div 
+						h2 Ejemplos 
+						ul 
+							li \( (a_n)_{n\in\mathbb N} = (1,4,9,16,25,36, \dots) \) donde \( a_n = n^2. \)
+							li \( (b_n)_{n\in\mathbb N} = (2,4,6,8,10,12,\dots)\) donde \(b_n =2n. \)
+							li \( (c_n)_{n\in\mathbb N} = (1,3,5,7,9,11,\dots) \) donde \( c_n = 2n-1.\)
+							li \( (d_n)_{n\in\mathbb N} = (-1,1-1,1,-1,1,\dots) \) donde \( d_n = (-1)^n.\)
+							li \( (e_n)_{n\in\mathbb N} = (1,-1,1,-1,1,-1,\dots) \) donde \( e_n = (-1)^{n+1}.\)
+
+						.comentario 
+							h3 Nota 
+							ul 
+								li La variable independiente es $n$ para hacer énfasis en su dominio en $\mathbb{N}$.
+								li Una sucesión se puede definir por recurrencia. Ejemplo: La suceción que cumple $a_1=2$ y $a_n=3\cdot a_{n-1}$.
+								li No toda sucesión presentada como lista tiene necesariamente asociada un fórmula para el término general. La sucesión de número primos es un ejemplo: \[ (2,3,5,7,11,13,17,\dots) \]
 
 			.diapo
 				h1 Representación de sucesiones 
 				script(src="./representacionSucesiones.js") 
-				.contenido 
-					h2 Gráfico en el plano $\mathbb{R}^2$
-					figure 
-						#graficoDeSucesion 
-						figcaption Las sucesiones se pueden representar igual que una función, con la salvedad de su dominio en $\mathbb{N}$. El el gráfico se observa $a_n=2+(-1)^n/n$
-					h2 Puntos en la Recta 
-					figure 
-						#sucesionEnLaRecta 
-						figcaption Cada punto representa los términos de la sucesión $a_n=2+(-1)^n/n$
+				.col-igual-2
+					div 
+						h2 Gráfico en el plano $\mathbb{R}^2$
+						figure 
+							#graficoDeSucesion 
+							figcaption Las sucesiones se pueden representar igual que una función, con la salvedad de su dominio en $\mathbb{N}$. El el gráfico se observa $a_n=2+(-1)^n/n$
+					div
+						h2 Puntos en la Recta 
+						figure 
+							#sucesionEnLaRecta 
+							figcaption Cada punto representa los términos de la sucesión $a_n=2+(-1)^n/n$
+						.comentario 
+							h3 Nota
+							ul 
+								li En ambos gráficos se puede observar que los valores de la sucesión $a_n=2+(-1)^n/n$ se aproximan a $2$ a medida que crece el orden $n.$ Diremos en este caso: 
+									ul 
+										li $a_n$ tiende a $2.$
+										li $a_n$ converge o es convergente a $2$.
+										li El límite de $a_n$ para $n$ tendiendo a $+\infty$ es igual a $2$. Notación \[ \lim_{n\to +\infty}a_n = \lim_{n\to +\infty} 2+\frac{(-1)^n}{n}=2\]
+								li Hay sucesiones que no son convergentes (o equivalentemente, no tienen límite). La sucesión \( a_n = (-1)^n \) oscila entre $1$ y $-1$. 
+								li Hay sucesiones cuyos valores crecen hacia infinito como en el caso $a_n = n^2$. En ese caso diremos que la suceción tiene limite infinito. 
 
 			.diapo
 				h1 Límite de Sucesiones 
-				h2 Definición 
-				p Una sucesión $a_n$ se dice convergente a o tiende a $l\in\mathbb{R}$ si \[ \forall\epsilon>0,\Rightarrow n_0/ n>n_0 \implies  | a_n-l| &lt \epsilon \]
-				figure 
-					#defLimite 
-					script(src="./definicionLimite.js") 
+				.col-2
+					.contenido
+						h2 Definición 
+						p Una sucesión $a_n$ se dice convergente a o tiende a $l\in\mathbb{R}$ si \[ \forall\epsilon>0,\exists n_0\in\mathbb N: n>n_0 \implies  | a_n-l| &lt \epsilon \]
+						p Cuando esto suceda lo notaremos \[ \lim_{n\to +\infty} a_n = l. \]
+						p En el caso que la sucesión no tenga límite (finito) diremos que es una sucesión divergente.
+						.comentario 
+							h3 Nota
+							ul 
+								li $\forall \epsilon \gt 0$ indica que lo que sigue debe cumplirse para cualquier valor de $\epsilon$ positivo.
+								li La expresión $ |a_n -l|\lt \epsilon$ implica que la distancia entre los valores de $a_n$ y $l$ es menor que $\epsilon.$ En el gráfico esta expresión corresponde a una banda de semiancho $\epsilon$ alrededor de $l$.
+								li El valor $n_0$ corresponde al primer término a partir del cual se cumple $ | a_n -l|\lt \epsilon$. Para que exista el límite, dado cualquier $\epsilon\gt 0 $ debe poder hallarse un $n_0$ a partir del cual todos los valores de $a_n$ se encuetren a distancia menor de $\epsilon$ respecto de $l.$
+					figure 
+						#defLimite 
+						script(src="./definicionLimite.js") 
+						figcaption Representación de una sucesión (puntos) y la banda centrada en $2$ y semiancho $\epsilon.$ Los puntos dentro de esa banda se encuentran a distancia menor que $\epsilon$ respecto del $2.$ Para cada $\epsilon$ es posible definir un término $n_0$ a partir del cual todos los siguientes caen dentro de la banda.
+			
+
+			.diapo 
+				h1 Un ejemplo de la definición de límite
+				.col-2
+					.contenido 
+						h2 Propiedad 
+						p \[ \lim_{n\to +\infty} \frac 1 n = 0.\]
+						.comentario
+							h3 demostración
+							div 
+								p Queremos ver \( \forall \epsilon\gt0,\exists n_0 \in\mathbb N: n\geq n_0 \implies |\frac 1 n | \lt \epsilon.\)
+								p Sea cualquier \( \epsilon\gt 0 \) veamos para que valores de $n$ se cumple \( |\frac 1 n | \lt \epsilon. \) Como \(  |\frac 1 n | = \frac 1 n \) (porque $n$ es natural) nos queda:
+								p \[  |\frac 1 n | \lt \epsilon \iff  \frac 1 n \lt \epsilon \iff \frac 1 \epsilon \lt n. \]
+								p Por propiedad arquimediana, sin importar el valor de \( \frac 1 \epsilon \) siempre encontraremos un número natural $n_0$ de mayor valor. Con lo cual existe $n_0$ tal que $\frac 1 \epsilon \lt n_0$. Por la propiedad transitiva además cualquier otro número $n\geq n_0$ también cumple $\frac 1 \epsilon \lt n.$
+					figure 
+						#limite1SobreN 
+						script(src="limite1SobreN.js")
+						figcaption Representación de la sucesión $a_n = \frac 1 n$ y la banda de semiancho $\epsilon$ centrada en $0.$ 
+
+			.diapo 
+				h1 Límite de infinito 
+				.col-2 
+					.contenido
+						h2 Definición
+						p Diremos que la sucesión $a_n$ tiende a $\infty$ o diverge a $\infty$ si
+						p \[ \forall M\gt 0, \exists n_0 \in\mathbb N: n\geq n_0\ \implies | a_n| \gt M.\]
+						p y lo notaremos como \[ \lim_{n\to +\infty} a_n = \infty.\]
+
+						.comentario 
+							h3 Nota
+							ul 
+								li $M\gt0$ hace las veces de $\epsilon$ de límite convergente. Sin embargo indica la separación de los valores de $a_n$ con respecto al $0.$
+								li En el caso de conocer el signo de la tendencia se notará $+\infty$ o $-\infty.$
+
+					figure 
+						#limiteAlInf
+						script(src="limiteAlInf.js")
+						figcaption Representación de una sucesión $a_n$ y las regiones (bandas) que se encuentran a distancia mayor a $M$ respecto del eje horizontal.
+
+			.diapo 
+				h1 Ejemplo de límite infinito por Definición
+				.col-2 
+					.contenido 
+						h2 Propiedad 
+						p \[ \lim_{n\to +\infty} n = +\infty. \]
+						.comentario 
+							h3 Nota
+							div 
+								p Queremos ver que $\forall M\gt 0, \exists n_0 \in\mathbb N: n\geq n_0\ \implies  a_n \gt M.$ 
+								p Dado cualquier valor de $M\gt0$, la propiedad arquimediana nos garantiza que existe un número natural mayor que $M$, si llamamos $n_0$ a ese natural nos queda $n_0\gt M$. 
+								p Por la propiedad transitiva, para cualquier numero $n\geq n_0$ tenemos $n\gt M$, como queriamos probar.
+
+					figure 
+						#limiteDeN
+						script(src="limiteDeN.js")
+						figcaption Representación de la sucesión $a_n=n.$
+
+			.diapo 
+				h1 Álgebra de Límites e indeterminaciones
+				.col-igual-2 
+					div 
+						h2 Propiedad 
+						p Sean \(a_n\) y \( b_n \) dos sucesiones convergentes (con límite finito) tal que $\lim a_n = l$ y $\lim b_n=k$. Entonces:
+						p \[ \lim_{n\to +\infty} a_n \pm  b_n = l\pm k\]
+						p \[ \lim_{n\to +\infty} a_n\cdot b_n = l \cdot k \]
+						p \[ \lim_{n\to +\infty} \frac{a_n}{b_n} = \frac l k (k\neq 0) \]
+						p \[ \lim_{n\to +\infty} {a_n}^{b_n} = l^k (a\gt 0)\]
+					div 
+						h2 Indeterminaciones 
+						p En las situaciones no contempladas por el álgebra de límite aparecen algunas indeterminaciones. En esos casos el límite puede existir pero para hallarlo es necesario aplicar algún método o criterio.
+						.col-igual-2.
+							\[ "0" \cdot "\infty" \]
+							\[ "+\infty" - "+\infty" \]
+							\[\frac{"0"}{"0"}\]
+							\[\frac{"\infty"}{\infty}\]
+							\[ "1"^{"\infty"} \]
+							\[ "0"^{"0"} \]
+							\[ "+\infty"^{"0"} \]
+
+				.comentario 
+					h3 Nota
+					ul 
+						li La notación \( "\infty" \) o \( "0" \) indican a una sucesión cuyo límite es $\infty$ o $0,$ respectivamente.
+						li Existen situaciones donde el algebra de límite de puede extender a sucesiones no convergentes, algunos ejemplos son:
+						.col-igual-2.
+							\[ "+\inf"+"+\infty" = +\infty \]
+							\[ "-\infty"+"-\infty"= -\infty \]
+							\[ "\infty"\cdot "\infty" = \infty \]
+							\[ \frac{"l"}{"\infty"} = 0 \]
+							\[ "l"\cdot "\infty" = \infty   (l\neq 0) \]
+					
+
