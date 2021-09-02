@@ -26,15 +26,15 @@ html(lang="es")
 							li \( (a_n)_{n\in\mathbb N} = (1,4,9,16,25,36, \dots) \) donde \( a_n = n^2. \)
 							li \( (b_n)_{n\in\mathbb N} = (2,4,6,8,10,12,\dots)\) donde \(b_n =2n. \)
 							li \( (c_n)_{n\in\mathbb N} = (1,3,5,7,9,11,\dots) \) donde \( c_n = 2n-1.\)
-							li \( (d_n)_{n\in\mathbb N} = (-1,1-1,1,-1,1,\dots) \) donde \( d_n = (-1)^n.\)
-							li \( (e_n)_{n\in\mathbb N} = (1,-1,1,-1,1,-1,\dots) \) donde \( e_n = (-1)^{n+1}.\)
+							li \( (d_n)_{n\in\mathbb N} = (-1,+1,-1,+1,-1,\dots) \) donde \( d_n = (-1)^n.\)
+							li \( (e_n)_{n\in\mathbb N} = (+1,-1,+1,-1,+1,\dots) \) donde \( e_n = (-1)^{n+1}.\)
 
 						.comentario 
 							h3 Nota 
 							ul 
 								li La variable independiente es $n$ para hacer énfasis en su dominio en $\mathbb{N}$.
 								li Una sucesión se puede definir por recurrencia. Ejemplo: La suceción que cumple $a_1=2$ y $a_n=3\cdot a_{n-1}$.
-								li No toda sucesión presentada como lista tiene necesariamente asociada un fórmula para el término general. La sucesión de número primos es un ejemplo: \[ (2,3,5,7,11,13,17,\dots) \]
+								li No toda sucesión presentada como lista tiene necesariamente asociada una fórmula para el término general. La sucesión de número primos es un ejemplo: \[ (2,3,5,7,11,13,17,\dots) \]
 
 			.diapo
 				h1 Representación de sucesiones 
@@ -62,11 +62,12 @@ html(lang="es")
 								li Hay sucesiones cuyos valores crecen hacia infinito como en el caso $a_n = n^2$. En ese caso diremos que la suceción tiene limite infinito. 
 
 			.diapo
-				h1 Límite de Sucesiones 
+				h1 Límite de sucesiones convergentes  
 				.col-2
 					.contenido
 						h2 Definición 
-						p Una sucesión $a_n$ se dice convergente a o tiende a $l\in\mathbb{R}$ si \[ \forall\epsilon>0,\exists n_0\in\mathbb N: n>n_0 \implies  | a_n-l| &lt \epsilon \]
+						p Una sucesión $a_n$ se dice convergente a o tiende a $l\in\mathbb{R}$ si
+						p \[\begin{align} \forall\epsilon\gt 0,\exists n_0\in\mathbb N:& \\ n\geq n_0 &\implies  | a_n-l| \lt \epsilon  \end{align} \]
 						p Cuando esto suceda lo notaremos \[ \lim_{n\to +\infty} a_n = l. \]
 						p En el caso que la sucesión no tenga límite (finito) diremos que es una sucesión divergente.
 						.comentario 
@@ -78,7 +79,7 @@ html(lang="es")
 					figure 
 						#defLimite 
 						script(src="./definicionLimite.js") 
-						figcaption Representación de una sucesión (puntos) y la banda centrada en $2$ y semiancho $\epsilon.$ Los puntos dentro de esa banda se encuentran a distancia menor que $\epsilon$ respecto del $2.$ Para cada $\epsilon$ es posible definir un término $n_0$ a partir del cual todos los siguientes caen dentro de la banda.
+						figcaption Representación de una sucesión (puntos) y la banda centrada en $l=2$ y semiancho $\epsilon.$ Los puntos dentro de esa banda se encuentran a distancia menor que $\epsilon$ respecto del $2.$ Para cada $\epsilon$ es posible definir un término $n_0$ a partir del cual todos los siguientes caen dentro de la banda.
 			
 
 			.diapo 
@@ -100,12 +101,12 @@ html(lang="es")
 						figcaption Representación de la sucesión $a_n = \frac 1 n$ y la banda de semiancho $\epsilon$ centrada en $0.$ 
 
 			.diapo 
-				h1 Límite de infinito 
+				h1 Límite divergente al infinito 
 				.col-2 
 					.contenido
 						h2 Definición
 						p Diremos que la sucesión $a_n$ tiende a $\infty$ o diverge a $\infty$ si
-						p \[ \forall M\gt 0, \exists n_0 \in\mathbb N: n\geq n_0\ \implies | a_n| \gt M.\]
+						p \[\begin{align}\forall M\gt 0, \exists n_0 \in\mathbb N:&\\ n\geq n_0\ &\implies | a_n| \gt M.  \end{align} \]
 						p y lo notaremos como \[ \lim_{n\to +\infty} a_n = \infty.\]
 
 						.comentario 
@@ -145,30 +146,36 @@ html(lang="es")
 						p Sean \(a_n\) y \( b_n \) dos sucesiones convergentes (con límite finito) tal que $\lim a_n = l$ y $\lim b_n=k$. Entonces:
 						p \[ \lim_{n\to +\infty} a_n \pm  b_n = l\pm k\]
 						p \[ \lim_{n\to +\infty} a_n\cdot b_n = l \cdot k \]
-						p \[ \lim_{n\to +\infty} \frac{a_n}{b_n} = \frac l k (k\neq 0) \]
-						p \[ \lim_{n\to +\infty} {a_n}^{b_n} = l^k (a\gt 0)\]
+						p \[ \lim_{n\to +\infty} \frac{a_n}{b_n} = \frac l k\ (k\neq 0) \]
+						p \[ \lim_{n\to +\infty} {a_n}^{b_n} = l^k\ (a\gt 0)\]
 					div 
 						h2 Indeterminaciones 
 						p En las situaciones no contempladas por el álgebra de límite aparecen algunas indeterminaciones. En esos casos el límite puede existir pero para hallarlo es necesario aplicar algún método o criterio.
-						.col-igual-2.
+						.col-igual-2.margen-cambiado.
 							\[ "0" \cdot "\infty" \]
-							\[ "+\infty" - "+\infty" \]
+							\[ "\infty" - "\infty" \]
 							\[\frac{"0"}{"0"}\]
-							\[\frac{"\infty"}{\infty}\]
+							\[\frac{"\infty"}{"\infty"}\]
 							\[ "1"^{"\infty"} \]
 							\[ "0"^{"0"} \]
-							\[ "+\infty"^{"0"} \]
+						.margen-cambiado \[ "+\infty"^{"0"} \]
 
 				.comentario 
 					h3 Nota
 					ul 
-						li La notación \( "\infty" \) o \( "0" \) indican a una sucesión cuyo límite es $\infty$ o $0,$ respectivamente.
-						li Existen situaciones donde el algebra de límite de puede extender a sucesiones no convergentes, algunos ejemplos son:
-						.col-igual-2.
-							\[ "+\inf"+"+\infty" = +\infty \]
-							\[ "-\infty"+"-\infty"= -\infty \]
-							\[ "\infty"\cdot "\infty" = \infty \]
-							\[ \frac{"l"}{"\infty"} = 0 \]
-							\[ "l"\cdot "\infty" = \infty   (l\neq 0) \]
-					
+						li La notación \( "\infty" \), \( "0" \), \( "1" \) o \( "l" \) indican a una sucesión cuyo límite es $\infty,$ $0,$ $1$ o  un número $l,$  respectivamente.
+						li Existen situaciones donde el álgebra de límite de puede extender a sucesiones no convergentes, algunos ejemplos son:
+						.col-igual-2.margen-cambiado.
+							\[ "\infty"\pm "l" \to \infty \]
+							<div>\[ "\pm\infty"+"\pm\infty" \to \pm\infty\ \] <div style="font-size:.8em;text-align:center"> (suma de $\infty$ de mismo signo) </div></div>
+							\[ "l"^{"+\infty"}\to \infty\ (l\gt 1)\]
+							\[ "l"^{"-\infty"}\to 0\  (0\leq l\lt 1)\]
+							\[ \frac{"l"}{"\infty"} \to 0 \]
+							\[ \frac{"l"}{"0"}\to \infty\  (l\neq 0)\]
+							\[ "\infty"\cdot "\infty" \to \infty \]
+							\[ "l"\cdot "\infty" \to \infty\  (l\neq 0) \]
+					style.
+						.margen-cambiado div {
+							margin:.5em;
+						}
 

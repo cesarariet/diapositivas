@@ -1,7 +1,8 @@
 crearGrafico(
   "graficoDeSucesion",
   () => {
-    graficoDeSucesion.setCoordSystem(-5, 20, -1, 4);
+    graficoDeSucesion.setCoordSystem(-10, 40, -1, 4);
+    graficoDeSucesion.setGridVisible(false);
   },
   undefined,
   undefined,
@@ -13,6 +14,7 @@ crearGrafico(
   () => {
     sucesionEnLaRecta.setCoordSystem(0, 3, -1, 1);
     sucesionEnLaRecta.setAxesVisible(true, false);
+    sucesionEnLaRecta.setGridVisible(false);
   },
   320,
   70,
