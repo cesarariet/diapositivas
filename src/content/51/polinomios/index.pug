@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Polinómios</title>
+	<meta name="description" content="Definición de polinomios. Descripción de las operaciones con polinomios. El algoritmo de división y la regla de Ruffini. Las raices y forma factorizada de un polinómio." />
+	<meta name="keywords" content="polinomio, grado de polinomio, regla de ruffini, raices, ceros, forma factorizada." />
+	<link rel="stylesheet" href="/style/diapositivas.css" />
+	<script src="/utils/geogebra.js"></script>
+</head>
+<body>
+	.diapositivas
+		.diapo 
+			h1 Monomios 
+			.col-2 
+				.contenido 
+					h2 Definición $ $
+					p Llamaremos monomio a la función \[ f(x)=a\cdot x^n \]
+					p donde $n \in \mathbb N$ se denomina grado del monomio y $a\in \mathbb R$ su coeficiente.
+					h2 Propiedades 
+					ul 
+						li Suma de monomios de igual grado
+							p \[ a\cdot x^n+b\cdot x^n = (a+b)\cdot x^n \]
+						li Multiplicación de monomios
+						p \[ (a\cdot x^n)\cdot (b \cdot x^k) = (a\cdot b) \cdot x^{n+k} \]
+					.comentario 
+						h3 Nota
+						ul 
+							li El monomio $f(x)= x^n$ tiene grado $n$ y coeficiente $a=1.$ 
+							li El monomio $f(x)= -x^n$ tiene grado $n$ y coeficiente $a=-1.$
+							li El monomio $f(x) = a$ tiene grado $0$ si $a\neq 0. $
+							li Diremos que $f(x)=0$ no tiene grado. Equivalentemente, $f(x)=0\cdot x^n$ no tiene grado.						
+				div 
+					figure 
+						#monomio
+						script(src="monomio.js")
+						figcaption Representación de monomios. Notar los monomios con grado impar tiene un rama hacia arriba y otra hacia abajo, mientras que los monomios de grado par tiene sus dos ramas hacia arriba (o hacia abajo).
+
+			.diapo 
+				h1 Polinomios
+				.col-igual-2 
+					.contenido 
+						h2 Definición
+						p Llamaremos polinomio a toda suma o resta de una cantidad finita de monomios.
+						p \[ f(x)= 3x^5-2x^2+10 \]
+						p \[ g(x) = 2+3x-5x^7+6x^4 \]
+						ul 
+							li Llamaremos grado del polinomio al mayor grado de los monomios intervinientes 
+							li Llamaremos coeficiente principal al coeficiente del monomio de mayor grado.
+						.comentario 
+							h3 Nota
+							ul 
+								li En los ejemplos $f(x)$ es un polinomio de grado 5 y su coeficiente principal es 3. En $g(x)$ el grado es 7 y su coeficiente principal es -5.
+								li Todos los monomios son también polinomios.
+								li Llamaremos $h(x)= 0$ como polinomio nulo y, como defininimos en monomios, no tiene grado.
+								li Al multiplicar dos polinomios (no nulos) se obtiene un polinomio de grado igual a la suma los grados de cada polinomio.
+								li Las funciones lineales son polinomios de grado a lo sumo $1.$
+								li Las funciones cuadráticas son polinomios de grado $2.$
+					.contenido 
+						h2 Definiciones auxiliares 
+						ul 
+							li Diremos que un polinomio es completo continene en forma explicita todas las potencias de $x$ menores o iguales que su grado (incluyendo el término independiente). El siguiente ejemplo muestra el mismo polinomio incompleto y completo.
+								p \[ \begin{align} h(x) &= 5x^4+3x^2 \\ & = 5x^4+0x^3+3x^2+0x+0 \end{align} \]
+								p Como se muestra en el ejemplo, se puede completar un polinomio agregando las potencias faltantes multiplicadas por cero.
+							li Diremos que un polinomio está ordenado si sus potencias se ubican de mayor a menor. El siguiente ejemplo muestra el mismo polinomio desordenado y ordenado.
+								p \[ \begin{align} h(x) &= 4x-5x^3+10-x^2 \\ &=-5x^3-x^2+4x+19 \end{align}  \]
+			
+		.diapo 
+			h1 Algoritmo de división
+			.col-igual-2 
+				.contenido 
+					h2 Teorema del resto 
+					p Sea $f(x)$ un polinomio y $r\in \mathbb R.$ Existe un único polinomio $g(x)$ tal que 
+					p \[ f(x)= g(x)\cdot (x-r)+f(r). \]
+					h2 Teorema 
+					p Sea $f(x)$ un polinomio  y $r\in \mathbb R$ una raíz del polinomio (es decir, $f(r)=0).$ Entonces existe un único polinomio $g(x)$ tal que 
+					p \[f(x)= g(x)\cdot (x-r) \]
+				.comentario 
+					h3 Nota
+					div 
+						p La regla de Ruffini nos permite encontrar $g(x)$ y $f(r)$ de forma sencilla. 
+						p Como ejemplo apliquemos la regla de Ruffini con $r=-2$ sobre el polinomio $$f(x) = 5+4x^3 -x^2.$$
+						p Es importante usar la forma ordenada y completa del polinomio.
+						p \[ \begin{array}{r|rrrr}  & 4 & -1 & 0 & 5\\ \overbrace{-2}^{r} & \downarrow & -8 & 18 & -32\\ \hline  &  4 & -9 & 18 &\underbrace{-27}_{f(r)}\end{array} \]
+						p En los números resultantes, los primeros corresponten con los coeficientes del polinomio $g(x)$ del teorema y el último con $f(r)$.
+						p \[  f(x)=\underbrace{(4x^2-9x+10)}_{g(x)}\underbrace{(x-(-2)}_{(x-r)}+\underbrace{-27}_{f(r)} \]
+		
+		.diapo 
+			h1 Raíces y Forma Factorizada de un polinomio
+			.col-igual-2 
+				.contenido 
+					h2 Teorema 
+					p Un polinomio de grado $n$ puede tener a lo sumo $n$ raíces. 
+					h2 Forma factorizada 
+					p Un polinomio $f(x)$ de grado $n$ que tiene $x_1,x_2,\dots,x_n$ como raíces puede escribirse como 
+					p \[f(x)= a(x-x_1)(x-x_2)\dots(x-x_n)\]
+					.comentario
+						h3 Ejemplos 
+						div
+							p \[ f(x)=4(x+2)(x+1)(x-3) \]
+							p El polinomio $f(x)$ tiene grado $3$, con raíces a $C_0={-2,-1,3}$ y coeficiente principal $4.$ 
+							p \[ g(x)=-x(x-3) \] 
+							p El polinomio $g(x)$ tiene grado $2$, con raíces a $C_0={0,3}$ y coeficiente principal $-1.$
+				.comentario
+					h3 Nota
+					ul 
+						li No todos los polinomios tienen forma factorizada.
+						li En la forma factorizada, el número $a$ es el coeficiente principal de polinomio.
+						li En la forma factorizada, las raíces del polinomio llevan el signo cambiado (debido a que se encuentran restando).
+						li Factorizar un polinomio $f(x)$ implica resolver un problema $f(x)=0.$ 
+						li Las raíces de un polinomio son los elementos de su conjunto de ceros $C_0.$
+						li Cuando se conoce una raíz de un polinomio puede ser muy útil la regla de Ruffini para comenzar la factorización.
+						li Cuando no hay término independiente es buena idea sacar factor común $x$ para comenzar la factorización.
+
+							
+</body>
+</html>
