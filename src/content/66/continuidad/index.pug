@@ -1,0 +1,86 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Continuidad de funciones
+		meta(name="description", content="Definición de continuidad de funciones en un punto y en un conjunto. Discontinuidades y su clasificación. Álgebra de funciones continuas. Teorema de Bolzano y su aplicación.")
+		meta(name="keywords", content="continuidad, discontinuidad, clasificación de discontinuidades, Teorema de Bolzano, Corolario del Teorema de Bolzano")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js")
+	body 
+		.diapositivas
+			.diapo 
+				h1 Continuidad en un punto 
+				.col-2
+					.contenido
+						h2 definición
+						p Sea $f$ una función. Diremos que $f$ es continua para $x=a$ si se cumple 
+							ul 
+								li Existe $f(a)$, o equivalentementre, $a\in Dom f.$
+								li Existe, es finito y es igual a $f(a)$ el límite puntual \[ \lim_{x\to a} f(x)=f(a). \]
+						p En caso de no cumplir lo anterior diremos que $f$ es discontinua en $a.$
+						p Diremos que $f$ es continua en un conjunto $A$ si es continua en todo $a\in A.$
+						h2 Tipos de discontinuidad 
+						ul 
+							li Una función $f$ tiene una discontinudad en $a$ evitable si \[ \lim_{x\to a^+}f(x)= \lim_{x \to a^-}f(x)\ (\text{finito.}) \]
+							li Una función $f$ tiene una discontinuidad esencial en $a$ si $f$ es discontinua en $a$ pero no evitable. 
+					
+					div
+						figure
+							#continuidadPunto 
+							script(src="continuidadPunto.js")
+							figcaption Representación de una función y el punto $(1,f(1)).$ Al mover los delizadores puede cambiarse la función de tal manera que resulte continua o discontinua.
+						
+						.comentario 
+							h3 Nota
+							ul 
+								li La existencia del límite puntual implica que los límites laterales existen y son iguales. \[ \lim_{x\to a^+}f(x)=\lim_{x\to a^-} f(x)=\lim_{x\to a} f(x)\]
+								li Intuitivamente la función $f$ es continua en $a$ el gráfico de la función pasa por punto $(a,f(a))$ y además los trazos a izquierda y derecha se dirigen a ese punto.
+
+
+			.diapo 
+				h1 Algebra de Funciones continuas 
+				.col-2
+					div
+						h2 Propiedad 
+						p Sean $f$ y $g$ funciones continuas $a.$ Entonces: 
+						ul 
+							li $f\pm g$ es continua en $a.$
+							li \( f\cdot g \) es continua en $a.$
+							li \( \frac{f}{g}  \) es continua en $a$ (siempre y cuando $g(a)\neq 0$).
+						p Así también si $f$ continua en $a$ y $g$ continua en $f(a)$ entonces $g\circ f$ es continua en $a.$
+
+						.comentario 
+							h3 Nota 
+							ul 
+								li Los funciones polinómicas son continuos en $\mathbb R.$ 
+								li Las funciones exponenciales son continuuas en $\mathbb R.$ 
+								li Las funciones logarítmicas son continuas en $(0,+\infty).$  
+								li Las funciones trigonométrica son continuas en $\mathbb R.$
+								li Una función presentará un gráfico sin cortes donde puede definirse un intervalo donde la función sea continua.
+
+					figure 
+						#ejemploContinuidadHomografica 
+						script(src="ejemploContinuidadHomografica.js")
+						figcaption  Gráfico de la función \[ f(x)=\frac{2x-1}{x-3}. \] La función $f(x)$ es continua en todo su dominio pero su gráfico se corta en $x=3.$
+
+			.diapo 
+				h1 Teorema de Bolzano
+				.col-2
+					div
+						h2 Teorema
+						p Sea una función $f$ tal que
+							ul 
+								li $f$ sea continua en un intervalo cerrado $[a,b].$
+								li $f(a)$ y $f(b)$ tiene distinto signo.
+						p Entonces \[ \exists c\in (a,b): f(c)=0 \]
+						h2 Corolario 
+						p Sea una $f$ una función continua en un intervalo y que no tenga ceros en él, entonces $f$ conserva su signo en dicho intervalo.
+						
+						.comentario 
+							h3 Nota
+							ul 
+								li En el teorema de Bolzano $c$ representa una raíz o cero de la función $f,$ lugar donde el gráfico pasa por el eje $x.$ Puede existir multiples raíces.
+								li El Colorario del teorema de Bolzano es muy útil para buscar los conjuntos de positividad y de negatividad de una función.

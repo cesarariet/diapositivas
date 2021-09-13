@@ -11,31 +11,45 @@ html(lang="es")
 	body 
 		.diapositivas 
 			.diapo 
-				h1 Límite (hacia $+\infty$)
+				h1 Límite ( $x\to+\infty$)
 				.col-2
 					.contenido 
 						h2 Definición
 						p Sea $f$ una función cuyo dominio no esta acotado superiormete.
-						ul
-							li Diremos que $$ \lim_{x\to+\infty} f(x) =l $$ cuando $\forall \epsilon\gt 0,\exists N>0 $ tal que $$  x>N \implies |f(x)-l|<\epsilon$$ 
-							li Diremos que $$ \lim_{x\to+\infty} f(x) =\infty $$ cuando $ \forall M\gt 0,\exists N>0$ tal que $$ x>N \implies |f(x)|>M$$ 
+						.col-igual-2
+							div
+								p Diremos que $$ \lim_{x\to+\infty} f(x) =l $$ cuando $\forall \epsilon\gt 0,\exists N>0 $ tal que $$  x>N \implies |f(x)-l|<\epsilon$$ 
+							div
+								p Diremos que $$ \lim_{x\to+\infty} f(x) =\infty $$ cuando $ \forall M\gt 0,\exists N>0$ tal que $$ x>N \implies |f(x)|>M$$ 
 
+						.comentario 
+							h3 Nota 
+							ul 
+								li La definición es equivalente al límite de sucesiones.
+								li No se pueden usar los criterios de D'Alembert (del cociente) y Cauchy (de la raiz n-ésima). Son exclusivos de sucesiones.
+								li Como el dominio no esta restringido a $\mathbb{N}$ también pueden hacerse $x\to -\infty$, $x\to a$ con $a\in\mathbb{R}$, etc.
 
-
-					.comentario 
-						h3 Nota 
-						ul 
-							li La definición es equivalente al límite de sucesiones.
-							li No se pueden usar los criterios de D'Alembert (del cociente) y Cauchy (de la raiz n-ésima). Son exclusivos de sucesiones.
-							li Como el dominio no esta restringido a $\mathbb{N}$ también pueden hacerse $x\to -\infty$, $x\to a$ con $a\in\mathbb{R}$, etc.
+					div 
+						figure 
+							#limiteAmasInf 
+							script(src="limiteAmasInf.js")
+							figcaption Representación gráfica de un límite $\lim_{x\to +\infty}f(x)=1$. La banda en rojo centrada en $y=1$ tiene un alto $2\epsilon.$ Para que exista el límite, para cualquier valor de $\epsilon$ debe existir un valor $N$ de tal manera que la función ingrese por el lateral izquierdo del recuadro rojo y no se salga del mismo.
 
 			.diapo 
-				h1 Límite (hacia $-\infty$)
-				.contenido 
-					h2 Definición
-					p Sea $f$ una función cuyo dominio no esta acotado inferiormente.
-					p Diremos que $$ \lim_{x\to-\infty} f(x) =l $$ cuando $\forall \epsilon\gt 0,\exists N>0 $ tal que \[ x<-N \implies |f(x)-l|<\epsilon \]
-					p Diremos que $$ \lim_{x\to-\infty} f(x) =\infty $$ cuando $ \forall M,\exists N>0$ tal quel \[ x&lt N \implies |f(x)|>M \]
+				h1 Límite ($x\to-\infty$)
+				.col-2
+					.contenido 
+						h2 Definición
+						p Sea $f$ una función cuyo dominio no esta acotado inferiormente.
+						.col-igual-2
+							div
+								p Diremos que $$ \lim_{x\to-\infty} f(x) =l $$ cuando $\forall \epsilon\gt 0,\exists N\lt 0 $ tal que \[ x\lt N \implies |f(x)-l|<\epsilon \]
+							div
+								p Diremos que $$ \lim_{x\to-\infty} f(x) =\infty $$ cuando $ \forall M,\exists N\lt0$ tal quel \[ x&lt N \implies |f(x)|>M \]
+					figure 
+						#limiteAMenosInf 
+						script(src="limiteAMenosInf.js")
+						figcaption Representación gráfica de un límite $\lim_{x\to -\infty}f(x)=-1$. La banda en rojo centrada en $y=-1$ tiene un alto $2\epsilon.$ Para que exista el límite, para cualquier valor de $\epsilon$ debe existir un valor $N$ de tal manera que la función ingrese por el lateral derecho del recuadro rojo y no se salga del mismo.
 
 
 			.diapo 
@@ -45,6 +59,10 @@ html(lang="es")
 						p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
 
 						p $$ \lim_{x\to a^-} f(x) =l $$ Cuando $ \forall \epsilon\gt 0,\exists \delta>0$ tal que $$ 0&lt a-x<\delta \Rightarrow |f(x)-l|<\epsilon $$
+
+						.comentario 
+							h3 Nota
+							p Notar que la condición $ 0\lt a-x$ implica $x\neq a$, indicando que al límite no le importa el valor $f(a)$ (que incluso podría no exitir).
 
 					figure 
 						#limiteLateralIzq 
@@ -58,6 +76,10 @@ html(lang="es")
 						p Sea $f$ una función y $a\in\mathbb R.$ Diremos que 
 
 						p $$ \lim_{x\to a^+} f(x) =l $$ Cuando $ \forall \epsilon\gt 0,\exists \delta>0 $ tal que \[ 0&lt x-a<\delta \Rightarrow |f(x)-l|<\epsilon \]
+
+						.comentario 
+							h3 Nota
+							p Notar que la condición $ 0\lt x-a$ implica $x\neq a$, indicando que al límite no le importa el valor $f(a)$ (que incluso podría no exitir).
 
 					figure 
 						#limiteLateralDer 
@@ -75,6 +97,7 @@ html(lang="es")
 						.comentario 
 							h3 Nota 
 							ul 
+								li Notar que la condición $ 0\lt |x-a|$ implica $x\neq a$, indicando que al límite no le importa el valor $f(a)$ (que incluso podría no exitir).
 								li El límite puntual existe si y solo si los límites laterales existen y valen lo mismo. \[ \lim_{x\to a}f(x)= \lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)\]
 								li Los límites con resultado $\infty$ se reemplaza $\forall \epsilon>0$ por $\forall M>0$ y también $|f(x)-l|<\epsilon$ por $|f(x)|>M$ 
 
@@ -89,23 +112,25 @@ html(lang="es")
 				h1 Propiedades de límites 
 				.contenido
 					p El tratamiento es similar a los límites de sucesiones (sin criterio de D'Alembert ni criterio de Cauchy):
-					ol 
-						li Vale el algebra de límites de sucesiones.
-						li Se mantienen las indeterminaciones.
-						li Vale las propiedad del Sandwich y $\text{"0"}\cdot\text{"acotado"}.$
-						li En sumas y restas se puede sacar factor común el término dominante (cuando este tiene a $\infty$).
-						li En divisiones de polinomios que tienen a $\text{"0"}/\text{"0"}$ se puede factorizar.
-						li Se puede multiplicar y dividir por el conjugado $(\sqrt{a}-\sqrt{b})\cdot(\sqrt{a}+\sqrt{b})=a-b$.
-						li En los límites $\text{"a"}^\text{"b"}$ vale: 
-							p \[ \text{"a"}^{"+\infty"} =\begin{cases} +\infty & \text{"a"}\gt 1 \\ 0 & 1\gt\text{"a"} \gt 0\end{cases}\]	
-							p \[ \text{"a"}^{"-\infty"} =\begin{cases} 0 & \text{"a"}\gt 1 \\ +\infty & 1\gt\text{"a"} \gt 0\end{cases}\]	
-							p si $a\to 1$ y $b\to \infty$ usar el límite especial: \[ \lim_{x\to +\infty}\left(1+\frac{1}{x}\right)^x=e \]
-							li En los casos $\sin(\text{"0"})/\text{"0"}$ se puede usar $$\lim_{x\to 0}\frac{\sin(x)}{x}=1.$$
+					ul.col-igual-2 
+						div
+							li Vale el algebra de límites de sucesiones.
+							li Se mantienen las indeterminaciones.
+							li Vale las propiedad del Sandwich y $\text{"0"}\cdot\text{"acotado"}.$
+							li En sumas y restas se puede sacar factor común el término dominante (cuando este tiene a $\infty$).
+							li En divisiones de polinomios que tienen a $\text{"0"}/\text{"0"}$ se puede factorizar.
+							li En la situación $"\infty"-"\infty"$ donde los términos tienen un crecimiento similar y al menos interviene una raíz cuadrada se puede multiplicar y dividir por el conjugado $$(\sqrt{a}-\sqrt{b})\cdot(\sqrt{a}+\sqrt{b})=a-b.$$
 							li Se puede hacer cambio de variable.
 							li Se puede usar la regla de L'Hospital.
-						.comentario
-							h3 Nota 
-							p La notación $\text{"a"}$ representa a una función cuyo límite es $a$. 
+						div
+							li En los límites $\text{"a"}^\text{"b"}$ vale: 
+								p \[ \text{"a"}^{"+\infty"} =\begin{cases} +\infty & \text{"a"}\gt 1 \\ 0 & 1\gt\text{"a"} \gt 0\end{cases}\]	
+								p \[ \text{"a"}^{"-\infty"} =\begin{cases} 0 & \text{"a"}\gt 1 \\ +\infty & 1\gt\text{"a"} \gt 0\end{cases}\]	
+								p si $\text{"a"}= 1$ y $\text{"b"}= \infty$ usar el límite especial: \[ \lim_{x\to +\infty}\left(1+\frac{1}{x}\right)^x=e \]
+							li En los casos $\sin(\text{"0"})/\text{"0"}$ se puede usar $$\lim_{x\to 0}\frac{\sin(x)}{x}=1.$$
+					.comentario
+						h3 Nota 
+						p La notación $\text{"a"}$ representa a una función cuyo límite es $a$. 
 
 
 			.diapo
@@ -116,15 +141,17 @@ html(lang="es")
 						p $$ \lim_{x\to 0} \frac{\sin(x)}{x}=1 $$
 						.comentario
 							h3 Nota
-							ul
-								li El límite presenta una indeterminación $\frac{sin(\text{"0"})}{\text{"0"}} $
-								li Si bien esta propiedad es fundamental para este tipo de indeterminación, podrá salvarse también con la regla de L'Hospital.
-								li Idea de la demostración de la propiedad:
+							.col-igual-2
+								div
+									p El límite presenta una indeterminación $\frac{sin(\text{"0"})}{\text{"0"}} $
+									p Si bien esta propiedad es fundamental para este tipo de indeterminación, podrá salvarse también con la regla de L'Hospital.
+									p Idea de la demostración de la propiedad:
 									p Sea $x$ el arco de circunferencia entre el $(1,0)$ y el punto \( (\cos(x),\sin(x)) \) (rojo) en la construcción geométrica. Las areas de las figuras son: 
 									ul 
 										li Área del "triángulo 1"\( =\tfrac{\cos(x)\sin(x)}2 \) 
 										li Área de la "sección circular" \( =\tfrac x 2 \) 
 										li Área del "triángulo 2" \(= \tfrac{\tan(x)} 2 \) 
+								div
 									p Debido a las desigualdades de las áreas del "triángulo 1", "sección circular" y "triángulo 2" tenemos 
 									p \[ \frac{\cos(x)\sin(x)}2 \leq \frac x 2 \leq \frac {\tan(x)} 2 \]
 									p Teniendo en cuenta que \( \tan(x)=\tfrac{\sin(x)}{\cos(x)} \) y diviendo a todo por \( \tfrac{\sin(x)}2 \) queda 
