@@ -11,33 +11,155 @@ html(lang="es")
 		script(src="/utils/geogebra.js") 
 	body 
 		.diapositivas 
-			.diapo
-				h1 Límite $x \to +\infty$ 
-				.contenido 
-					h2 Definición 
-					p Diremos que la función tiene límite $l$ cuando $x$ tiende a $+\infty$ cuando "Los valores de f(x) se acercan al valor $l$ a medida que $x$ toma valores cada vez más grandes y positivos". Lo notaresmo 
+			.diapo 
+				h1 Límite lateral 
+				.col-2 
+					.contenido 
+						p(style="text-align:center") ¿Qué sucede con los resultados de una función a medida que $x$ se aproxima a $x_0$?
+						br
+						h2 notación
+						ul
+							li Diremos que $f(x)$ tiene límite $l$ cuando $x$ tiende a $x_0$ por izquierda y lo notaremos \[ \lim_{x\to x_0^-} f(x) = l, \] cuando los valores de $f(x)$ se aproximan a $l$ a medida que $x$ se acerca por la izquierda a $x_0.$ 
+							li Diremos que $f(x)$ tiene límite $l$ cuando $x$ tiende a $x_0$ por derecha y lo notaremos \[ \lim_{x\to x_0^+} f(x) = l, \] cuando los valores de $f(x)$ se aproximan a $l$ a medida que $x$ se acerca por la derecha a $x_0.$ 
 
-					p \[ \lim_{x\to+\infty}f(x)=l \]
+						.comentario 
+							h3 Nota
+							ul 
+								li En los números reales $\mathbb R$ el acercamiento de $x$ hacia $x_0$ se puede hacer desde la izquierda $(x\lt x_0)$ o desde la derecha $(x\gt x_0).$
+								li Cuando los resultados de $f(x)$ crecen indefinidamente diremos que el límite es infinito $(\infty).$
 					
-					figure 
-						#limiteAlInf 
-						script(src="limiteAlInf.js") 
-						figcaption Representación visual de límite de una función cuando $\lim_{x\to+\infty}f(x)=3$
 
-					figure 
-						#limiteAlInf2 
-						script(src="limiteAlInf2.js") 
-						figcaption Representación visual de límite de una función cuando $\lim_{x\to+\infty}f(x)=+\infty$
+					div
+						figure 
+							#limiteLateralIzq 
+							script(src="limiteLateralIzq.js")
+							figcaption Límite lateral por izquieda. 
+						figure 
+							#limiteLateralDer 
+							script(src="limiteLateralDer.js")
+							figcaption Límite lateral por derecha.
 
 			.diapo 
-				h1 Propiedades de los límites $x\to + \infty$
-				.contenido 
-					p \[ \lim_{x\to+\infty}x^p=+\infty, \text{ (p>0)} \]	
-					p \[ \lim_{x\to+\infty}\frac{1}{x^p}=0, \text{ (p>0)} \]
+				h1 Límite puntual 
+				p(style="text-align:center") ¿Qué sucede con los resultados de una función a medida que $x$ se aproxima a $x_0$?
+				.col-2 
+					.contenido 
+						h2 Definición
+						p Diremos que $f(x)$ tiene límite $l$ cuando $x$ tiende a $x_0$ y lo notaremos \[ \lim_{x\to x_0} f(x) = l, \] cuando los valores de $f(x)$ se aproximan a $l$ a medida que $x$ se acerca a $x_0$ sin importar si es por derecha o izquierda. 
+						h2 Propiedades 
+						ul 
+							li El límite puntual existe si y solo si los límites laterales son iguales. Es ese caso el límite puntual vale lo mismo que los laterales.
+							li Cuando una función es continua en $x_0$ puede verse que \[ \lim_{x\to x_0}f(x)=f(x_0). \]
 
-				.comentario 
-					h3 Nota 
-					ul 
-						li El infinito no es un número por lo cual hay que tener cuidado operar con él.
-						li Existen indeterminaciones:  \[\frac{"\infty"}{"\infty"},"\infty"-"\infty", \frac{"0"}{"0"},\]\["0"\cdot "\infty", "1"^{"\infty"},"0"^"0","\infty"^"0" \]
-						li Para el infinito vale la regla de los signos.
+					figure 
+						#limitePuntual
+						script(src="limitePuntual.js")
+						figcaption Representación de los límites laterales por derecha (en azul) y por izquierda (en rojo). Notar como ambos límites tienen $-2,$ con lo cual podemos decir que \[ \lim_{x\to 2} f(x) = -2.\]
+
+			.diapo 
+				h1 Límites infinitos 
+				.col-2 
+					.contenido
+						h2 Propiedades
+						p \[ \lim_{x\to 0^-}\frac 1 x = -\infty \]
+						p \[ \lim_{x\to 0^+}\frac 1 x = +\infty \]
+						p \[ \lim_{x\to 0}\frac{1}{x} = \infty \]
+						p En general puede verse que \[ \frac k{\text{"0"}}=\infty\ (k\neq 0)\]
+						.comentario 
+							h3 Nota
+							ul
+								li La notación de \( \text{"0"} \) indica una función cuyo límite es $0.$
+								li Notar que en ocaciones se indica \( +\infty \) o \( -\infty \) (con signo explícito) y a veces \( \infty \) (sin signo, a secas). El infinito a secas indica que el límite crece en módulo (sin importar si los valores son positivos o negativos).
+
+					figure 
+						#limite1SobreX 
+						script(src="limite1SobreX.js")
+						figcaption Gráfico de la función $f(x)= \frac 1 x$ y sus límites laterales (representado la tendencia por izquierda con el punto color azul y la tendencia por derecha con punto color rojo).
+
+
+			.diapo 
+				h1 Límite indeterminado $\frac{"0"}{"0"}$
+				.col-igual-2 
+					.contenido 
+						p Cuando se presenta límite de una división donde el numerador y el denominador tienden a cero el resutaldo del límite es indeterminado.
+						h2 Ejemplo 1: 
+						p \[ \lim_{x\to 0}\frac{\overbrace{x^2-6x}^{\to 0}}{\underbrace{3x^2+2x}_{\to 0}} \]
+						p En esta indeterminación se puede factorizar el numerador y el denominador (sacando $x$ factor común):
+						p \[ \begin{align}  \lim_{x\to 0}\frac{x^2-6x}{3x^2+2x} & = \lim_{x\to 0}\frac{x(x-6)}{x(3x+2)} \\ & = \lim_{ x\to 0}\frac{\cancel x(x-6)}{\cancel x(3x+2)} \\ &=\lim_{x\to 0}\frac{\overbrace{(x-6)}^{\to -6}}{\underbrace{(3x+2)}_{\to 2}}=\frac{-6}{2}\end{align} \]
+					.contenido 
+						h2 Ejemplo 2
+						p \[ \lim_{x\to 3} \frac{\overbrace{x^2-2x-3}^{\to 0}}{\underbrace{x^2-3x}_{\to 0}} \]
+						p En esta situación puede factorizarse el polinomio del numerador usando la regla de Ruffini para $x=3$ (ya que $3$ es raíz de dicho polinomio) y el denominador puede factorizarse sencillamente sacando factor común $x$.
+						p \[ \begin{align}  \lim_{x\to 3} \frac{x^2-2x-3}{x^2-3x} &= \lim_{x\to 3}\frac{(x+1)(x-3)}{x(x-3)} \\ &=\lim_{x\to 3}\frac{(x+1)\cancel{(x-3)}}{x\cancel{(x-3)}} \\ &= \lim_{x\to 3}\frac{\overbrace{(x+1)}^{\to 4}}{\underbrace{x}_{\to 3}}= \frac 4 3\end{align} \]
+			
+
+			.diapo 
+				h1 Asíntotas Verticales (AV)
+				.col-2 
+					.contenido 
+						h2 definición
+						p Diremos que una función $f(x)$ tiene una asíntota vertical (AV) de ecuación $x=a$ si el límite (sea puntual o cualquier lateral) es infinito.
+						p \[ \lim_{x\to a} f(x) = \infty. \]
+						.comentario 
+							h3 Nota 
+							ul 
+								li Las asíntotas verticales son rectas, para definirlas es debe darse en forma de ecuación $x=a$, núnca como un número aislado.
+								li Los valores $a$ candidatos para buscar asíntota vertical son aquellos donde la función resulte discontinua o bien los valores que no pertenecen al dominio de la función.
+								li Solo con que uno de los límites laterales de infinito alcanza para garantizar la existencia de una asíntota vertical. 
+					figure 
+						#asintotasVerticales
+						script(src="asintotasVerticales.js")
+						figcaption Representación de una función y sus dos asíntotas verticales en $x=-3$ y en $x=1.$
+
+			.diapo 
+				h1 Límite $x\to \pm \infty$
+				.col-2 
+					.contenido
+						h2 Definición
+						ul
+							li
+								p Diremos que $f(x)$ tiene límite $l$ cuando $x$ tiende a $+\infty$ y lo notaremos \[ \lim_{x\to +\infty} f(x) = l, \]
+								p si los valores de $f(x)$ se aproximan a $l$ cuando $x$ se hace un número cada vez más grande y positivo.
+							li
+								p Diremos que $f(x)$ tiene límite $l$ cuando $x$ tiende a $-\infty$ y lo notaremos \[ \lim_{x\to -\infty} f(x) = l, \]
+								p si los valores de $f(x)$ se aproximan a $l$ cuando $x$ se hace un número cada vez más grande y negativo.
+
+					figure 
+						#limiteAlInf
+						script(src="limiteAlInf.js")
+						figcaption Gráfico de una función $f(x)$ donde se puede ver las tendencias $x\to +\infty$ (punto de color rojo) y $x\to -\infty$ (punto de color azul). En este ejemplo: \[ \lim_{x\to +\infty}f(x) = 2 \] \[  \lim_{x\to -\infty}f(x) = +\infty \]
+			
+
+			//- .diapo 
+			//- 	h1 Límite indeterminado con $\infty$
+			//- 	.col-igual-2 
+			//- 		.contenido 
+			//- 			p Los límites del tipo \( \infty - \infty \) y los del tipo \( \frac{"\infty"}{"\infty"} \) son  indeterminados. 
+			//- 			h2 Ejemplo 1
+			//- 			p \[ \lim_{x\to+\infty}2x^3-4x^2 \]
+
+
+
+			.diapo 
+				h1 Asíntotas Horizontales (AH)
+				.col-2 
+					.contenido 
+						h2 definción
+						p Diremos que una función $f(x)$ tiene una asíntota horizontal (AH) de ecuación $y=b$ si 
+						p \[ \lim_{x\to \pm\infty}f(x) = b\ (\text{finito}) \]
+						.comentario 
+							h3 Nota
+							ul 
+								li La asíntota horizontal es una recta por lo cual debe definirse con una ecuación de tipo $y=b.$
+								li Si el límite es finito solo para $x\to +\infty$ diremos que hay AH por derecha.
+								li Si el límite es finito solo para $x\to -\infty$ diremos que hay AH por izquierda.
+
+					figure 
+						#asintotasHorizontales 
+						script(src="asintotasHorizontales.js")
+						figcaption Gráfico de una función y sus asíntotas horizontales. Hay una asíntota horizontal por izquierda de ecuación $y=-2$ y una asíntota horizontal por derecha de ecuación $y=4.$
+
+
+
+
+
