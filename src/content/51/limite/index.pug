@@ -27,6 +27,8 @@ html(lang="es")
 							ul 
 								li En los números reales $\mathbb R$ el acercamiento de $x$ hacia $x_0$ se puede hacer desde la izquierda $(x\lt x_0)$ o desde la derecha $(x\gt x_0).$
 								li Cuando los resultados de $f(x)$ crecen indefinidamente diremos que el límite es infinito $(\infty).$
+								li Notar en los gráficos de ejemplo que $f(2)=2$ (punto verde). En el concepto de límite no usa el valor de la función en el punto donde se hace el límite (a menos que $f(x)$ sea continua, donde se da la igualdad).
+
 					
 
 					div
@@ -57,19 +59,20 @@ html(lang="es")
 						figcaption Representación de los límites laterales por derecha (en azul) y por izquierda (en rojo). Notar como ambos límites tienen $-2,$ con lo cual podemos decir que \[ \lim_{x\to 2} f(x) = -2.\]
 
 			.diapo 
-				h1 Límites infinitos 
+				h1 Límites particulares 
 				.col-2 
 					.contenido
 						h2 Propiedades
 						p \[ \lim_{x\to 0^-}\frac 1 x = -\infty \]
 						p \[ \lim_{x\to 0^+}\frac 1 x = +\infty \]
 						p \[ \lim_{x\to 0}\frac{1}{x} = \infty \]
-						p En general puede verse que \[ \frac k{\text{"0"}}=\infty\ (k\neq 0)\]
 						.comentario 
 							h3 Nota
 							ul
-								li La notación de \( \text{"0"} \) indica una función cuyo límite es $0.$
+								li La notación de comillas como \( \text{"0"} \) o \( \text{"}\infty\text{"} \) indica una función cuyo límite es $0$ o $\infty$, respectivamente.
 								li Notar que en ocaciones se indica \( +\infty \) o \( -\infty \) (con signo explícito) y a veces \( \infty \) (sin signo, a secas). El infinito a secas indica que el límite crece en módulo (sin importar si los valores son positivos o negativos).
+								li  En general puede verse que (para $k\neq 0$) \[ \frac{\text{"k"}}{\text{"0"}}=\infty, \ \text{"k"}\cdot \text{"}\infty\text{"}=\infty, \] \[ \text{"}\infty\text{"} \pm\text{"k"} = \infty. \]
+								li Cuando tenemos un límite donde aparece $ \text{"0"} $ o $ \text{"}\infty\text{"} $ hay que tener cuidado con las indeterminaciones: \[ \frac{"0"}{"0"}, \ \frac{\text{"}\infty\text{"} }{\text{"}\infty\text{"} }, \ \text{"0"}\cdot \text{"}\infty\text{"}, \  \text{"}\infty\text{"} -\text{"}\infty\text{"}.   \]
 
 					figure 
 						#limite1SobreX 
@@ -130,13 +133,33 @@ html(lang="es")
 						figcaption Gráfico de una función $f(x)$ donde se puede ver las tendencias $x\to +\infty$ (punto de color rojo) y $x\to -\infty$ (punto de color azul). En este ejemplo: \[ \lim_{x\to +\infty}f(x) = 2 \] \[  \lim_{x\to -\infty}f(x) = +\infty \]
 			
 
+			.diapo 
+				h1 Límites particulares 
+				.col-2 
+					.contenido 
+						h2 Propiedades 
+						p \[ \lim_{x\to+\infty}x^n =\infty \ (\text{para } n\gt 0)\]
+						p \[ \lim_{x\to-\infty}x^n = \begin{cases} +\infty & n\text{ par,} \\ -\infty & n\text{ impar.} \end{cases} \]
+						.comentario
+							h3 Nota
+							ul 
+								li  En general puede verse que (para $k\neq 0$) \[ \frac {\text{"k"}}{\text{"0"}}=\infty, \ \text{"k"}\cdot \text{"}\infty\text{"}=\infty, \] \[ \text{"}\infty\text{"} \pm\text{"k"} = \infty.\]
+								li Cuando tenemos un límite donde aparece $ \text{"0"} $ o $ \text{"}\infty\text{"} $ hay que tener cuidado con las indeterminaciones: \[ \frac{"0"}{"0"}, \ \frac{\text{"}\infty\text{"} }{\text{"}\infty\text{"} }, \ \text{"0"}\cdot \text{"}\infty\text{"}, \  \text{"}\infty\text{"} -\text{"}\infty\text{"}.   \]
+					
+					figure 
+						#limiteXALaN 
+						script(src="limiteXALaN.js")
+						figcaption Gráfico de la función $f(x)=x^n$ (con el deslizador se puede seleccionar la potencia $n$). El límite para $x\to-\infty$ queda representado por el movimiento del punto azul y el límite para $x\to +\infty$ queda representado por el punto rojo.
+
 			//- .diapo 
 			//- 	h1 Límite indeterminado con $\infty$
 			//- 	.col-igual-2 
 			//- 		.contenido 
-			//- 			p Los límites del tipo \( \infty - \infty \) y los del tipo \( \frac{"\infty"}{"\infty"} \) son  indeterminados. 
+			//- 			p Los límites del tipo \( "\infty" - "\infty" \) y los del tipo \( \frac{"\infty"}{"\infty"} \) son  indeterminados. 
 			//- 			h2 Ejemplo 1
-			//- 			p \[ \lim_{x\to+\infty}2x^3-4x^2 \]
+			//- 			p \[ \lim_{x\to-\infty}\overbrace{2x^3}^{\to\infty}-\overbrace{10x^2}^{\to\infty} \]
+			//- 			p Para salvar la indeterminación \( "\infty" - "\infty" \) se puede sacar factor común la mayor potencia
+			//- 			p \[\begin{align} \lim_{x\to-\infty}2x^3-10x^2 & = \lim_{x\to-\infty}x^3(2-10\frac{1}{}   \end{align} \]
 
 
 
