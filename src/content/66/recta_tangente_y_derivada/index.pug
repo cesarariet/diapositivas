@@ -185,6 +185,37 @@ html(lang="es")
 								td $\cos(x)$
 								td $-\sin(x)$
 								
+			.diapo 
+				h1 Otras derivadas 
+				.col-igual-2
+					.contenido 
+						h2 Derivada logarítmica
+						p Sea $f(x)=g(x)^{h(x)}$. Entonces \[ {f'(x)}= f(x) \big[h'(x)\cdot \ln(g(x)+h(x)\frac{g'(x)}{g(x)}\big] \]
+
+						.comentario 
+							h3 Demostración
+							div
+								p Usando la regla de la cadena puede verse que $ (\ln(f(x)))'=\frac{f'(x)}{f(x)}$
+								p Esta propiedad es muy útil para derivar una función del tipo $f(x)=g(x)^{h(x)}$. Si aplicamos el $\ln$ de ambos lados tenemos \[ \ln(f(x))=\ln(g(x)^{h(x)})=h(x)\cdot \ln(g(x)) \]
+								p Derivando cada miembro y usando propiedades queda \[ \frac{f'(x)}{f(x)}= h'(x)\cdot \ln(g(x)+h(x)\frac{g'(x)}{g(x)} \]
+								p Y despejando obtenemos la derivada buscada \[ {f'(x)}= f(x) \big[h'(x)\cdot \ln(g(x)+h(x)\frac{g'(x)}{g(x)}\big] \]
+					.contenido
+						h2 Derivada de función inversa	
+						p Sea $f(x)$ una función inversible tal que $f(a)=b$. Si ambos funciones son derivables se tiene \[ (f^{-1})'(b)=\frac{1}{f'(a)} \]
+						.comentario 
+							h3 Demostración
+							div 
+								p Al componer una función y su invesa obtenemos $f^{-1}\circ f (x) = x.$ Al derivar ambos miembros de la igualdad en $x=a$ obtenemos 
+								p \[ (f^{-1})'(f(a))f'(a)=1, \]
+								p donde se uso la regla de la cadena en el miembro izquierdo de la igualdad. Pasando dividiendo $f'(a)$ y reemplazando \( b=f(a) \) obtenemos
+								p \[ (f^{-1})'(b)=\frac{1}{f'(a)},  \]
+								p quedando la expresión del enunciado. 
+								p Una aplicación de la derivada de la función inversa es usarla para hallar las derivadas de las funciones trigonométricas inversas. Sus resultados son: 
+								p(style="text-align:center") \[ (\arctan(x))'=\frac 1 {1+x^2} \]
+								.col-igual-2.
+									\[ (\arcsin(x))'=\frac 1 {\sqrt{1-x^2}} \]
+									\[ (\arccos(x))'=\frac {-1} {\sqrt{1-x^2}} \]
+
 
 
 			.diapo 
