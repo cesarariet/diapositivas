@@ -190,15 +190,15 @@ html(lang="es")
 				.col-igual-2
 					.contenido 
 						h2 Derivada logarítmica
-						p Sea $f(x)=g(x)^{h(x)}$. Entonces \[ {f'(x)}= f(x) \big[h'(x)\cdot \ln(g(x)+h(x)\frac{g'(x)}{g(x)}\big] \]
+						p Sea $f(x)=g(x)^{h(x)}$. Entonces \[ {f'(x)}= f(x) \left[{h'(x)\cdot \ln(g(x))+h(x)\frac{g'(x)}{g(x)}}\right] \]
 
 						.comentario 
 							h3 Demostración
 							div
-								p Usando la regla de la cadena puede verse que $ (\ln(f(x)))'=\frac{f'(x)}{f(x)}$
+								p Usando la regla de la cadena puede verse que $ \Big(\ln\big(f(x)\big)\Big)'=\frac{f'(x)}{f(x)}$
 								p Esta propiedad es muy útil para derivar una función del tipo $f(x)=g(x)^{h(x)}$. Si aplicamos el $\ln$ de ambos lados tenemos \[ \ln(f(x))=\ln(g(x)^{h(x)})=h(x)\cdot \ln(g(x)) \]
-								p Derivando cada miembro y usando propiedades queda \[ \frac{f'(x)}{f(x)}= h'(x)\cdot \ln(g(x)+h(x)\frac{g'(x)}{g(x)} \]
-								p Y despejando obtenemos la derivada buscada \[ {f'(x)}= f(x) \big[h'(x)\cdot \ln(g(x)+h(x)\frac{g'(x)}{g(x)}\big] \]
+								p Derivando cada miembro y usando propiedades queda \[ \frac{f'(x)}{f(x)}= h'(x)\cdot \ln(g(x))+h(x)\frac{g'(x)}{g(x)} \]
+								p Y despejando obtenemos la derivada buscada \[ {f'(x)}= f(x) \left[{h'(x)\cdot \ln(g(x))+h(x)\frac{g'(x)}{g(x)}}\right] \]
 					.contenido
 						h2 Derivada de función inversa	
 						p Sea $f(x)$ una función inversible tal que $f(a)=b$. Si ambos funciones son derivables se tiene \[ (f^{-1})'(b)=\frac{1}{f'(a)} \]
