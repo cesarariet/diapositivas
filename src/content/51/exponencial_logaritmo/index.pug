@@ -1,0 +1,135 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Función exponencial y logarítimica
+		meta(name="description", content="Definición, gráfico y propiedades de las funciones exponenciales y logarítmicas")
+		meta(name="keywords", content="función, exponencial, logarítmica, matemática, análisis matemático")
+		link(rel="stylesheet", href="/style/diapositivas.css")
+		script(src="/utils/geogebra.js")
+	body 
+		.diapositivas
+			.diapo
+				h1 Función exponencial
+				.col-2 
+					.contenido
+						p Definimos la función exponencial de base $a$ como
+						p $$f(x)=a^x\ \ (a\gt 0, a\neq1)$$
+						h2 Propiedades 
+						ul 
+							li El dominio es \( Dom f = \mathbb R \) y la imagen es \( Im f = (0,+\infty) \)
+							li Para \( a\gt 1 \) el gráfico de la función es creciente en \( \mathbb R \) y además
+								p \[ \lim_{x\to+\infty}a^x=+\infty \]
+								p \[ \lim_{x\to-\infty}a^x=0 \]
+								p Hay asíntota horizontal de ecuación $y=0$ hacia la izquierda.
+							li Para \( 0\lt a\lt 1 \) el gráfico de la función es decreciente en \( \mathbb R \) y además
+								p \[ \lim_{x\to+\infty}a^x = 0\]
+								p \[ \lim_{x\to-\infty}a^x= +\infty \]
+								p Hay asíntota horizontal de ecuación $y=0$ hacia la derecha.
+					div
+						figure 
+							#funcionExponencial 
+							script(src="funcionExponencial.js")
+							figcaption Gráfico de la función exponencial. Con el deslizador puede se puede cambiar su base. 
+						
+						.comentario 
+							h3 Nota
+							ul 
+								li La función expoencial aparece en muchos procesos naturales. El crecimiento en el tiempo del número de bacterias en un cultivo puede modelarse con una función exponencial.
+								li Las propiedades de las potencias pueden usarse en las funciones exponenciales.
+								li La condición $a\gt0$ es necesaria para evitar problemas como $(-2)^{\frac{1}{2}}=\sqrt{-2}.$
+								li Con $a=1$ se obtiene una función constante, por eso excluimos ese valor como base.
+			
+			.diapo 
+				h1 Logaritmo como inversa de una exponencial
+				.col-igual-2
+					.contenido
+						p La funciones exponenciales son inyectivas (no repite resultados) y por lo tanto pueden invertirse. 
+						h2 Definición
+						p Llamaremos logarítmo de base $a$ y lo notaremos $\log_a(x)$ a la función inversa de la exponencial $a^x.$
+					.comentario 
+						h3 Nota
+						div
+							p Debido a que la función exponencial y logarítimica son inversas entre si, tenemos la siguiente relación (útil para despejes) \[ a^x = y \iff x= \log_a(y) \]
+							p A continuación se presentan los gráficos de estás funciones, donde puede verse la relación de los gráficos (al intercambiar los ejes se convierte una función en la otra).
+				.col-igual-2 
+					figure 
+						#exponencialAInvertir 
+						script(src="exponencialAInvertir.js")
+						figcaption Gráfico de la función exponencial $a^x.$ Al <button onClick="invertirGrafico('exponencialAInvertir')" type="button">intercambiar</button> los ejes de coordenadas puede verse como se obtiene el gráfico de $\log_a(x).$
+					
+					figure 
+						#inversaDeExponencial 
+						figcaption Gráfico de la función logarítimica $\log_a(x).$ Al <button onClick="invertirGrafico('inversaDeExponencial')" type="button">intercambiar</button> los ejes de coordenadas puede verse como se obtiene el gráfico de  $a^x.$
+							
+					style.
+						.graficoInvertido {
+							animation-name: invertir;
+							animation-duration: 2s;
+							animation-fill-mode: forwards;
+						}
+						@keyframes invertir{
+							50%{
+								transform: rotateZ(-90deg)
+							}
+							100% {transform: rotateZ(-90deg) rotateX(180deg)}
+						}
+
+			.diapo 
+				h1 Función logarítimica
+				.col-2
+					.contenido
+						p Llamaremos función logarítimica de base $a$ como la inversa de $a^x$ y notaremos \[ f(x)=\log_a(x)\ \ (a\gt0, a\neq 1) \]
+						h2 Propiedades 
+						ul
+							li El dominio es \( Dom f =(0,+\infty) \) y la imagen \( Im f = \mathbb R. \)
+							li Para $a\gt1$ el gráfico de la función es creciente en $(0,+\infty)$ y además
+								p \[ \lim_{x\to +\infty}\log_a(x)=+\infty \]
+								p \[ \lim_{x\to 0^+} \log_a(x) = -\infty \]
+								p Hay asíntota vertical de ecuación $x=0.$
+							li Para $0\lt x \lt 1$ el gráfico de la función es decreciente en $(0,+\infty)$ y además
+								p \[ \lim_{x\to+\infty}\log_a(x)=-\infty\]
+								p \[ \lim_{x\to 0^+} \log_a(x)= +\infty\]
+								p Hay asíntota vertical de ecuación $x=0.$
+					div 
+						figure 
+							#funcionLogaritmica 
+							script(src="funcionLogaritmica.js")
+							figcaption Gráfico de la función logarítimica. Con el deslizador puede se puede cambiar su base.
+
+			.diapo 
+				h1 Propiedades de las funciones exponenciales y logarítimicas
+				p \[ a^x=y \iff x=\log_a(y) \]
+				.col-igual-2
+					div.
+						\[ a^0 = 1 \]
+						\[ a^x\cdot a^y=a^{x+y} \]
+						\[\frac{a^x}{a^y}= a^{x-y} \]
+						\[ (a^x)^y = a^{x\cdot y}\]
+					div.
+						\[ \log_a(1)=0 \]
+						\[ \log_a(x\cdot y)=\log_a(x) +\log_a(y) \]
+						\[ \log_a\left(\frac{x}{y}\right)= \log_a(x) - \log_a(y) \]
+						\[ \log_a(x^y)=y\cdot \log_a(x) \]
+				.col-igual-2
+					div
+						h2 Bases importantes y comunes 
+						ul 
+							li Base natural $e=2,718\dots$ donde notaremos $\log_e(x)=\ln(x).$
+							li Base $10$ donde notaremos $\log_{10}(x)=\log(x).$
+						.comentario 
+							h3 Nota
+							ul 
+								li En la calculadora se encuentran la tecla \( \ln \) correspondiente al logaritmo de base $e=2,718\dots$ y la tecla \( \log \) correspondiente al logaritmo de base $10.$
+								li Se suele llamar logartimo natural (y a veces como neperiano) al logartimo de base $e=2,718\dots$ y se suele indicar $e^x$ como "la función exponencial" (a secas).
+								p \[ \ln(x)=y \iff x=e^y \]
+					div 
+						h2 Fórmula de cambio de base
+						p \[ \log_a(x)=\frac{\log_b(x)}{\log_b(a)} \]
+						.comentario 
+							h3 Nota
+							div: p En particular, puede calcularse cualquier logaritmo en la calculadora usando \[ \log_a(x)=\frac{\ln(x)}{\ln(a)} \]
+
+				
