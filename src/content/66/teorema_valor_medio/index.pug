@@ -4,16 +4,13 @@ html(lang="es")
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title Estudio de Funciones
-		meta(name="description", content="Estudio y gráficos de funciones usando las propiedades de las derivadas de la función.")
-		meta(name="keywords", content="estudio de funciones, gráfico, crecimiento, decrecimiento, derivada, fermat, lagrange, teorema de valor medio.")
+		title Teoremas de valores medios y sus consecuencias
+		meta(name="description", content="Teoremas de valores medios y sus consecuencias. Regla de L'Hospital. Estudio y gráficos de funciones usando las propiedades de las derivadas de la función.")
+		meta(name="keywords", content="estudio de funciones, gráfico, crecimiento, decrecimiento, derivada, fermat, lagrange, rolle, cauchy, L'Hospital, teorema de valor medio")
 		link(rel="stylesheet", href="/style/diapositivas.css")
 		script(src="/utils/geogebra.js") 
 	body 
 		.diapositivas 
-			.diapo 
-				h1 Estudio de funciones 
-				p Aplicación de la derivada para reconocer los intervalos de monotonía y localizar extremos de una función.
 				
 			.diapo 
 				h1 Puntos Críticos 
@@ -40,8 +37,7 @@ html(lang="es")
 						figure 
 							#fermat 
 							script(src="fermat.js") 
-							figcaption Como puede observarse en $x=-1$ la función alcanza un mínimo local y en $x=1$ la función alcanza un máximo local. La recta tangente en ambos lugares es horizontal (derivada nula).
-
+							figcaption Función con extremos locales en $x=1$, $x=2$, $x=4$, $x=6$ y $x=8.$ Solamente los extremos en $x=2$ y $x=6$ cumplen con las condiciones del teorema de Fermat.
 
 			.diapo 
 				h1 Teoremas de Valor Medio
@@ -71,6 +67,10 @@ html(lang="es")
 				.col-2 
 					div 
 						h3 Teorema
+						p Sea \( f \) una función tal que \( f'(x)=0,\ \forall x\in(a,b). \) Entonces \[ f(x)=C,\ \forall x\in(a,b).\]
+						h3 Teorema 
+						p Sean \( f \) y \( g \) dos funciones tales que \( f'(x)=g'(x),\ \forall x\in(a,b).\) Entonces \[ f(x)=g(x)+C, \ \forall x\in(a,b).\]
+						h3 Teorema
 						p Sea $f$ una funcion derivable en $(a,b)$.
 						p(style="text-align:center")
 							span \( f \) creciente en \( (a,b) \)
@@ -83,6 +83,7 @@ html(lang="es")
 						.comentario 
 							h3 Nota 
 							ul 
+								li Los tres teoremas pueden interpretarse físicamente tomando a cada función como la posición en el tiempo y la derivada como la velocidad instantanea.
 								li Con el corolario del Teorema de Bolzado sobre $f'(x)$ es posible hallar los intervalos de monotonía de la función $f.$ 
 								li Los intervalos de monotonía son útiles a la hora de estudiar o graficar una función.
 					figure 
@@ -117,3 +118,21 @@ html(lang="es")
 								li Hallar la cantidad de soluciones de la ecuación \( f(x)=C \) donde \( C \) es una constante.
 
 
+			.diapo 
+				h1 Clasificación de extremos
+				.col-igual-2 
+					.contenido 
+						h2 Definición de extremos locales 
+						p Diremos que una función \( f \) tiene un mínimo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\geq f(x_0)\] 
+						p Diremos que una función \( f \) tiene un máximo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\leq f(x_0)\] 
+					.contenido 
+						h2 Definición de extremos absolutos 
+						p Diremos que una función \( f \) tiene un mínimo absoluto en \( x_0\in Dom f \) si \[ \forall x\in Dom f,\ f(x)\geq f(x_0)\] 
+						p Diremos que una función \( f \) tiene un máximo absoluto en \( x_0\in Dom f \) si \[ \forall x\in Dom f,\ f(x)\leq f(x_0)\] 
+				.comentario 
+					h3 Nota 
+					ul 
+						li Todo extremo absoluto también es, además, un extremos local o relativo. 
+						li Los extremos locales y absolutos se encuentran en los puntos críticos de una función (aunque no todo punto crítico es un extremo).
+						li Para hallar y clasificar los puntos críticos de una función es útil hacer un gráfico.
+						li Las funciones continuas en intervalos cerrados $[a,b]$ siempre tienen máximo y mínimo absoluto (Teorema de Weierstrass).
