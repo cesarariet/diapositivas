@@ -11,6 +11,24 @@ html(lang="es")
 		script(src="/utils/geogebra.js") 
 	body 
 		.diapositivas 
+
+			.diapo 
+				h1 Clasificación de extremos
+				.col-igual-2 
+					.contenido 
+						h2 Definición de extremos locales 
+						p Diremos que una función \( f \) tiene un mínimo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\geq f(x_0)\] 
+						p Diremos que una función \( f \) tiene un máximo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\leq f(x_0)\] 
+					.contenido 
+						h2 Definición de extremos absolutos 
+						p Diremos que una función \( f \) tiene un mínimo absoluto en \( x_0\in Dom f \) si \[ \forall x\in Dom f,\ f(x)\geq f(x_0)\] 
+						p Diremos que una función \( f \) tiene un máximo absoluto en \( x_0\in Dom f \) si \[ \forall x\in Dom f,\ f(x)\leq f(x_0)\] 
+				.comentario 
+					h3 Nota 
+					ul 
+						li Todo extremo absoluto también es, además, un extremos local o relativo. 
+						li Para hallar y clasificar los extremos de una función es útil hacer un gráfico.
+						li Las funciones continuas en intervalos cerrados $[a,b]$ siempre tienen máximo y mínimo absoluto (Teorema de Weierstrass).
 				
 			.diapo 
 				h1 Puntos Críticos 
@@ -116,23 +134,3 @@ html(lang="es")
 								li Estimar la imagen de la función \( f(x). \)
 								li Hallar los extremos de la función \( f(x) \) y clasificarlos.
 								li Hallar la cantidad de soluciones de la ecuación \( f(x)=C \) donde \( C \) es una constante.
-
-
-			.diapo 
-				h1 Clasificación de extremos
-				.col-igual-2 
-					.contenido 
-						h2 Definición de extremos locales 
-						p Diremos que una función \( f \) tiene un mínimo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\geq f(x_0)\] 
-						p Diremos que una función \( f \) tiene un máximo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\leq f(x_0)\] 
-					.contenido 
-						h2 Definición de extremos absolutos 
-						p Diremos que una función \( f \) tiene un mínimo absoluto en \( x_0\in Dom f \) si \[ \forall x\in Dom f,\ f(x)\geq f(x_0)\] 
-						p Diremos que una función \( f \) tiene un máximo absoluto en \( x_0\in Dom f \) si \[ \forall x\in Dom f,\ f(x)\leq f(x_0)\] 
-				.comentario 
-					h3 Nota 
-					ul 
-						li Todo extremo absoluto también es, además, un extremos local o relativo. 
-						li Los extremos locales y absolutos se encuentran en los puntos críticos de una función (aunque no todo punto crítico es un extremo).
-						li Para hallar y clasificar los puntos críticos de una función es útil hacer un gráfico.
-						li Las funciones continuas en intervalos cerrados $[a,b]$ siempre tienen máximo y mínimo absoluto (Teorema de Weierstrass).
