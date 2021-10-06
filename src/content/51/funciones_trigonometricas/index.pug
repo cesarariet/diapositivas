@@ -88,11 +88,32 @@ html(lang="es")
 						p Usando la identidad trigonométrica de suma de ángulos $$ \cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$$
 						p puede mostrarse $$\cos(\pi-x)=-\cos(x)$$ $$\cos(\pi+x)=-\cos(x)$$ $$\cos(2\pi-x)=\cos(x)$$ 
 						p Estás propiedades son útiles para la resolución de problemas del tipo $\cos(x)=a$
+
 					figure
 						#cosenoPropiedades
 						script(src="cosenoPropiedades.js")
 						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedades listadas. Notar que cada punto pertenece a un cuadrante distinto del plano cartesiano. Los puntos en el II y III cuadrante son valores negativos del coseno.
 						
+			
+			.diapo 
+				h1 Ecuación $\cos(x)=a$ en la primera vuelta
+				p Para los valores de $x\in [0,2\pi)$ se presentan las siguientes situaciones
+				.col-igual-2 
+					div
+						h3 $ 0\leq a \lt 1 $ 
+						p Existen dos soluciones. La solución en el primer cuadrante puede buscarse en la tabla de valores (o usando la calculadora). Entonces, \[ x_1= \text{de tabla o calculadora.} \] \[ x_2=2\pi-x_1 \]
+					div
+						h3 \( -1\lt a \lt 0 \)
+						p Existen dos soluciones. Sea $x$ la solución del primer cuadrante de $\cos(x)=|a|$ (puede encontrarse en la tabla de valores o con calculadora).  Entonces, \[ x_1= \pi-x \] \[ x_2=\pi+x \]
+					div
+						h3 $a=\pm 1$
+						p Existe una solución que puede obtenerse de la tabla.
+					.comentario 
+						h3 Nota
+						ul 
+							li Las soluciones propuestas pueden demostrarse con las propiedades del coseno.
+							li En el caso $a\gt 1$ o en el caso $a\lt 1$ la ecucación no tiene solución.
+							li Las soluciones anteriores corresponden a los $ x\in \mathbb [0,2\pi).$ En caso de buscar soluciones para \( x\in \mathbb R \) a las soluciones propuestas debe sumarse $2\pi k$ con $k\in \mathbb Z$ (vueltas enteras).
 
 			.diapo
 				h1 Propiedades del seno
@@ -106,11 +127,31 @@ html(lang="es")
 						script(src="senoPropiedades.js")
 						figcaption Visualización de algunos puntos simétricos de la circunferencia trigonométrica desde donde pueden deducirse las propiedades listadas. Notar que cada punto pertenece a un cuadrante distinto del plano cartesiano. Los puntos en el III y IV cuadrante son valores negativos de la función seno.
 
+	
+			.diapo 
+				h1 Ecuación $\sin(x)=a$ en la primera vuelta
+				p Para los valores de $x\in [0,2\pi)$ se presentan las siguientes situaciones
+				.col-igual-2 
+					div
+						h3 $ 0\leq a \lt 1 $ 
+						p Existen dos soluciones. La solución en el primer cuadrante puede buscarse en la tabla de valores (o usando la calculadora). Entonces, \[ x_1= \text{de tabla o calculadora.} \] \[ x_2=\pi-x_1 \]
+					div
+						h3 \( -1\lt a \lt 0 \)
+						p Existen dos soluciones. Sea $x$ la solución del primer cuadrante de $\sin(x)=|a|$ (puede encontrarse en la tabla de valores o con calculadora).  Entonces, \[ x_1= \pi+x \] \[ x_2=2\pi-x \]
+					div
+						h3 $a=\pm 1$
+						p Existe una solución que puede obtenerse de la tabla.
+					.comentario 
+						h3 Nota
+						ul 
+							li Las soluciones propuestas pueden demostrarse con las propiedades del seno.
+							li En el caso $a\gt 1$ o en el caso $a\lt 1$ la ecucación no tiene solución.
+							li Las soluciones anteriores corresponden a los $ x\in \mathbb [0,2\pi).$ En caso de buscar soluciones para \( x\in \mathbb R \) a las soluciones propuestas debe sumarse $2\pi k$ con $k\in \mathbb Z$ (vueltas enteras).
 
 
 			.diapo
 				h1 Gráficos de las funciones coseno y seno
-				.col-2
+				.col-igual-2
 					.contenido
 						h2 Función coseno
 						figure
@@ -124,7 +165,7 @@ html(lang="es")
 						h3 Nota
 						ul 
 							li Los gráficos de ambas funciones son similares, salvo por una traslación horizontal.
-							li Los gráficos se repiten cada $2\pi$
+							li Los gráficos se repiten cada $2\pi.$
 							li La imagen de ambas funciones es $[-1,1]$
 							li Ambas funciones son continuas en los reales.
 
