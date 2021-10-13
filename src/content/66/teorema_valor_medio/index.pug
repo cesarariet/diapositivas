@@ -17,7 +17,7 @@ html(lang="es")
 				.col-igual-2 
 					.contenido 
 						h2 Definición de extremos locales 
-						p Diremos que una función \( f \) tiene un mínimo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\geq f(x_0)\] 
+						p Diremos que una función $ f $ tiene un mínimo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\geq f(x_0)\] 
 						p Diremos que una función \( f \) tiene un máximo local o relativo en \( x_0\in Dom f \) si existe un intervalo $I$ que contiene a $x_0$ \( (x_0\in I) \) tal que \[ \forall x\in I,\ f(x)\leq f(x_0)\] 
 					.contenido 
 						h2 Definición de extremos absolutos 
@@ -59,26 +59,45 @@ html(lang="es")
 
 			.diapo 
 				h1 Teoremas de Valor Medio
-				.col-2 
-					
+				.col-igual-3 
 					div 
+						h2 Teorema de Rolle
+						p Sea \( f(x) \) una función tal que: 
+						ul 
+							li \( f \) es continua en el intervalo cerrado \( [a,b]. \)
+							li \( f \) es derivable en el intervalo abierto \( (a,b). \) 
+							li \( f(a)=f(b). \)
+						p Entonces, existe un \( c\in(a,b) \) donde se cumple \[ f'(c)=0\]
+					div 
+						h2 Teorema de Lagrange
 						p Sea \( f(x) \) una función tal que: 
 						ul 
 							li \( f \) es continua en el intervalo cerrado \( [a,b]. \)
 							li \( f \) es derivable en el intervalo abierto \( (a,b). \) 
 						p Entonces, existe un \( c\in(a,b) \) donde se cumple \[ f'(c)=\frac{f(b)-f(a)}{b-a} \]
-						.comentario 
-							h3 Nota 
-							ul 
-								li El cociente $\tfrac{f(b)-f(a)}{b-a}$ es la pendiente de la recta secante a $f$ que pasa por los puntos \( (a,f(a)) \) y \( (b,f(b)). \)
-								li $f'(c)$ es la pendiente de la recta tangente de $f$ en \( (c,f(c)). \)
-								li La igualdad indica que la recta tangente es paralela a la recta secante.
-								li El teorema garantiza la existencia de un $c$ con la propiedad anterior, pero pueden existir otros.
+					div 
+						h2 Teorema de Cauchy
+						p Sea \( f(x) \) y \( g(x) \) funciones tales que:
+						ul 
+							li \( f \) y \( g \)  continuas en el intervalo cerrado \( [a,b]. \)
+							li \( f \) y \( g \)  derivables en el intervalo abierto \( (a,b). \) 
+						p Entonces, existe un \( c\in(a,b) \) donde se cumple \[ \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)} \]
+				.col-2
+					.comentario 
+						h3 Nota 
+						ul 
+							li Los tres teoremas son equivalentes entre si.
+							li El teorema de Rolle se puede demostrar usando el teorema de Weierstrass y el teorema de Fermat.
+							li El cociente $\tfrac{f(b)-f(a)}{b-a}$ es la pendiente de la recta secante a $f$ que pasa por los puntos \( (a,f(a)) \) y \( (b,f(b)). \)
+							li $f'(c)$ es la pendiente de la recta tangente de $f$ en \( (c,f(c)). \)
+							li La igualdad en el teorema de Lagrange indica que la recta tangente es paralela a la recta secante.
+							li en los teoremas se garantiza la existencia de un $c$ con la propiedad indicada, pero pueden existir otros.
+							li El teorema de Cauchy es útil en la demostración de la Regla de L'Hospital.
 
 					figure 
 						#lagrange 
 						script(src="lagrange.js") 
-						figcaption Representación gráfica del teorema. Dada la recta secante que pasa por \( (a,f(a)) \) y \( (b,f(b)), \) es posible hallar al menos una recta tangente de igual pendiente.
+						figcaption Representación gráfica del teorema de Lagrange. Dada la recta secante que pasa por \( (a,f(a)) \) y \( (b,f(b)), \) es posible hallar al menos una recta tangente de igual pendiente.
 			
 			.diapo 
 				h1 Consecuencias de Teorema de Valor Medio 
