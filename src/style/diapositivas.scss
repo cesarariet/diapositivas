@@ -118,7 +118,7 @@ ol {
   }
 }
 a {
-  color:inherit;
+  color: inherit;
 }
 
 figure {
@@ -164,6 +164,11 @@ table {
   .col-igual-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .col-igual-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
   }
 }
