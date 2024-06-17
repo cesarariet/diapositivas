@@ -1,16 +1,16 @@
 const { task, watch, src, dest, series, parallel } = require("gulp");
 const math = require("gulp-mathjax-node");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require('sass'));
 const cssmin = require("gulp-cssmin");
 const pug = require("gulp-pug-3");
 const gulpWatch = require("gulp-watch");
 
-task("compilaPug", function (cb) {
+task("compilaPug", function(cb) {
   src("./src/content/**/*.pug").pipe(pug()).pipe(math()).pipe(dest("dist"));
   cb();
 });
 
-task("compilaSass", function (cb) {
+task("compilaSass", function(cb) {
   src("./src/style/*.scss")
     .pipe(sass())
     .pipe(cssmin())
@@ -18,17 +18,17 @@ task("compilaSass", function (cb) {
   cb();
 });
 
-task("copiarArchivos", function (cb) {
+task("copiarArchivos", function(cb) {
   src(["./src/content/**/*", "!./src/content/**/*.pug"]).pipe(dest("dist"));
   cb();
 });
 
-task("copiarUtilidades", function (cb) {
+task("copiarUtilidades", function(cb) {
   src("./src/utils/**/*").pipe(dest("dist/utils"));
   cb();
 });
 
-task("watchViejo", function () {
+task("watchViejo", function() {
   watch("./src/content/**/*.pug", task("compilaPug"));
   watch("./src/style/*.scss", task("compilaSass"));
   watch(
@@ -47,7 +47,7 @@ task(
     task("copiarUtilidades")
   )
 );
-task("watch", function () {
+task("watch", function() {
   gulpWatch("./src/content/**/*.pug")
     .pipe(pug())
     .pipe(math())
